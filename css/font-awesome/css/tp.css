@@ -1,0 +1,9 @@
+@font-face {
+    font-family:"AgencyFBRegular";
+    src: url('../fonts/trajanpro.ttf') /* EOT file for IE */
+}
+@font-face {
+    font-family:"AgencyFBRegular";
+    src: url('../fonts/trajanpro.ttf') /* TTF file for CSS3 browsers */
+}
+
