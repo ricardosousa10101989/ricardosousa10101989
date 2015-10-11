@@ -1,0 +1,8 @@
+---
+modal-id: 8
+img: 8/2.jpg
+thumbnail: 8/1.jpg
+w: 1200
+h: 900
+
+---

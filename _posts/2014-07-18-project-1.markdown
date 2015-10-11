@@ -1,6 +1,8 @@
 ---
 modal-id: 1
-img: dreams.png
-thumbnail: dreams-thumbnail.png
+img: 1/2.jpg
+thumbnail: 1/1.jpg
+w: 1200
+h: 900
 
 ---

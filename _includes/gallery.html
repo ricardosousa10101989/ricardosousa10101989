@@ -79,8 +79,8 @@ var openPhotoSwipe = function(index) {
         {% endif %}
         {
             src: 'img/portfolio/{{ post.thumbnail }}',
-            w: 964,
-            h: 1024
+            w: {{ post.w }},
+            h: {{ post.h }}
         }
     {% endfor %}
     ];
