@@ -1,7 +1,7 @@
 ---
 modal-id: 1
-img: 1/2.jpg
-thumbnail: 1/1.jpg
+img: 1/1.jpg
+thumbnail: 1/2.jpg
 w: 1200
 h: 900
 

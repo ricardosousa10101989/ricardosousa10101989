@@ -1,7 +1,7 @@
 ---
 modal-id: 9
-img: 9/2.jpg
-thumbnail: 9/1.jpg
+img: 9/1.jpg
+thumbnail: 9/2.jpg
 w: 1200
 h: 900
 
