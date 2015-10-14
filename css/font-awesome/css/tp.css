@@ -1,9 +1,9 @@
 @font-face {
-    font-family:"AgencyFBRegular";
-    src: url('../fonts/trajanpro.ttf'); /* EOT file for IE */
+  font-family: 'AgencyFBRegular';
+  src: url('Trajan Pro Regular.eot'); /* IE9 Compat Modes */
+  src: url('Trajan Pro Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('Trajan Pro Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('Trajan Pro Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('Trajan Pro Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('Trajan Pro Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
-@font-face {
-    font-family:"AgencyFBRegular";
-    src: url('../fonts/trajanpro.ttf') format('truetype');/* TTF file for CSS3 browsers */
-}
-
