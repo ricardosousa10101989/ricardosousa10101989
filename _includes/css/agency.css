@@ -176,7 +176,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-brand {
-    font-family:'TrajanPro-Regular', sans-serif;
+    font-family:'AgencyFBRegular', sans-serif;
     color: #{{ site.color.primary }};
 }
 
