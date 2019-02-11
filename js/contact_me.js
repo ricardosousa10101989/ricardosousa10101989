@@ -18,7 +18,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "https://formspree.io/rsousa.agro@gmail.com",
+                url: "https://formspree.io/geral@plantaecorta.pt",
                 type: "POST",
                 data: {
                     name: name,
