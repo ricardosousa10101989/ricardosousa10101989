@@ -18,7 +18,7 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "https://formspree.io/geral@plantaecorta.pt",
+                url: "https://briskforms.com/go/1054b8e54c6904aea1ea2d9625bfdf6e",
                 type: "POST",
                 data: {
                     name: name,
