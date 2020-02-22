@@ -1,0 +1,19 @@
+# Global settings applied to the whole site.
+[build]
+  base    = ""
+  publish = "public"
+  command = "yarn build"
+
+# Production context: All deploys to the main
+# repository branch will inherit these settings.
+[context.production.environment]
+  HUGO_VERSION = "0.53"
+  YARN_VERSION = "1.21.1"
+  YARN_FLAGS = "--no-ignore-optional"
+
+# Deploy Preview context: All Deploy Previews
+# will inherit these settings.
+[context.deploy-preview.environment]
+  HUGO_VERSION = "0.53"
+  YARN_VERSION = "1.21.1"
+  YARN_FLAGS = "--no-ignore-optional"

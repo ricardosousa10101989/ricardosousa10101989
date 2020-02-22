@@ -1,8 +1,0 @@
----
-modal-id: 10
-img: 10/1.jpg
-thumbnail: 10/2.jpg
-w: 1200
-h: 900
-
----
