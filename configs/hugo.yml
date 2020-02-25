@@ -5,6 +5,9 @@ MetaDataFormat: "yaml"
 blackfriday:
   hrefTargetBlank: true
 title: "Planta&Corta"
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
 
 # i18n
 DefaultContentLanguage: "pt"
