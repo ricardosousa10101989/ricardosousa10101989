@@ -10,12 +10,13 @@
     "pre-build:configs": "node scripts/configs.js",
     "build:css": "npm-run-all -s css:scss-compile css:postcss",
     "build:hugo": "hugo",
-    "watch:browsersync": "browser-sync public -w --port 3000 --no-ui",
+    "build:js": "webpack",
+    "watch:browsersync": "browser-sync start --config browser-sync.js",
     "watch:css": "chokidar 'scss/**/*.scss' -c 'npm run build:css' --initial",
     "watch:hugo": "hugo -w",
     "erase:public": "rm -Rf ./public && mkdir ./public",
-    "css:postcss": "postcss public/css/*.css -d public/css --use autoprefixer --use cssnano --verbose",
-    "css:scss-compile": "node-sass scss/ -o public/css --include-path ./node_modules"
+    "css:postcss": "postcss public/css/*.css -d public/css --use autoprefixer --use cssnano --verbose --map",
+    "css:scss-compile": "node-sass scss/ -o public/css --include-path ./node_modules --source-map true"
   },
   "dependencies": {
     "autoprefixer": "^9.7.4",
