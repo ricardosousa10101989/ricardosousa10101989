@@ -1,3 +1,9 @@
-$color-primary: #0D8A39;
-$color-secondary: #0b7c33;
-$color-dark: #333;
+@import 'variables';
+
+@import 'bootswatch/dist/flatly/variables';
+@import 'bootstrap/scss/bootstrap';
+@import 'bootswatch/dist/flatly/bootswatch';
+
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/solid';

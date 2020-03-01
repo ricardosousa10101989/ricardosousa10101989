@@ -5,10 +5,12 @@
 
   <body id="page-top" class="index">
 
-  {{ block "main" . }}{{ end }}
+    {{ partial "nav.html" . }}
 
-  {{ partial "footer.html" . }}
-  {{ partial "js.html" . }}
+    {{ block "main" . }}{{ end }}
+
+    {{ partial "footer.html" . }}
+    <script src="js/bundle.js"></script>
 
   </body>
 </html>

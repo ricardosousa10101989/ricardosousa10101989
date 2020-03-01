@@ -1,0 +1,98 @@
+.navbar {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  transition: background-color .3s;
+
+  &.navbar--expanded,
+  &.navbar--scrolled {
+    background-color: $dark;
+  }
+
+  .container {
+    align-items: stretch;
+  }
+
+  @include media-breakpoint-down(md) {
+    .container {
+      max-width: unset;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    justify-content: space-between;
+  }
+}
+
+.navbar-brand {
+  margin: 1rem 2rem;
+  color: $primary;
+  font-family: 'AgencyFBRegular', sans-serif;
+  transition: font-size .3s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-secondary;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 2em;
+  }
+}
+
+.navbar-collapse {
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.navbar-toggler {
+  padding: 0 24px;
+
+  i {
+    color: $primary;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-color: $primary;
+
+    i {
+      color: $light;
+    }
+  }
+}
+
+.nav-link {
+  padding: 0;
+  color: $light;
+  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color .3s;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover,
+  &.page-scroll--active {
+    background-color: $primary;
+    color: $light;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+  }
+}
