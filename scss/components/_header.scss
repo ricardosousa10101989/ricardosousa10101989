@@ -1,0 +1,43 @@
+.header {
+  background-image: url('../img/header-bg.jpg');
+  background-repeat: none;
+  background-position: center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  background-attachment: scroll;
+}
+
+.header__intro-text {
+  padding-top: 226px;
+  padding-bottom: 50px;
+  transition: padding-top .6s, padding-bottom .6s;
+
+  body.scrolled & {
+    padding-top: 138px;
+    padding-bottom: 138px;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: 500px;
+    padding-bottom: 200px;
+
+    body.scrolled & {
+      padding-top: 350px;
+      padding-bottom: 350px;
+    }
+  }
+}
+
+.header__intro-lead-in {
+  margin-bottom: 25px;
+  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 22px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}

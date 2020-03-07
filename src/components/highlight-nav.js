@@ -10,6 +10,7 @@ import $ from 'jquery';
       scrollTimeout = setTimeout(() => {
         const what = $(window).scrollTop() ? 'add' : 'remove';
         navbar.classList[what]('navbar--scrolled');
+        document.body.classList[what]('scrolled');
         scrollTimeout = null;
       }, 150);
     }

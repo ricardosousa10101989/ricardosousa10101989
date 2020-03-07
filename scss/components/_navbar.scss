@@ -1,20 +1,30 @@
 .navbar {
+  display: flex;
+  align-items: stretch;
+  min-height: 74px;
   padding: 0;
   border: 0;
   background-color: transparent;
   transition: background-color .3s;
 
-  &.navbar--expanded,
+  @include media-breakpoint-down(md) {
+    &.navbar--expanded {
+      background-color: $dark;
+    }
+  }
+
   &.navbar--scrolled {
     background-color: $dark;
   }
 
   .container {
+    position: relative;
     align-items: stretch;
   }
 
   @include media-breakpoint-down(md) {
     .container {
+      justify-content: flex-end;
       max-width: unset;
       margin-right: 0;
       margin-left: 0;
@@ -27,19 +37,47 @@
 }
 
 .navbar-brand {
-  margin: 1rem 2rem;
-  color: $primary;
-  font-family: 'AgencyFBRegular', sans-serif;
-  transition: font-size .3s;
+  position: absolute;
+  top: 146px;
+  left: 50%;
+  margin: 0 0 0 5px;
+  transform: translateX(-50%);
+  transition: top .6s, left .6s, transform .6s;
+  pointer-events: none;
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color-secondary;
+  @include media-breakpoint-down(md) {
+    top: 60px;
+
+    .navbar--expanded & {
+      top: 0;
+      left: 0;
+      transform: translateX(0);
+      pointer-events: all;
+    }
   }
 
-  @include media-breakpoint-up(md) {
-    font-size: 2em;
+  .navbar--scrolled & {
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+}
+
+.navbar-logo {
+  height: 280px;
+  transition: height .6s;
+
+  @include media-breakpoint-down(md) {
+    height: 132px;
+
+    .navbar--expanded & {
+      height: 64px;
+    }
+  }
+
+  .navbar--scrolled & {
+    height: 64px;
   }
 }
 
@@ -49,7 +87,9 @@
 }
 
 .navbar-toggler {
+  min-height: 74px;
   padding: 0 24px;
+  border-radius: 0;
 
   i {
     color: $primary;
@@ -86,8 +126,11 @@
     color: $light;
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     padding: 32px 0;
+  }
+
+  @include media-breakpoint-down(md) {
     text-align: center;
   }
 

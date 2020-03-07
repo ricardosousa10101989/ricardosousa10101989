@@ -20,6 +20,8 @@ rules:
     - exclude:
       - 'breakpoint'
       - 'mq'
+      - 'media-breakpoint-up'
+      - 'media-breakpoint-down'
 
   # Line Spacing
   one-declaration-per-line: 2
