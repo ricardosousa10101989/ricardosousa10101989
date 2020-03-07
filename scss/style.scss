@@ -1,6 +1,7 @@
 @import 'init';
 
 @import 'components/contact';
+@import 'components/footer';
 @import 'components/header';
 @import 'components/navbar';
 @import 'components/portfolio';
@@ -163,51 +164,6 @@ fieldset[disabled] .btn-xl.active {
 .btn-xl .badge {
     background-color: #fff;
     color: $color-primary;
-}
-
-footer {
-    padding: 25px 0;
-    text-align: center;
-}
-
-footer span.copyright {
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 40px;
-    text-transform: uppercase;
-    text-transform: none;
-}
-
-footer ul.quicklinks {
-    margin-bottom: 0;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 40px;
-    text-transform: uppercase;
-    text-transform: none;
-}
-
-ul.social-buttons {
-    margin-bottom: 0;
-}
-
-ul.social-buttons li a {
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    outline: 0;
-    background-color: #222;
-    color: #fff;
-    font-size: 20px;
-    line-height: 40px;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-}
-
-ul.social-buttons li a:hover,
-ul.social-buttons li a:focus,
-ul.social-buttons li a:active {
-    background-color: $color-primary;
 }
 
 .btn:focus,
