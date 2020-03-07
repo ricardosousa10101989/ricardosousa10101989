@@ -99,7 +99,7 @@ const runSharp = inFile => {
     // images go in the static folder so hugo will take care of that.
 
     // Output an image for every specified file size.
-    config.sizes.forEach(size => {
+    sizes.forEach(size => {
       inFile.name = fileName + size.suffix;
       const outFile = path.format(inFile);
 

@@ -7,3 +7,29 @@ media_folder: "/static/media/uploads" # Folder where user uploaded files should 
 public_folder: "/media/uploads"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "homepage"
+    label: "Homepage"
+    folder: "content"
+    filter:
+      field: "i18nlanguage"
+      value: "pt-i"
+    extension: "md"
+    format: "yaml-frontmatter"
+    create: false
+    editor:
+      preview: false
+    fields:
+      - name: "i18nlanguage"
+        label: "Content language"
+        widget: "hidden"
+        default: "pt-i"
+      - name: "title"
+        label: "Enter here to edit."
+        widget: "string"
+        default: "Enter here to edit."
+      - name: "hero_text"
+        label: "Hero Text"
+        widget: "string"
+      - name: "hero_image"
+        label: "Hero Image"
+        widget: "image"
