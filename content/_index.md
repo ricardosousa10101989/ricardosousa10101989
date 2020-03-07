@@ -37,8 +37,6 @@ portfolio:
     title: ' '
   - image: /media/uploads/20181127_101830914_ios.jpg
     title: ' '
-  - image: /media/uploads/20181108_162641317_ios.jpg
-    title: ' '
 contact_address: 'Rua das Areias 176, Campanhã, Porto'
 contact_map: >-
   https://www.google.pt/maps/dir/''/R.+das+Areias+176,+4300-038+Porto/@41.152762,-8.5650702,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xd246365334564a5:0xf8038a6d092fc96a!2m2!1d-8.5628815!2d41.152762
