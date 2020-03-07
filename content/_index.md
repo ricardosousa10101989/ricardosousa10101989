@@ -2,7 +2,7 @@
 i18nlanguage: pt-i
 title: Enter here to edit.
 hero_text: Mexer na terra é um vício...
-hero_image: /media/uploads/header-bg.jpg
+hero_image: /media/uploads/20190401_140137181_ios-capa.jpg
 services:
   - title: Construção de Jardins
     icon: fas fa-tree
