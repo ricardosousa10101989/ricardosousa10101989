@@ -1,0 +1,20 @@
+<section id="portfolio" class="main-section bg-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Alguns dos nossos trabalhos</h2>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio__outer-container">
+    <button class="portfolio__controller portfolio__previous"><i class="fas fa-angle-left"></i></button>
+    <button class="portfolio__controller portfolio__next"><i class="fas fa-angle-right"></i></button>
+    <div class="portfolio__container">
+      {{ range .Params.portfolio }}
+        <a href="{{ .image }}" class="portfolio__item" data-lightbox="portfolio" data-alt="{{ .title }}" data-title="{{ .title }}">
+          <img class="portfolio__img tns-lazy-img" data-src="{{ .image }}" data-srcset="{{ partial "srcset.html" .image }}" alt="{{ .title }}" sizes="100vw">
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</section>

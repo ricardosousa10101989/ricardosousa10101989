@@ -1,5 +1,6 @@
 import 'bootstrap';
 
+import './components/gallery';
 import './components/highlight-nav';
 import './components/highlight-section';
 import './components/mobile-menu';

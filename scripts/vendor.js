@@ -7,3 +7,9 @@ fs.copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/webfonts'
 
 // Copy Netlify CMS from dependency directory
 fs.copy('node_modules/netlify-cms/dist/netlify-cms.js', 'public/js/netlify-cms.js', err => err && console.error(err));
+
+// Tiny Slider
+fs.copy('node_modules/tiny-slider/dist/tiny-slider.css', 'public/css/tiny-slider.css', err => err && console.error(err));
+
+// Lightbox
+fs.copy('node_modules/lightbox2/dist', 'public/lightbox', err => err && console.error(err));
