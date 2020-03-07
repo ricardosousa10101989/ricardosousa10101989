@@ -16,6 +16,7 @@ collections: # A list of collections the CMS should be able to edit
     extension: "md"
     format: "yaml-frontmatter"
     create: false
+    delete: false
     editor:
       preview: false
     fields:
@@ -53,3 +54,13 @@ collections: # A list of collections the CMS should be able to edit
               - name: "detail"
                 label: "Detail"
                 widget: "string"
+      - name: "portfolio"
+        label: "Portfolio"
+        widget: "list"
+        fields:
+          - name: "image"
+            label: "Image"
+            widget: "image"
+          - name: "title"
+            label: "Title"
+            widget: "string"
