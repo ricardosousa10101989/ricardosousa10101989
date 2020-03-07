@@ -23,22 +23,27 @@ services:
       - detail: Tratamento a pragas e doenças
       - detail: Limpeza e recolha de lixo
 portfolio:
-  - image: /media/uploads/2015-08-26_17.06.00.jpg
-  - image: /media/uploads/2015-08-26_17.14.11.jpg
-  - image: /media/uploads/2015-08-26_17.18.47.jpg
-  - image: /media/uploads/2015-08-26_17.24.39.jpg
-  - image: /media/uploads/2015-08-26_17.32.17.jpg
-  - image: /media/uploads/SAM_0828.JPG
-  - image: /media/uploads/SAM_0882.JPG
-  - image: /media/uploads/SAM_0901.JPG
-  - image: /media/uploads/SAM_0908.JPG
-  - image: /media/uploads/SAM_0915.JPG
-  - image: /media/uploads/SAM_0923.JPG
-  - image: /media/uploads/SAM_0937.JPG
-contact_address: Rua das Areias 176, Campanhã, Porto
-contact_map: "https://www.google.pt/maps/dir/''/R.+das+Areias+176,+4300-038+Porto/@41.152762,-8.5650702,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xd246365334564a5:0xf8038a6d092fc96a!2m2!1d-8.5628815!2d41.152762"
-contact_phone: "+351 917 417 873"
-contact_email: "geral@plantaecorta.pt"
+  - image: /media/uploads/20190401_140137181_ios.jpg
+    title: ' '
+  - image: /media/uploads/20190520_102515526_ios.jpg
+    title: ' '
+  - image: /media/uploads/20190328_162352991_ios.jpg
+    title: ' '
+  - image: /media/uploads/20181127_101523987_ios.jpg
+    title: ' '
+  - image: /media/uploads/20190606_100031018_ios.jpg
+    title: ' '
+  - image: /media/uploads/20181221_155559354_ios.jpg
+    title: ' '
+  - image: /media/uploads/20181127_101830914_ios.jpg
+    title: ' '
+  - image: /media/uploads/20181108_162641317_ios.jpg
+    title: ' '
+contact_address: 'Rua das Areias 176, Campanhã, Porto'
+contact_map: >-
+  https://www.google.pt/maps/dir/''/R.+das+Areias+176,+4300-038+Porto/@41.152762,-8.5650702,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xd246365334564a5:0xf8038a6d092fc96a!2m2!1d-8.5628815!2d41.152762
+contact_phone: +351 917 417 873
+contact_email: geral@plantaecorta.pt
 ---
 A PLANTA&CORTA é uma empresa dedicada à gestão, projeto, construção e manutenção de espaços verdes.
 
