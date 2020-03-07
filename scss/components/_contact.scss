@@ -1,0 +1,85 @@
+.contact {
+  background-color: #222;
+  background-image: url('../img/map-image.png');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &::placeholder {
+    color: #bbb;
+    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .section-heading {
+    color: #fff;
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+  }
+
+  input,
+  textarea {
+    padding: 20px;
+  }
+
+  .form-control {
+    &input {
+      height: auto;
+    }
+
+    &textarea {
+      height: 236px;
+    }
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: none;
+    }
+  }
+
+  input.form-control {
+    height: auto;
+  }
+
+  textarea.form-control {
+    height: 236px;
+  }
+
+  .form-control:focus {
+    border-color: $color-primary;
+    box-shadow: none;
+  }
+}
+
+.contact__success {
+  display: none;
+  border: 1px solid $primary;
+  background: rgba($primary, .2);
+  color: white;
+  font-size: 24px;
+
+  .contact--success & {
+    display: block;
+  }
+}
+
+.contact__error {
+  display: none;
+  border: 1px solid $red;
+  background: rgba($red, .2);
+  color: white;
+  font-size: 24px;
+
+  .contact--error & {
+    display: block;
+  }
+}
+
+.contact__submit {
+  .contact--success &,
+  .contact--error & {
+    display: none;
+  }
+}
