@@ -12,10 +12,12 @@
     "build:css": "yarn css:scss-compile && yarn css:postcss",
     "build:hugo": "hugo",
     "build:js": "webpack",
+    "build:sharp": "node scripts/sharp.js",
     "watch:browsersync": "browser-sync start --config browser-sync.js",
     "watch:css": "chokidar 'scss/**/*.scss' -c 'yarn css:build-maps' --initial",
     "watch:hugo": "hugo -w",
     "watch:js": "webpack -w",
+    "watch:sharp": "nodemon -q -w scripts/sharp.js -x 'yarn build:sharp'",
     "erase:public": "rm -Rf ./public && mkdir ./public",
     "css:build-maps": "yarn css:scss-compile --source-map true && yarn css:postcss --map",
     "css:postcss": "postcss public/css/*.css -d public/css --use autoprefixer --use cssnano --verbose",
@@ -31,6 +33,7 @@
     "bootswatch": "^4.4.1",
     "browser-sync": "^2.26.7",
     "chalk": "^3.0.0",
+    "chokidar": "^3.3.1",
     "chokidar-cli": "^2.1.0",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
@@ -44,9 +47,11 @@
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.1",
     "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
     "npm-run-all": "^4.1.5",
     "popper.js": "^1.16.1",
     "postcss-cli": "^7.1.0",
+    "sharp": "^0.24.1",
     "toml-require": "^1.2.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
@@ -55,5 +60,43 @@
     "last 2 versions",
     "> 1%",
     "IE 11"
-  ]
+  ],
+  "sharp-config": {
+    "src": "static/media",
+    "dest": "public/media",
+    "quality": 80,
+    "types": [
+      "jpg",
+      "jpeg",
+      "png",
+      "webp",
+      "tiff"
+    ],
+    "sizes": [
+      {
+        "suffix": "-xlarge",
+        "width": 2800
+      },
+      {
+        "suffix": "-large",
+        "width": 1400
+      },
+      {
+        "suffix": "-regular",
+        "width": 820
+      },
+      {
+        "suffix": "-medium",
+        "width": 680
+      },
+      {
+        "suffix": "-small",
+        "width": 460
+      },
+      {
+        "suffix": "-xsmall",
+        "width": 280
+      }
+    ]
+  }
 }
