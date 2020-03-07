@@ -1,33 +1,20 @@
-<!-- Services Section -->
 <section id="services" class="main-section">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Serviços</h2>
-        <h3 class="section-subheading text-muted">O que fazemos</h3>
+        <h2 class="section-heading">O que fazemos</h2>
       </div>
     </div>
     <div class="row text-center">
-      <div class="col-md-6">
-        <i class="services__icon fa fa-tree fa-4x fa-inverse"></i>
-        <h4 class="service-heading">Construção de Jardins</h4>
-        <p class="text-muted">Plantações</p>
-        <p class="text-muted">Sementeiras</p>
-        <p class="text-muted">Implantação de sistemas de rega automáticos</p>
-        <p class="text-muted">Tapete de relva natural</p>
-        <p class="text-muted">Relva sintética</p>
-        <p class="text-muted">Decoração com inertes</p>
-      </div>
-      <div class="col-md-6">
-        <i class="services__icon fa fa-wrench fa-4x fa-inverse"></i>
-        <h4 class="service-heading">Manutenção de Jardins</h4>
-        <p class="text-muted">Desmatações</p>
-        <p class="text-muted">Corte de relvados</p>
-        <p class="text-muted">Poda de árvores de qualquer tamanho e arbustos</p>
-        <p class="text-muted">Adubações</p>
-        <p class="text-muted">Tratamento a pragas e doenças</p>
-        <p class="text-muted">Limpeza e recolha de lixo</p>
-      </div>
+      {{ range .Params.services }}
+        <div class="col-md-6">
+          <i class="services__icon {{ .icon }} fa-4x fa-inverse"></i>
+          <h4 class="service-heading">{{ .title }}</h4>
+          {{ range .details }}
+            <p class="text-muted">{{ .detail }}</p>
+          {{ end }}
+        </div>
+      {{ end }}
     </div>
   </div>
 </section>
