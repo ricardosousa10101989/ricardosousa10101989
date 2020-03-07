@@ -35,15 +35,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-12 text-center">
-        <br />
-        <br />
-        <br />
-        <address>
-        <a  class="contacts-url" href="https://www.google.pt/maps/dir/''/R.+das+Areias+176,+4300-038+Porto/@41.152762,-8.5650702,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xd246365334564a5:0xf8038a6d092fc96a!2m2!1d-8.5628815!2d41.152762"> Rua das Areias 176,<br />Campanhã, PORTO </a>
-        </address>
-        <a  class="contacts-url" href="tel:+351917417873"> +351 917 417 873 </a> <br />
-        <a  class="contacts-url" href="mailto:geral@plantaecorta.pt"> geral@plantaecorta.pt </a>
+      <div class="contacts-url col-lg-12 text-center">
+        <div class="contacts-url__address">
+          <a href="{{ .Params.contact_map }}" target="_blank" rel="noopener noreferrer">{{ .Params.contact_address }}</a>
+        </div>
+        <div class="contacts-url__phone">
+          <a href="tel:{{ replace .Params.contact_phone " " "" }}">{{ .Params.contact_phone }}</a>
+        </div>
+        <div class="contacts-url__email">
+          <a href="mailto:{{ .Params.contact_email }}">{{ .Params.contact_email }}</a>
+        </div>
       </div>
     </div>
   </div>

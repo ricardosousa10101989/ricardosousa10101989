@@ -83,3 +83,19 @@
     display: none;
   }
 }
+
+.contacts-url {
+  margin-top: 3em;
+
+  a {
+    color: $light;
+    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+.contacts-url__address {
+  margin: 1em 0;
+}
