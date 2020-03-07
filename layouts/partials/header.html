@@ -1,6 +1,6 @@
 <header class="main-section header">
   <div class="container">
-    <img class="header__bg" src="{{ .Params.hero_image }}" />
+    <img class="header__bg" src="{{ .Params.hero_image }}" srcset="{{ partial "srcset.html" .Params.hero_image }}" sizes="100vw" />
     <div class="header__intro-text">
       <div class="header__intro-lead-in">{{ .Params.hero_text }}</div>
       <a href="#contact" class="page-scroll btn btn-xl">Peça orçamento</a>
