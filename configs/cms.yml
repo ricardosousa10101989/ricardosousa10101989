@@ -33,3 +33,6 @@ collections: # A list of collections the CMS should be able to edit
       - name: "hero_image"
         label: "Hero Image"
         widget: "image"
+      - name: "body"
+        label: "About us"
+        widget: "markdown"

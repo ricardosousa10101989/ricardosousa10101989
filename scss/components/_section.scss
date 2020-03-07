@@ -1,0 +1,15 @@
+section {
+  padding: 100px 0;
+
+  @include media-breakpoint-up(md) {
+    padding: 150px 0;
+  }
+}
+
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 75px;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 400;
+}
