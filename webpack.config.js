@@ -1,7 +1,10 @@
 const path = require('path'); // eslint-disable-line import/no-extraneous-dependencies
 
 const mode = process.env.NODE_ENV || 'development';
-
+console.log({
+  env: process.env.NODE_ENV,
+  mode,
+});
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.js'),
 
