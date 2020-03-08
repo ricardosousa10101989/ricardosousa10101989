@@ -40,7 +40,6 @@
   position: absolute;
   top: 146px;
   left: 50%;
-  margin: 0 0 0 5px;
   transform: translateX(-50%);
   transition: top .6s, left .6s, transform .6s;
   pointer-events: none;
@@ -109,7 +108,6 @@
 .nav-link {
   padding: 0;
   color: $light;
-  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 1px;
   text-align: center;

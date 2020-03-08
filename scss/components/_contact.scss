@@ -6,7 +6,6 @@
 
   &::placeholder {
     color: #bbb;
-    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -48,7 +47,7 @@
   }
 
   .form-control:focus {
-    border-color: $color-primary;
+    border-color: $primary;
     box-shadow: none;
   }
 }
@@ -89,7 +88,6 @@
 
   a {
     color: $light;
-    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;

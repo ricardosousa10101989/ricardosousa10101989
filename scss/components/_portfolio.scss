@@ -1,3 +1,7 @@
+.portfolio__wrapper {
+  background-color: $gray-100;
+}
+
 .portfolio__outer-container {
   position: relative;
   width: 100%;
@@ -30,13 +34,15 @@
   height: 64px;
   border: 0;
   border-radius: 32px;
-  background: rgba($light-gray, .15);
+  opacity: .25;
+  background: $gray-100;
   color: $primary;
   font-size: 48px;
   transform: translateY(-50%);
-  transition: background .3s, color .3s;
+  transition: opacity .3s, background .3s, color .3s;
 
   &:hover {
+    opacity: 1;
     background: $primary;
     color: $light;
   }
