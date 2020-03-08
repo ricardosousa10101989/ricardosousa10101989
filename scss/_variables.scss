@@ -1,4 +1,8 @@
-$fa-font-path: '../webfonts';
+// FontAwesome webfonts
+$fa-font-path: '../lib/webfonts';
+
+// Defined here to override the default Lato font for the Flatly theme
+$web-font-path: 'https://fonts.googleapis.com/css?family=Montserrat:400,700,400i,700i';
 
 // $original: #419350;
 $primary: #0d8a39;

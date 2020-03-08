@@ -20,7 +20,7 @@
     "watch:sharp": "nodemon -q -w scripts/sharp.js -x 'yarn build:sharp'",
     "erase:public": "rm -Rf ./public && mkdir ./public",
     "css:build-maps": "yarn css:scss-compile --source-map true && yarn css:postcss --map",
-    "css:postcss": "postcss public/css/*.css -d public/css --use autoprefixer --use cssnano --verbose",
+    "css:postcss": "postcss public/css/*.css -d public/css --use autoprefixer --use cssnano --verbose --no-map",
     "css:scss-compile": "node-sass scss/ -o public/css --include-path ./node_modules"
   },
   "dependencies": {
