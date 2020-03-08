@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 (() => {
   const navbar = document.querySelector('.navbar');
   let scrollTimeout = null;
@@ -8,7 +6,7 @@ import $ from 'jquery';
   window.addEventListener('scroll', () => {
     if (!scrollTimeout) {
       scrollTimeout = setTimeout(() => {
-        const what = $(window).scrollTop() ? 'add' : 'remove';
+        const what = jQuery(window).scrollTop() ? 'add' : 'remove';
         navbar.classList[what]('navbar--scrolled');
         document.body.classList[what]('scrolled');
         scrollTimeout = null;

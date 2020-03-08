@@ -1,11 +1,9 @@
-import $ from 'jquery';
-
 (() => {
-  const $form = $('#contactForm');
+  const $form = jQuery('#contactForm');
   $form.submit(e => {
     e.preventDefault();
 
-    $.post($form.attr('action'), $form.serialize())
+    jQuery.post($form.attr('action'), $form.serialize())
       .done(() => {
         $form.addClass('contact--success');
       })

@@ -2,6 +2,7 @@
   "extends": "airbnb",
   "globals": {
     "document": true,
+    "jQuery": true,
     "IntersectionObserver": true,
     "lightbox": true,
     "MutationObserver": true,
