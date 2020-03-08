@@ -7,7 +7,7 @@
 # Production context: All deploys to the main
 # repository branch will inherit these settings.
 [context.production.environment]
-  HUGO_VERSION = "0.66"
+  HUGO_VERSION = "0.66.0"
   NODE_VERSION = "12.13.1"
   YARN_VERSION = "1.21.1"
   YARN_FLAGS = "--no-ignore-optional"
@@ -15,7 +15,7 @@
 # Deploy Preview context: All Deploy Previews
 # will inherit these settings.
 [context.deploy-preview.environment]
-  HUGO_VERSION = "0.66"
+  HUGO_VERSION = "0.66.0"
   NODE_VERSION = "12.13.1"
   YARN_VERSION = "1.21.1"
   YARN_FLAGS = "--no-ignore-optional"
