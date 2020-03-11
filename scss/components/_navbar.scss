@@ -7,7 +7,7 @@
   background-color: transparent;
   transition: background-color .3s;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     &.navbar--expanded {
       background-color: $dark;
     }
@@ -22,7 +22,7 @@
     align-items: stretch;
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     .container {
       justify-content: flex-end;
       max-width: unset;
@@ -40,44 +40,36 @@
   position: absolute;
   top: 146px;
   left: 50%;
-  transform: translateX(-50%);
-  transition: top .6s, left .6s, transform .6s;
+  transform: scale(1) translateX(-50%);
+  transform-origin: top left;
   pointer-events: none;
 
-  @include media-breakpoint-down(md) {
+  body.transitions-enabled & {
+    transition: top .6s, left .6s, transform .6s;
+  }
+
+  @include media-breakpoint-down(sm) {
     top: 60px;
+    transform: scale(.47) translateX(-50%);
 
     .navbar--expanded & {
-      top: 0;
+      top: 4px;
       left: 0;
-      transform: translateX(0);
+      transform: scale(.23) translateX(0);
       pointer-events: all;
     }
   }
 
   .navbar--scrolled & {
-    top: 0;
+    top: 4px;
     left: 0;
-    transform: translateX(0);
+    transform: scale(.23) translateX(0);
     pointer-events: all;
   }
 }
 
 .navbar-logo {
   height: 280px;
-  transition: height .6s;
-
-  @include media-breakpoint-down(md) {
-    height: 132px;
-
-    .navbar--expanded & {
-      height: 64px;
-    }
-  }
-
-  .navbar--scrolled & {
-    height: 64px;
-  }
 }
 
 .navbar-collapse {
@@ -126,9 +118,6 @@
 
   @include media-breakpoint-down(sm) {
     padding: 32px 0;
-  }
-
-  @include media-breakpoint-down(md) {
     text-align: center;
   }
 
