@@ -48,6 +48,10 @@
     transition: top .6s, left .6s, transform .6s;
   }
 
+  body.header-gone & {
+    transition: top .15s, left .15s, transform .15s;
+  }
+
   @include media-breakpoint-down(sm) {
     top: 60px;
     transform: scale(.47) translateX(-50%);
