@@ -4,18 +4,17 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  &::placeholder {
-    color: #bbb;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-
   .section-heading {
     color: #fff;
   }
 
   .form-group {
     margin-bottom: 25px;
+
+    label {
+      position: absolute;
+      opacity: 0;
+    }
   }
 
   input,
@@ -24,6 +23,8 @@
   }
 
   .form-control {
+    color: $dark;
+
     &input {
       height: auto;
     }
@@ -35,6 +36,13 @@
     &:focus {
       border-color: $primary;
       box-shadow: none;
+      color: $dark;
+    }
+
+    &::placeholder {
+      color: $section-text;
+      font-style: italic;
+      text-transform: uppercase;
     }
   }
 

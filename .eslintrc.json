@@ -5,7 +5,6 @@
     "document": true,
     "jQuery": true,
     "IntersectionObserver": true,
-    "lightbox": true,
     "MutationObserver": true,
     "name": true,
     "window": true

@@ -1,5 +1,6 @@
 import { tns } from 'tiny-slider/src/tiny-slider';
 
+import addPassiveEventListener from '../utils/addPassiveEventListener';
 import safe from '../utils/safe';
 
 safe(() => {
@@ -79,6 +80,13 @@ safe(() => {
       nav: false,
       nextButton: '.portfolio__next',
       prevButton: '.portfolio__previous',
+
+      // This option triggers a Lighthouse warning "Does not use passive
+      // listeners to improve scrolling performance", but that's likely an
+      // error by Lighthouse. The handlers for this option are supposed to stop
+      // scrolling, so they can't be passive. Lighthouse is supposed to filter
+      // out handlers that call e.preventDefault(), but that's clearly not
+      // happening.
       preventScrollOnTouch: 'auto',
     });
 
@@ -133,7 +141,7 @@ safe(() => {
   };
 
   onResize();
-  window.addEventListener('resize', () => {
+  addPassiveEventListener(window, 'resize', () => {
     if (!slider.timer) {
       slider.timer = setTimeout(() => {
         onResize();
@@ -142,7 +150,7 @@ safe(() => {
     }
   });
 
-  lightbox.option({
+  window.lightbox.option({
     showImageNumberLabel: false,
   });
 });

@@ -2,7 +2,7 @@
 i18nlanguage: pt-i
 title: Enter here to edit.
 hero_text: Mexer na terra é um vício...
-hero_image: /media/uploads/header-bg.jpg
+hero_image: /media/uploads/20190401_140137181_ios.jpg
 about_title: Quem somos
 services_title: O que fazemos
 services:

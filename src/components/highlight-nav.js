@@ -1,3 +1,4 @@
+import addPassiveEventListener from '../utils/addPassiveEventListener';
 import safe from '../utils/safe';
 
 safe(() => {
@@ -30,7 +31,7 @@ safe(() => {
   };
 
   // Highlight the top nav as scrolling occurs
-  window.addEventListener('scroll', () => {
+  addPassiveEventListener(window, 'scroll', () => {
     if (!scrollTimeout) {
       scrollTimeout = setTimeout(handleScroll, 150);
     }

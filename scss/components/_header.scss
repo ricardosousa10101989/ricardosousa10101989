@@ -1,8 +1,8 @@
 .header {
   position: relative;
+  background-color: $dark;
   color: #fff;
   text-align: center;
-  background-attachment: scroll;
 }
 
 .header__bg {
@@ -12,6 +12,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: .5;
   object-fit: cover;
 }
 
