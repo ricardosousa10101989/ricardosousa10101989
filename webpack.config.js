@@ -37,9 +37,5 @@ module.exports = {
       '.js',
       '.json',
     ],
-
-    modules: [
-      'node_modules',
-    ],
   },
 };

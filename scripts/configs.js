@@ -1,8 +1,9 @@
-const chalk = require('chalk');
 const exec = require('child_process').execSync;
 const far = require('find-and-replace');
 const fs = require('fs');
 const path = require('path');
+
+const chalk = require('./chalk');
 
 require('toml-require').install();
 const netlifyToml = require('../netlify.toml');
@@ -73,7 +74,7 @@ far
     // eslint-disable-next-line no-console
     console.log(chalk.green('Updated CMS configuration file.'));
   })
-  .error((err) => {
+  .error(err => {
     throw err;
   });
 
@@ -87,6 +88,6 @@ far
     // eslint-disable-next-line no-console
     console.log(chalk.green('Updated Hugo configuration file.'));
   })
-  .error((err) => {
+  .error(err => {
     throw err;
   });

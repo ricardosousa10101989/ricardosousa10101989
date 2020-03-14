@@ -1,5 +1,6 @@
 {
-  "extends": "airbnb",
+  "extends": "airbnb-base",
+
   "globals": {
     "document": true,
     "jQuery": true,
@@ -9,6 +10,7 @@
     "name": true,
     "window": true
   },
+
   "rules": {
     "array-bracket-spacing": [
       "error",

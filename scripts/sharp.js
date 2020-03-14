@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 
-const chalk = require('chalk');
-const chokidar = require('chokidar');
 const fs = require('fs');
 const glob = require('glob'); // eslint-disable-line import/no-extraneous-dependencies
 const path = require('path');
 const sharp = require('sharp');
+
+const chalk = require('./chalk');
 
 let config;
 let src;
@@ -116,7 +116,9 @@ const runSharp = inFile => {
             fit: 'inside',
           })
           // eslint-disable-next-line no-unexpected-multiline
-          [method]({ quality })
+          [method]({
+            quality: size.quality || quality,
+          })
           .toFile(outFile, (err, data) => {
             if (err) {
               reject(err);
@@ -244,6 +246,9 @@ let watcher;
 // This also builds every image when first run, so there's no need to call processImages
 // from the glob below.
 if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line import/no-extraneous-dependencies
+  const chokidar = require('chokidar');
+
   watcher = chokidar.watch([ src, './package.json' ], {
     ignoreInitial: true,
   });
