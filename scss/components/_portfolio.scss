@@ -1,7 +1,9 @@
 @import 'tiny-slider/src/tiny-slider';
 
 .portfolio__wrapper {
-  background-color: $gray-100;
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 0;
+  }
 }
 
 .portfolio__outer-container {
