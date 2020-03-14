@@ -32,7 +32,7 @@ portfolio:
   - image: /media/uploads/20181127_101523987_ios.jpg
   - image: /media/uploads/20190606_100031018_ios.jpg
   - image: /media/uploads/20181221_155559354_ios.jpg
-  - image: /media/uploads/20181127_101830914_ios.jpg
+  - image: /media/uploads/20181127_101830914_ios_cropped.jpg
 contact_title: Contacte-nos e peça o seu orçamento
 contact_address: 'Rua das Areias 176, Campanhã, Porto'
 contact_map: >-
