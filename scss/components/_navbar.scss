@@ -49,7 +49,7 @@
     transition: top .6s, left .6s, transform .6s;
   }
 
-  body.header-gone & {
+  body.transitions-enabled.header-gone & {
     transition: top .15s, left .15s, transform .15s;
   }
 

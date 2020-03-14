@@ -25,7 +25,7 @@
     transition: padding-top .6s, padding-bottom .6s;
   }
 
-  body.header-gone & {
+  body.transitions-enabled.header-gone & {
     transition: padding-top .15s, padding-bottom .15s;
   }
 
