@@ -3,6 +3,8 @@ i18nlanguage: pt-i
 title: Enter here to edit.
 hero_text: Mexer na terra é um vício...
 hero_image: /media/uploads/header-bg.jpg
+about_title: Quem somos
+services_title: O que fazemos
 services:
   - title: Construção de Jardins
     icon: fas fa-tree
@@ -22,6 +24,7 @@ services:
       - detail: Adubações
       - detail: Tratamento a pragas e doenças
       - detail: Limpeza e recolha de lixo
+portfolio_title: Alguns dos nossos trabalhos
 portfolio:
   - image: /media/uploads/20190401_140137181_ios.jpg
   - image: /media/uploads/20190520_102515526_ios.jpg
@@ -30,6 +33,7 @@ portfolio:
   - image: /media/uploads/20190606_100031018_ios.jpg
   - image: /media/uploads/20181221_155559354_ios.jpg
   - image: /media/uploads/20181127_101830914_ios.jpg
+contact_title: Contacte-nos e peça o seu orçamento
 contact_address: 'Rua das Areias 176, Campanhã, Porto'
 contact_map: >-
   https://www.google.pt/maps/dir/''/R.+das+Areias+176,+4300-038+Porto/@41.152762,-8.5650702,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xd246365334564a5:0xf8038a6d092fc96a!2m2!1d-8.5628815!2d41.152762
