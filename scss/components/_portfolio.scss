@@ -1,3 +1,5 @@
+@import 'tiny-slider/src/tiny-slider';
+
 .portfolio__wrapper {
   background-color: $gray-100;
 }
@@ -12,7 +14,22 @@
   }
 
   @include media-breakpoint-up(md) {
-    width: 750px;
+    max-width: 1200px;
+  }
+}
+
+.portfolio__img {
+  width: 100%;
+  transform: scale(1);
+
+  .portfolio__item:not(.portfolio__item--looped) & {
+    transition: transform .3s;
+  }
+
+  @include media-breakpoint-up(md) {
+    .portfolio__item:not(.portfolio__item--active) & {
+      transform: scale(.65);
+    }
   }
 }
 
