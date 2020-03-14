@@ -10,6 +10,11 @@ safe(() => {
     // Closes the Responsive Menu on Menu Item Click
     link.addEventListener('click', () => {
       if (navContent.classList.contains('show')) {
+        // We're sure to be scrolling down now, make sure the logo stays in
+        // its corner and doesn't jump back and forth.
+        navbar.classList.add('navbar--scrolled');
+        document.body.classList.add('scrolled');
+
         toggler.click();
       }
     });
