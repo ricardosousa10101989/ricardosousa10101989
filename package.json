@@ -77,8 +77,12 @@
     ],
     "sizes": [
       {
-        "suffix": "-xlarge",
+        "suffix": "-wide",
         "width": 2800
+      },
+      {
+        "suffix": "-xlarge",
+        "width": 2000
       },
       {
         "suffix": "-large",
