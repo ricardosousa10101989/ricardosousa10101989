@@ -11,7 +11,7 @@
     <button class="portfolio__controller portfolio__next" aria-label="Next photo"><i class="fas fa-angle-right"></i></button>
     <div class="portfolio__container">
       {{ range .Params.portfolio }}
-        <a href="#" class="portfolio__item" data-alt="{{ .title }}" data-title="{{ .title }}" aria-label="Expand portfolio photo">
+        <a href="javascript:void(0);" class="portfolio__item" data-alt="{{ .title }}" data-title="{{ .title }}" aria-label="Expand portfolio photo">
           <img class="portfolio__img tns-lazy-img" data-src="{{ .image }}" data-srcset="{{ partial "srcset.html" .image }}" alt="{{ .title }}" sizes="(max-width: 767px) 100vw, 750px">
         </a>
       {{ end }}

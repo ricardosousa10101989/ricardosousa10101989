@@ -4,6 +4,10 @@ import addPassiveEventListener from '../utils/addPassiveEventListener';
 import safe from '../utils/safe';
 
 safe(() => {
+  // eslint-disable-next-line spaced-comment
+  const isIE = /*@cc_on!@*/false || !!document.documentMode;
+  let lastScrollTop = 0;
+
   const initLightbox = mode => {
     const items = document.querySelectorAll('.portfolio__item');
 
@@ -41,11 +45,16 @@ safe(() => {
         items.forEach(item => {
           item.removeAttribute('data-lightbox');
         });
-        e.preventDefault();
       };
 
     items.forEach(el => {
-      el.addEventListener('click', lightboxHandler);
+      el.addEventListener('click', e => {
+        lightboxHandler(e);
+
+        if (isIE) {
+          lastScrollTop = document.documentElement.scrollTop;
+        }
+      });
     });
   };
 
@@ -151,6 +160,20 @@ safe(() => {
   });
 
   window.lightbox.option({
+    disableScrolling: true,
     showImageNumberLabel: false,
   });
+
+  // On IE Lightbox jumps to the top of the page. This brings it back to where
+  // the image is shown.
+  if (isIE) {
+    window.addEventListener('scroll', e => {
+      if (document.body.classList.contains('lb-disable-scrolling')) {
+        if (lastScrollTop !== document.documentElement.scrollTop) {
+          document.documentElement.scrollTop = lastScrollTop;
+        }
+        e.preventDefault();
+      }
+    }, true);
+  }
 });

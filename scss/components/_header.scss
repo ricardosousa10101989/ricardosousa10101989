@@ -12,8 +12,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: .5;
   object-fit: cover;
+  filter: contrast(1.3) brightness(.65);
+
+  // Specific for IE, since it doesn't support the filter property, we simply
+  // apply a small opacity that will show the black background of the header.
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // sass-lint:disable-line no-vendor-prefixes
+    opacity: .5;
+  }
 }
 
 .header__intro-text {

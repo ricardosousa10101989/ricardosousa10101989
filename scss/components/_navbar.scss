@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   align-items: stretch;
+  height: 74px;
   min-height: 74px;
   padding: 0;
   border: 0;
@@ -29,6 +30,11 @@
       max-width: unset;
       margin-right: 0;
       margin-left: 0;
+
+      // Fix for IE, not that there's an IE on mobile though...
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // sass-lint:disable-line no-vendor-prefixes
+        max-width: none;
+      }
     }
   }
 
@@ -136,6 +142,7 @@
 
   @include media-breakpoint-down(sm) {
     padding: 32px 0;
+    background-color: $dark;
     text-align: center;
   }
 

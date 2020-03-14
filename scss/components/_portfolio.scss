@@ -50,6 +50,10 @@
   transform: translateY(-50%);
   transition: opacity .3s, background .3s, color .3s;
 
+  i {
+    line-height: 46px;
+  }
+
   &:hover {
     opacity: 1;
     background: $primary;
@@ -64,6 +68,10 @@
     width: 64px;
     height: 64px;
     font-size: 48px;
+
+    i {
+      line-height: 62px;
+    }
   }
 }
 
@@ -73,4 +81,12 @@
 
 .portfolio__next {
   right: 6px;
+}
+
+// Fix for ie, it scrolls to top when opening lightbox.
+body.lb-disable-scrolling {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // sass-lint:disable-line no-vendor-prefixes
+    position: static;
+    overflow: auto;
+  }
 }
