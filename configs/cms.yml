@@ -64,6 +64,7 @@ collections: # A list of collections the CMS should be able to edit
           - name: "title"
             label: "Title"
             widget: "string"
+            required: false
       - name: "contact_address"
         label: "Contact Address"
         widget: "string"
