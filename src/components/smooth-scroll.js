@@ -1,4 +1,6 @@
-(() => {
+import safe from '../utils/safe';
+
+safe(() => {
   const scrolls = document.querySelectorAll('.page-scroll');
 
   scrolls.forEach(scroll => {
@@ -14,4 +16,4 @@
       }
     });
   });
-})();
+});

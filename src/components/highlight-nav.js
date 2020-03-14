@@ -1,4 +1,6 @@
-(() => {
+import safe from '../utils/safe';
+
+safe(() => {
   const navbar = document.querySelector('.navbar');
   const header = document.querySelector('.header');
   let scrollTimeout = null;
@@ -42,4 +44,4 @@
   setTimeout(() => {
     document.body.classList.add('transitions-enabled');
   }, 100);
-})();
+});

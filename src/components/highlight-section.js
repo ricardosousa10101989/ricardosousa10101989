@@ -1,9 +1,9 @@
-// Highlight navigation links when the current section is visible
-
 // Polyfill
 import 'intersection-observer';
 
-(() => {
+import safe from '../utils/safe';
+
+safe(() => {
   const sections = new Map();
   const options = {
     threshold: [ ...Array(101).keys() ].map(x => x / 100),
@@ -53,4 +53,4 @@ import 'intersection-observer';
 
     observer.observe(section);
   });
-})();
+});

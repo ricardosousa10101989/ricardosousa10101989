@@ -1,4 +1,6 @@
-(() => {
+import safe from '../utils/safe';
+
+safe(() => {
   const $form = jQuery('#contactForm');
   $form.submit(e => {
     e.preventDefault();
@@ -11,4 +13,4 @@
         $form.addClass('contact--error');
       });
   });
-})();
+});

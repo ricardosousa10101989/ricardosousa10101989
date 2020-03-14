@@ -1,4 +1,6 @@
-(() => {
+import safe from '../utils/safe';
+
+safe(() => {
   const navbar = document.querySelector('.navbar');
   const toggler = document.querySelector('.navbar-toggler');
   const navContent = document.getElementById('navbar__content');
@@ -26,4 +28,4 @@
   });
 
   observer.observe(toggler, { attributes: true });
-})();
+});

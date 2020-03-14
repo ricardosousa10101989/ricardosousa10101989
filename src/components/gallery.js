@@ -2,7 +2,7 @@ import { tns } from 'tiny-slider/src/tiny-slider';
 
 import safe from '../utils/safe';
 
-(() => {
+safe(() => {
   const initLightbox = mode => {
     const items = document.querySelectorAll('.portfolio__item');
 
@@ -145,4 +145,4 @@ import safe from '../utils/safe';
   lightbox.option({
     showImageNumberLabel: false,
   });
-})();
+});
