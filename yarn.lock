@@ -5372,6 +5372,11 @@ parent-module@^1.0.0:
   dependencies:
     callsites "^3.0.0"
 
+parent-node-prepend-polyfill@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/parent-node-prepend-polyfill/-/parent-node-prepend-polyfill-1.0.0.tgz#21bac25a8f5087ad6a95260bf910354db3dc64f1"
+  integrity sha512-1x9mSARHR5FOmLF2vzvs/egH8AizI/yUJIf71G2yLS26BAuAFtK+yQPoAvzAhRjaLYtlhSl1qFQTucct7muwLg==
+
 parse-asn1@^5.0.0:
   version "5.1.5"
   resolved "https://registry.yarnpkg.com/parse-asn1/-/parse-asn1-5.1.5.tgz#003271343da58dc94cace494faef3d2147ecea0e"
