@@ -41,7 +41,10 @@ safe(() => {
   icon.appendChild(fa);
 
   if (GDPR_VARIABLES && GDPR_VARIABLES.accept) {
-    const accept = document.getElementById('sgdpr-button').querySelector('.sgdpr-text');
-    accept.textContent = GDPR_VARIABLES.accept;
+    const button = document.getElementById('sgdpr-button');
+    button.setAttribute('aria-label', GDPR_VARIABLES.accept);
+
+    const label = button.querySelector('.sgdpr-text');
+    label.textContent = GDPR_VARIABLES.accept;
   }
 });
