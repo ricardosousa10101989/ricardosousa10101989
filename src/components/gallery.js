@@ -6,60 +6,82 @@ safe(() => {
   const isIE = /*@cc_on!@*/false || !!document.documentMode;
   let lastScrollTop = 0;
 
-  const initLightbox = mode => {
-    const items = document.querySelectorAll('.portfolio__item');
-
-    const lightboxHandler = mode === 'dk'
-      ? e => {
-        // Don't follow the anchor.
-        e.preventDefault();
-
-        items.forEach(item => {
-          const targetW = window.innerWidth * window.devicePixelRatio;
-          const img = item.querySelector('.portfolio__img');
-
-          // Set a default value to at least always load something. This will also
-          // be used on ultra wide viewports that exceed the size of the largest
-          // processed image.
-          item.setAttribute('href', img.dataset.src);
-          item.setAttribute('data-lightbox', 'portfolio');
-
-          // Find the optimal image size to load; it assumes srcset is listed in
-          // descending order by width size.
-          img.dataset.srcset
-            .split(',')
-            .map(opt => opt.trim().split(' '))
-            .forEach(([ path, size ]) => {
-              if (parseInt(size, 10) > targetW) {
-                item.setAttribute('href', path);
-              }
-            });
-        });
-      }
-      : e => {
-        // Don't follow the anchor.
-        e.preventDefault();
-
-        items.forEach(item => {
-          item.removeAttribute('data-lightbox');
-        });
-      };
-
-    items.forEach(el => {
-      el.addEventListener('click', e => {
-        lightboxHandler(e);
-
-        if (isIE) {
-          lastScrollTop = document.documentElement.scrollTop;
-        }
-      });
-    });
-  };
-
   const slider = {
     instance: null,
     mode: null,
     timer: null,
+  };
+
+  const initLightbox = mode => {
+    const items = document.querySelectorAll('.portfolio__item');
+
+    const lightboxOpen = () => {
+      items.forEach(item => {
+        const targetW = window.innerWidth * window.devicePixelRatio;
+        const img = item.querySelector('.portfolio__img');
+
+        // Set a default value to at least always load something. This will also
+        // be used on ultra wide viewports that exceed the size of the largest
+        // processed image.
+        item.setAttribute('href', img.dataset.src);
+        item.setAttribute('data-lightbox', 'portfolio');
+
+        // Find the optimal image size to load; it assumes srcset is listed in
+        // descending order by width size.
+        img.dataset.srcset
+          .split(',')
+          .map(opt => opt.trim().split(' '))
+          .forEach(([ path, size ]) => {
+            if (parseInt(size, 10) > targetW) {
+              item.setAttribute('href', path);
+            }
+          });
+      });
+    };
+
+    const lightboxRemove = () => {
+      items.forEach(item => {
+        item.removeAttribute('data-lightbox');
+      });
+    };
+
+    items.forEach(el => {
+      el.addEventListener('click', e => {
+        // Don't follow the anchor.
+        e.preventDefault();
+
+        if (isIE) {
+          lastScrollTop = document.documentElement.scrollTop;
+        }
+
+        if (mode === 'mb') {
+          lightboxRemove();
+          return;
+        }
+
+        let { target } = e;
+        while (target && !target.classList.contains('portfolio__item')) {
+          target = target.parentNode;
+        }
+
+        if (target) {
+          if (target.classList.contains('tns-slide-active') && !target.classList.contains('portfolio__item--active')) {
+            lightboxRemove();
+
+            if (target.previousElementSibling && target.previousElementSibling.classList.contains('portfolio__item--active')) {
+              slider.instance.goTo('next');
+            }
+            else if (target.nextElementSibling && target.nextElementSibling.classList.contains('portfolio__item--active')) {
+              slider.instance.goTo('prev');
+            }
+
+            return;
+          }
+        }
+
+        lightboxOpen();
+      });
+    });
   };
 
   const onResize = () => {
@@ -75,9 +97,6 @@ safe(() => {
     }
 
     slider.instance = window.tns({
-      autoplay: true,
-      autoplayButtonOutput: false,
-      autoplayHoverPause: true,
       center: true,
       container: '.portfolio__container',
       gutter: 0,
