@@ -63,7 +63,7 @@
   "sharp-config": {
     "src": "static/media",
     "dest": "public/media",
-    "quality": 80,
+    "quality": 60,
     "types": [
       "jpg",
       "jpeg",
