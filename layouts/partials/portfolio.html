@@ -12,7 +12,7 @@
     <div class="portfolio__container">
       {{ range .Params.portfolio }}
         <a href="javascript:void(0);" class="portfolio__item" data-alt="{{ .title }}" data-title="{{ .title }}" aria-label="Expand portfolio photo">
-          <img class="portfolio__img tns-lazy-img" data-src="{{ .image }}" data-srcset="{{ partial "srcset.html" .image }}" alt="{{ .title }}" sizes="(max-width: 767px) 100vw, 750px">
+          <img class="portfolio__img tns-lazy-img" data-src="{{ .image }}" data-srcset="{{ partial "srcset.html" .image }}" alt="{{ .title }}" sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 600px">
         </a>
       {{ end }}
     </div>
