@@ -12,7 +12,7 @@
 
   <meta name="twitter:description" property="og:description" content="{{ truncate 120 .Site.Data.seo.description }}" />
   <meta name="description" content="{{ truncate 120 .Site.Data.seo.description }}" />
-  <meta name="twitter:image" property="og:image" content="{{ .Site.Data.seo.image }}" />
+  <meta name="twitter:image" property="og:image" content="{{ .Site.Data.seo.image | absURL }}" />
 
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image">
