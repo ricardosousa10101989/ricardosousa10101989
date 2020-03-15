@@ -25,7 +25,7 @@ collections: # A list of collections the CMS should be able to edit
         widget: "hidden"
         default: "pt-i"
       - name: "title"
-        label: "Enter here to edit."
+        label: "[hidden]"
         widget: "string"
         default: "Enter here to edit."
       - name: "hero_text"
@@ -103,7 +103,7 @@ collections: # A list of collections the CMS should be able to edit
       preview: false
     fields:
       - name: "title"
-        label: "Enter here to edit."
+        label: "[hidden]"
         widget: "string"
         default: "Enter here to edit."
       - name: "google_verification"
