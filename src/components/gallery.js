@@ -1,5 +1,3 @@
-import { tns } from 'tiny-slider/src/tiny-slider';
-
 import addPassiveEventListener from '../utils/addPassiveEventListener';
 import safe from '../utils/safe';
 
@@ -76,7 +74,7 @@ safe(() => {
       slider.instance.destroy();
     }
 
-    slider.instance = tns({
+    slider.instance = window.tns({
       autoplay: true,
       autoplayButtonOutput: false,
       autoplayHoverPause: true,

@@ -1,5 +1,3 @@
-@import 'tiny-slider/src/tiny-slider';
-
 .portfolio__wrapper {
   @include media-breakpoint-down(sm) {
     padding-bottom: 0;
