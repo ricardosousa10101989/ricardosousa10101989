@@ -41,6 +41,7 @@
       writing-mode: lr-tb;
       fill-rule: nonzero;
       stroke: none;
+      text-shadow: 0 0 20px #222, 0 0 10px #222;
     }
     .icon-text--main {
       font-size: 52px;

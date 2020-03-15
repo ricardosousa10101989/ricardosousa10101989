@@ -58,9 +58,14 @@
   font-size: 22px;
   font-style: italic;
   line-height: 22px;
+  text-shadow: 0 0 20px $dark, 0 0 10px $dark;
 
   @include media-breakpoint-up(md) {
     font-size: 40px;
     line-height: 40px;
   }
+}
+
+.header__button {
+  box-shadow: 0 0 10px $dark;
 }
