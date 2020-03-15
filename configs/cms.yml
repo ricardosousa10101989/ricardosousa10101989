@@ -89,3 +89,48 @@ collections: # A list of collections the CMS should be able to edit
       - name: "contact_email"
         label: "Contact Email"
         widget: "string"
+      - name: "footer"
+        label: "Footer message"
+        widget: "string"
+        required: false
+  - name: "seo"
+    label: "SEO"
+    folter: "data"
+    format: "yaml"
+    create: false
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - name: "title"
+        label: "Enter here to edit."
+        widget: "string"
+        default: "Enter here to edit."
+      - name: "google_verification"
+        label: "Google Site Verification Code"
+        widget: "string"
+        required: false
+      - name: "description"
+        label: "Description"
+        widget: "string"
+        required: false
+      - name: "image"
+        label: "Image"
+        widget: "image"
+        required: false
+      - label: "Google Analytics tracking code"
+        name: "ga"
+        widget: "string"
+        required: false
+      - label: "Facebook Pixel ID"
+        name: "fp"
+        widget: "string"
+        required: false
+      - label: "Facebook Pixel Events"
+        name: "fpe"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Event"
+            name: "event"
+            widget: "string"
