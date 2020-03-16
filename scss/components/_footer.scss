@@ -16,6 +16,11 @@ footer {
 .social-buttons {
   margin-bottom: 0;
 
+  li {
+    display: inline-block;
+    margin: 0 8px;
+  }
+
   a {
     display: flex;
     align-items: center;

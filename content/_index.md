@@ -39,6 +39,13 @@ contact_map: >-
   https://www.google.pt/maps/dir/''/R.+das+Areias+176,+4300-038+Porto/@41.152762,-8.5650702,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xd246365334564a5:0xf8038a6d092fc96a!2m2!1d-8.5628815!2d41.152762
 contact_phone: +351 917 417 873
 contact_email: geral@plantaecorta.pt
+social:
+  - label: A nossa página no Facebook
+    link: https://facebook.com/plantaecorta
+    icon: fab fa-facebook-f
+  - label: O nosso Instagram
+    link: https://www.instagram.com/plantaecorta
+    icon: fab fa-instagram
 footer: © Planta&Corta 2020
 ---
 A PLANTA&CORTA é uma empresa dedicada à gestão, projeto, construção e manutenção de espaços verdes.

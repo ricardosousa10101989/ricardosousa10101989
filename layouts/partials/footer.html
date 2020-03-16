@@ -2,7 +2,9 @@
   <div class="container footer__container">
     <div class="row">
       <ul class="list-inline social-buttons">
-        <li><a href="https://facebook.com/plantaecorta" aria-label="Our Facebook page"><i class="fab fa-facebook-f"></i></a></li>
+        {{ range .Params.social }}
+          <li><a href="{{ .link }}" aria-label="{{ .label }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a></li>
+        {{ end }}
       </ul>
     </div>
     <div class="row">
