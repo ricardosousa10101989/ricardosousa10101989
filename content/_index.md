@@ -9,11 +9,11 @@ services:
   - title: Construção de Jardins
     icon: fas fa-seedling
     details:
-      - detail: Plantações
-      - detail: Sementeiras
-      - detail: Sistemas de rega
+      - detail: Plantação
+      - detail: Sementeira
       - detail: Tapete de relva natural
       - detail: Tapete de relva sintético
+      - detail: Sistema de rega
       - detail: Decoração com inertes
   - title: Manutenção de Jardins
     icon: fas fa-leaf
@@ -21,9 +21,8 @@ services:
       - detail: Limpeza de terrenos
       - detail: Corte de relvados
       - detail: Poda e abate de árvores
-      - detail: Poda se sebes e arbustos
-      - detail: Adubações
-      - detail: Tratamento a pragas e doenças
+      - detail: Poda de sebes e arbustos
+      - detail: Adubação e tratamento fitossanitário
       - detail: Limpeza e recolha de lixo
 portfolio_title: Alguns dos nossos trabalhos
 portfolio:
