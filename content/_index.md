@@ -16,7 +16,7 @@ services:
       - detail: Relva sintética
       - detail: Decoração com inertes
   - title: Manutenção de Jardins
-    icon: fas fa-wrench
+    icon: fas fa-leaf
     details:
       - detail: Desmatações
       - detail: Corte de relvados
@@ -41,10 +41,10 @@ contact_phone: +351 917 417 873
 contact_email: geral@plantaecorta.pt
 social:
   - label: A nossa página no Facebook
-    link: https://facebook.com/plantaecorta
+    link: 'https://facebook.com/plantaecorta'
     icon: fab fa-facebook-f
   - label: O nosso Instagram
-    link: https://www.instagram.com/plantaecorta
+    link: 'https://www.instagram.com/plantaecorta'
     icon: fab fa-instagram
 footer: © Planta&Corta 2020
 ---
