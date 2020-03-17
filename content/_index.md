@@ -11,9 +11,9 @@ services:
     details:
       - detail: Plantações
       - detail: Sementeiras
-      - detail: Implantação de sistemas de rega automáticos
+      - detail: Sistemas de rega
       - detail: Tapete de relva natural
-      - detail: Relva sintética
+      - detail: Tapete de relva sintético
       - detail: Decoração com inertes
   - title: Manutenção de Jardins
     icon: fas fa-leaf
