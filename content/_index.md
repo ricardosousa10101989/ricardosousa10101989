@@ -18,9 +18,10 @@ services:
   - title: Manutenção de Jardins
     icon: fas fa-leaf
     details:
-      - detail: Desmatações
+      - detail: Limpeza de terrenos
       - detail: Corte de relvados
-      - detail: Poda de árvores de qualquer tamanho e arbustos
+      - detail: Poda e abate de árvores
+      - detail: Poda se sebes e arbustos
       - detail: Adubações
       - detail: Tratamento a pragas e doenças
       - detail: Limpeza e recolha de lixo
