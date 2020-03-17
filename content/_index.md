@@ -9,6 +9,7 @@ services:
   - title: Construção de Jardins
     icon: fas fa-seedling
     details:
+      - detail: 'Aconselhamento, projeto e acompanhamento técnico especializado'
       - detail: Plantação
       - detail: Sementeira
       - detail: Tapete de relva natural
