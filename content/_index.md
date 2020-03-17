@@ -25,6 +25,7 @@ services:
       - detail: Poda de sebes e arbustos
       - detail: Adubação e tratamento fitossanitário
       - detail: Limpeza e recolha de lixo
+      - detail: Gestão e acompanhamento técnico especializado
 portfolio_title: Alguns dos nossos trabalhos
 portfolio:
   - image: /media/uploads/20190401_140137181_ios.jpg
