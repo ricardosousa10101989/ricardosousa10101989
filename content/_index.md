@@ -7,7 +7,7 @@ about_title: Quem somos
 services_title: O que fazemos
 services:
   - title: Construção de Jardins
-    icon: fas fa-tree
+    icon: fas fa-seedling
     details:
       - detail: Plantações
       - detail: Sementeiras
