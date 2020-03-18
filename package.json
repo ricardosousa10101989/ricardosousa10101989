@@ -74,32 +74,64 @@
     ],
     "sizes": [
       {
+        "quality": 60,
         "suffix": "-wide",
-        "width": 2800
+        "width": 2560
       },
       {
+        "quality": 55,
+        "suffix": "-xxxlarge",
+        "width": 1920
+      },
+      {
+        "quality": 50,
+        "suffix": "-xxlarge",
+        "width": 1440
+      },
+      {
+        "quality": 45,
         "suffix": "-xlarge",
-        "width": 2000
+        "width": 1280
       },
       {
+        "quality": 45,
         "suffix": "-large",
-        "width": 1400
+        "width": 1200
       },
       {
+        "quality": 40,
         "suffix": "-regular",
-        "width": 820
+        "width": 1080
       },
       {
+        "quality": 40,
         "suffix": "-medium",
-        "width": 680
+        "width": 960
       },
       {
+        "quality": 35,
         "suffix": "-small",
-        "width": 460
+        "width": 768
       },
       {
+        "quality": 35,
         "suffix": "-xsmall",
-        "width": 280
+        "width": 720
+      },
+      {
+        "quality": 35,
+        "suffix": "-xxsmall",
+        "width": 600
+      },
+      {
+        "quality": 30,
+        "suffix": "-xxxsmall",
+        "width": 480
+      },
+      {
+        "quality": 30,
+        "suffix": "-tiny",
+        "width": 320
       }
     ]
   }

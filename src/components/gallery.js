@@ -32,7 +32,7 @@ safe(() => {
           .split(',')
           .map(opt => opt.trim().split(' '))
           .forEach(([ path, size ]) => {
-            if (parseInt(size, 10) > targetW) {
+            if (parseInt(size, 10) > targetW || item.getAttribute('href') === img.dataset.src) {
               item.setAttribute('href', path);
             }
           });
