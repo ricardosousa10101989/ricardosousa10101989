@@ -61,6 +61,10 @@
 }
 
 .services__details {
-  padding: 16px 28px 16px 52px;
+  padding: 0 28px 16px 52px;
   font-size: 18px;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 8px;
+  }
 }
