@@ -142,6 +142,17 @@ safe(() => {
             }
 
             active.classList.add('portfolio__item--active');
+
+            // Try to preload the very next picture not yet visible.
+            const preloadIndex = info.index >= info.indexCached ? info.index + 2 : info.index - 2;
+            const preloadItem = info.slideItems.item(preloadIndex);
+            if (preloadItem) {
+              const preloadImg = preloadItem.querySelector('.tns-lazy-img');
+              if (preloadImg && !preloadImg.hasAttribute('src')) {
+                preloadImg.setAttribute('src', preloadImg.dataset.src);
+                preloadImg.setAttribute('srcset', preloadImg.dataset.srcset);
+              }
+            }
           }
         }
 
