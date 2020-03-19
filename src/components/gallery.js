@@ -144,16 +144,23 @@ safe(() => {
 
           // Try to preload the very next picture not yet visible.
           const indexChange = mode === 'dk' ? 2 : 1;
-          const preloadIndex = info.index >= info.indexCached
-            ? info.index + indexChange
-            : info.index - indexChange;
-          const preloadItem = info.slideItems.item(preloadIndex);
-          if (preloadItem) {
-            const preloadImg = preloadItem.querySelector('.tns-lazy-img');
-            if (preloadImg && !preloadImg.hasAttribute('src')) {
-              preloadImg.setAttribute('src', preloadImg.dataset.src);
-              preloadImg.setAttribute('srcset', preloadImg.dataset.srcset);
+          const preloadItem = idx => {
+            const item = info.slideItems.item(idx);
+            if (item) {
+              const img = item.querySelector('.tns-lazy-img');
+              if (img && !img.hasAttribute('src')) {
+                img.setAttribute('src', img.dataset.src);
+                img.setAttribute('srcset', img.dataset.srcset);
+              }
             }
+          };
+
+          if (info.index === info.indexCached || info.index > info.indexCached) {
+            preloadItem(info.index + indexChange);
+          }
+
+          if (info.index === info.indexCached || info.index < info.indexCached) {
+            preloadItem(info.index - indexChange);
           }
         }
       }
