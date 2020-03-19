@@ -116,59 +116,60 @@ safe(() => {
       preventScrollOnTouch: 'auto',
     });
 
-    if (mode === 'dk') {
-      let previousDisplayIndex;
+    let previousDisplayIndex;
 
-      const highlightActive = info => {
-        const active = info.slideItems.item(info.index);
-        const previous = document.querySelector('.portfolio__item--active');
+    const highlightActive = info => {
+      const active = info.slideItems.item(info.index);
+      const previous = document.querySelector('.portfolio__item--active');
 
-        if (active !== previous) {
-          if (previous) {
-            previous.classList.remove('portfolio__item--active');
+      if (active !== previous) {
+        if (previous) {
+          previous.classList.remove('portfolio__item--active');
+        }
+
+        if (active) {
+          // When looping back to the first node, there would be a jumpy
+          // transition artifact. We avoid this by disabling the transition
+          // momentarily, to allow tns to loop the nodes without visually
+          // alerting the user.
+          if (previousDisplayIndex === info.displayIndex) {
+            active.classList.add('portfolio__item--looped');
+
+            setTimeout(() => {
+              active.classList.remove('portfolio__item--looped');
+            }, 100);
           }
 
-          if (active) {
-            // When looping back to the first node, there would be a jumpy
-            // transition artifact. We avoid this by disabling the transition
-            // momentarily, to allow tns to loop the nodes without visually
-            // alerting the user.
-            if (previousDisplayIndex === info.displayIndex) {
-              active.classList.add('portfolio__item--looped');
+          active.classList.add('portfolio__item--active');
 
-              setTimeout(() => {
-                active.classList.remove('portfolio__item--looped');
-              }, 100);
-            }
-
-            active.classList.add('portfolio__item--active');
-
-            // Try to preload the very next picture not yet visible.
-            const preloadIndex = info.index >= info.indexCached ? info.index + 2 : info.index - 2;
-            const preloadItem = info.slideItems.item(preloadIndex);
-            if (preloadItem) {
-              const preloadImg = preloadItem.querySelector('.tns-lazy-img');
-              if (preloadImg && !preloadImg.hasAttribute('src')) {
-                preloadImg.setAttribute('src', preloadImg.dataset.src);
-                preloadImg.setAttribute('srcset', preloadImg.dataset.srcset);
-              }
+          // Try to preload the very next picture not yet visible.
+          const indexChange = mode === 'dk' ? 2 : 1;
+          const preloadIndex = info.index >= info.indexCached
+            ? info.index + indexChange
+            : info.index - indexChange;
+          const preloadItem = info.slideItems.item(preloadIndex);
+          if (preloadItem) {
+            const preloadImg = preloadItem.querySelector('.tns-lazy-img');
+            if (preloadImg && !preloadImg.hasAttribute('src')) {
+              preloadImg.setAttribute('src', preloadImg.dataset.src);
+              preloadImg.setAttribute('srcset', preloadImg.dataset.srcset);
             }
           }
         }
+      }
 
-        previousDisplayIndex = info.displayIndex;
-      };
+      previousDisplayIndex = info.displayIndex;
+    };
 
-      slider.instance.events.on('indexChanged', info => {
-        // Don't break slider if this breaks for some reason.
-        safe(() => {
-          highlightActive(info);
-        });
+    slider.instance.events.on('indexChanged', info => {
+      // Don't break slider if this breaks for some reason.
+      safe(() => {
+        highlightActive(info);
       });
+    });
 
-      // Initial active slider needs to be highlighted.
-      highlightActive(slider.instance.getInfo());
-    }
+    // Initial active slider needs to be highlighted.
+    highlightActive(slider.instance.getInfo());
 
     // Our Lightbox helper needs to run every time tns is rebuilt, as it
     // creates new nodes that need new handlers.
