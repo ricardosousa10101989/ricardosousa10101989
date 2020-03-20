@@ -38,9 +38,11 @@
   position: absolute;
   z-index: 5;
   top: 50%;
+  align-items: center;
   justify-content: center;
   width: 48px;
   height: 48px;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   opacity: .5;
@@ -49,10 +51,6 @@
   font-size: 36px;
   transform: translateY(-50%);
   transition: opacity .3s, background .3s, color .3s;
-
-  i {
-    line-height: 46px;
-  }
 
   &:hover {
     opacity: 1;
