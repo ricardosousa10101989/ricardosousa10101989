@@ -45,11 +45,18 @@
 
 .navbar-brand {
   position: absolute;
+  z-index: 5;
   top: 0;
   left: 0;
   margin-right: 0;
   padding: 0;
+
+  @include ie {
+    // IE has trouble with calculating %, vw, and px...
+    transform: scale(.47) translateX(100vw) translateX($grid-gutter-width / 2) translateX(-50%) translateY(60px);
+  }
   transform: scale(.47) translate(calc(100vw + #{($grid-gutter-width / 2)} - 50%), 60px);
+
   transform-origin: top left;
   pointer-events: none;
 
@@ -67,11 +74,17 @@
 
   @each $breakpoint, $container-max-width in $container-max-widths {
     @include media-breakpoint-up($breakpoint) {
+      @include ie {
+        transform: scale(1) translateX((($container-max-width - $grid-gutter-width) / 2) + ($grid-gutter-width / 2)) translateX(-50%) translateY(146px);
+      }
       transform: scale(1) translate(calc(#{(($container-max-width - $grid-gutter-width) / 2) + ($grid-gutter-width / 2)} - 50%), 146px);
     }
   }
 
   @include media-breakpoint-down(sm) {
+    @include ie {
+      transform: scale(.47) translateX(100vw) translateX($grid-gutter-width / 2 / .47) translateX(-50%) translateY(calc(60px / .47));
+    }
     transform: scale(.47) translate(calc(100vw + #{($grid-gutter-width / 2 / .47)} - 50%), calc(60px / .47));
 
     .navbar--expanded & {
@@ -108,10 +121,6 @@
     .navbar--expanded & {
       opacity: 1;
     }
-  }
-
-  @include safari {
-    opacity: 1;
   }
 }
 
