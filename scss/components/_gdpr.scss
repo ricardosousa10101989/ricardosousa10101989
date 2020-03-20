@@ -14,7 +14,7 @@
     bottom: 0;
     align-items: stretch;
 
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // sass-lint:disable-line no-vendor-prefixes
+    @include ie {
       top: auto;
     }
   }

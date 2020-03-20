@@ -32,7 +32,7 @@
       margin-left: 0;
 
       // Fix for IE, not that there's an IE on mobile though...
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // sass-lint:disable-line no-vendor-prefixes
+      @include ie {
         max-width: none;
       }
     }

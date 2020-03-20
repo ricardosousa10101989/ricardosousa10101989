@@ -18,10 +18,10 @@ rules:
   mixins-before-declarations:
     - 2
     - exclude:
-      - 'breakpoint'
-      - 'mq'
+      - 'ie'
       - 'media-breakpoint-up'
       - 'media-breakpoint-down'
+      - 'safari'
 
   # Line Spacing
   one-declaration-per-line: 2
