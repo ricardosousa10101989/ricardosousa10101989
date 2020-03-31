@@ -1,0 +1,14 @@
+<footer>
+  <div class="container footer__container">
+    <div class="row">
+      <ul class="list-inline social-buttons">
+        {{ range .Params.social }}
+          <li><a href="{{ .link }}" aria-label="{{ .label }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a></li>
+        {{ end }}
+      </ul>
+    </div>
+    <div class="row">
+      <div class="copyright">{{ .Params.footer }}</div>
+    </div>
+  </div>
+</footer>

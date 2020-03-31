@@ -1,0 +1,66 @@
+<section id="contact" class="main-section contact">
+  <div class="container">
+    <i class="contact__bg fas fa-envelope-open-text"></i>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">{{ .Params.contact_title }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <form name="sentMessage" id="contactForm" netlify>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nome" id="name" name="nome" required>
+                <label for="name">Nome</label>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email" id="email" name="mail" required>
+                <label for="email">Email</label>
+              </div>
+              <div class="form-group">
+                <input type="tel" class="form-control" placeholder="Contacto telefónico" id="phone" name="telefone" required>
+                <label for="phone">Contacto telefónico</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <textarea class="form-control" placeholder="Mensagem" id="message" name="mensagem"></textarea>
+                <label for="message">Mensagem</label>
+              </div>
+            </div>
+            <div class="col-lg-12 text-center">
+              <div class="form-group contact__checkboxes">
+                <div class="contact__checkboxes__item custom-control custom-checkbox">
+                  <input type="checkbox" class="form-check-input custom-control-input" name="consentimento submissão" id="consent" required />
+                  <label class="form-check-label custom-control-label contact__checkbox-label" for="consent">Compreendo que os dados submetidos serão tratados de acordo com a política de privacidade da Planta&Corta.</label>
+                </div>
+                <div class="contact__checkboxes__item custom-control custom-checkbox">
+                  <input type="checkbox" class="form-check-input custom-control-input" name="subscrever marketing" id="marketing" />
+                  <label class="form-check-label custom-control-label contact__checkbox-label" for="marketing">Quero receber campanhas de marketing, promoções, e novidades sobre a actividade da Planta&Corta.</label>
+                </div>
+              </div>
+              <div class="contact__success">Iremos entrar em contacto consigo assim que possível.</div>
+              <div class="contact__error">Ocorreu um erro! Por favor, entre em contacto via telefonica.</div>
+              <button type="submit" class="contact__submit btn btn-primary btn-lg">Pedir Orçamento</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="contacts-url col-lg-12 text-center">
+        <div class="contacts-url__address">
+          <a href="{{ .Params.contact_map }}" target="_blank" rel="noopener noreferrer">{{ .Params.contact_address }}</a>
+        </div>
+        <div class="contacts-url__phone">
+          <a href="tel:{{ replace .Params.contact_phone " " "" }}">{{ .Params.contact_phone }}</a>
+        </div>
+        <div class="contacts-url__email">
+          <a href="mailto:{{ .Params.contact_email }}">{{ .Params.contact_email }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

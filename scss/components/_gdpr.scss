@@ -1,0 +1,78 @@
+.sgdpr-box {
+  display: flex;
+  z-index: 9999;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
+  background: $dark;
+  color: $light;
+
+  @include media-breakpoint-down(md) {
+    position: fixed;
+    top: unset;
+    bottom: 0;
+    align-items: stretch;
+
+    @include ie {
+      top: auto;
+    }
+  }
+}
+
+.sgdpr-message {
+  flex: 1 1 auto;
+  margin-right: 5px;
+  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  @include media-breakpoint-up(lggdpr) {
+    padding-bottom: 0;
+  }
+}
+
+.sgdpr-button {
+  border-radius: 5px;
+  background-color: $primary;
+
+  &:hover {
+    background-color: darken($primary, 7.5%);
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 0 16px;
+    border-radius: 0;
+  }
+}
+
+.sgdpr-text {
+  font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#sgdpr-title-container {
+  display: flex;
+  margin-right: 10px;
+}
+
+.sgdpr-title {
+  display: none;
+}
+
+.sgdpr-info-icon {
+  position: relative;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0;
+  border-radius: 50%;
+  background-color: $primary;
+  background-image: none;
+}
+
+.sgdpr-info-icon-fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

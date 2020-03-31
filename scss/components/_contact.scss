@@ -1,0 +1,156 @@
+.contact {
+  position: relative;
+  background-color: $dark;
+
+  @include media-breakpoint-up(md) {
+    padding-bottom: 100px;
+  }
+
+  .section-heading {
+    color: #fff;
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+
+    label:not(.form-check-label) {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+
+  input,
+  textarea {
+    padding: 20px;
+  }
+
+  .form-control {
+    color: $dark;
+
+    &input {
+      height: auto;
+    }
+
+    &textarea {
+      height: 236px;
+    }
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: none;
+      color: $dark;
+    }
+
+    &::placeholder {
+      color: $section-text;
+      font-style: italic;
+      text-transform: uppercase;
+    }
+  }
+
+  input.form-control {
+    height: auto;
+  }
+
+  textarea.form-control {
+    height: 236px;
+  }
+
+  .form-control:focus {
+    border-color: $primary;
+    box-shadow: none;
+  }
+}
+
+.contact__bg {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  opacity: .2;
+  color: $gray-500;
+  font-size: 200px;
+  transform: translateX(-50%);
+  pointer-events: none;
+
+  @include media-breakpoint-up(md) {
+    top: 5px;
+    left: 20px;
+    font-size: 450px;
+    transform: none;
+  }
+}
+
+.contact__checkboxes {
+  margin-left: 18px;
+  color: $light;
+  font-size: 18px;
+  text-align: left;
+}
+
+.contact__checkboxes__item {
+  margin-bottom: 16px;
+  padding-left: 8px;
+}
+
+.contact__checkbox-label {
+  &:before,
+  &:after {
+    left: -28px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.contact__success {
+  display: none;
+  border: 1px solid $primary;
+  background: rgba($primary, .2);
+  color: white;
+  font-size: 24px;
+
+  .contact--success & {
+    display: block;
+  }
+}
+
+.contact__error {
+  display: none;
+  border: 1px solid $red;
+  background: rgba($red, .2);
+  color: white;
+  font-size: 24px;
+
+  .contact--error & {
+    display: block;
+  }
+}
+
+.contact__submit {
+  .contact--success &,
+  .contact--error & {
+    display: none;
+  }
+}
+
+.contacts-url {
+  margin-top: 3em;
+
+  a {
+    color: $light;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+      padding: 12px 0;
+    }
+  }
+}
+
+.contacts-url__address {
+  @include media-breakpoint-up(md) {
+    margin: 1em 0;
+  }
+}

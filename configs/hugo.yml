@@ -1,0 +1,19 @@
+# Defaults for all languages
+baseurl: "<% CURRENT_BASEURL %>"
+publishDir: "public"
+MetaDataFormat: "yaml"
+blackfriday:
+  hrefTargetBlank: true
+title: "Planta&Corta"
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+
+# i18n
+DefaultContentLanguage: "pt"
+
+# Params per language
+Languages:
+  pt:
+    locale: "pt-PT"
+    description: "Site da empresa Panta&Corta."

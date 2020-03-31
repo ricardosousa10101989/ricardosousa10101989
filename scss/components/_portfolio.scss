@@ -1,0 +1,90 @@
+.portfolio__wrapper {
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 0;
+  }
+}
+
+.portfolio__outer-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+
+  .tns-outer {
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: 1200px;
+  }
+}
+
+.portfolio__img {
+  width: 100%;
+  transform: scale(1);
+
+  .portfolio__item:not(.portfolio__item--looped) & {
+    transition: transform .3s;
+  }
+
+  @include media-breakpoint-up(md) {
+    .portfolio__item:not(.portfolio__item--active) & {
+      transform: scale(.65);
+    }
+  }
+}
+
+.portfolio__controller {
+  display: flex;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  opacity: .5;
+  background: transparent;
+  color: $light;
+  font-size: 36px;
+  transform: translateY(-50%);
+  transition: opacity .3s, background .3s, color .3s;
+
+  &:hover {
+    opacity: 1;
+    background: $primary;
+    color: $light;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 64px;
+    height: 64px;
+    font-size: 48px;
+
+    i {
+      line-height: 62px;
+    }
+  }
+}
+
+.portfolio__previous {
+  left: 6px;
+}
+
+.portfolio__next {
+  right: 6px;
+}
+
+// Fix for ie, it scrolls to top when opening lightbox.
+body.lb-disable-scrolling {
+  @include ie {
+    position: static;
+    overflow: auto;
+  }
+}

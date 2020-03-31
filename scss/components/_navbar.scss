@@ -1,0 +1,180 @@
+.navbar {
+  display: flex;
+  align-items: stretch;
+  height: 74px;
+  min-height: 74px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, $dark, transparent);
+  transition: background-color .3s;
+
+  @include media-breakpoint-down(sm) {
+    &.navbar--expanded {
+      background-color: $dark;
+    }
+  }
+
+  &.navbar--scrolled {
+    background-color: $dark;
+  }
+
+  .container {
+    position: relative;
+    align-items: stretch;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .container {
+      justify-content: flex-end;
+      max-width: unset;
+      margin-right: 0;
+      margin-left: 0;
+
+      // Fix for IE, not that there's an IE on mobile though...
+      @include ie {
+        max-width: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    justify-content: space-between;
+  }
+}
+
+.navbar-brand {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  margin-right: 0;
+  padding: 0;
+
+  @include ie {
+    // IE has trouble with calculating %, vw, and px...
+    transform: scale(.47) translateX(100vw) translateX($grid-gutter-width / 2) translateX(-50%) translateY(60px);
+  }
+  transform: scale(.47) translate(calc(100vw + #{($grid-gutter-width / 2)} - 50%), 60px);
+
+  transform-origin: top left;
+  pointer-events: none;
+
+  body.transitions-enabled & {
+    transition: transform .6s;
+  }
+
+  body.transitions-enabled .navbar--expanded & {
+    transition: transform .3s;
+  }
+
+  body.transitions-enabled.header-gone & {
+    transition: transform .15s;
+  }
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint) {
+      @include ie {
+        transform: scale(1) translateX((($container-max-width - $grid-gutter-width) / 2) + ($grid-gutter-width / 2)) translateX(-50%) translateY(146px);
+      }
+      transform: scale(1) translate(calc(#{(($container-max-width - $grid-gutter-width) / 2) + ($grid-gutter-width / 2)} - 50%), 146px);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    @include ie {
+      transform: scale(.47) translateX(100vw) translateX($grid-gutter-width / 2 / .47) translateX(-50%) translateY(calc(60px / .47));
+    }
+    transform: scale(.47) translate(calc(100vw + #{($grid-gutter-width / 2 / .47)} - 50%), calc(60px / .47));
+
+    .navbar--expanded & {
+      transform: scale(.21) translate(20px, 35px);
+      pointer-events: all;
+    }
+  }
+
+  .navbar--scrolled & {
+    transform: scale(.21) translate($grid-gutter-width / 2, 35px);
+    pointer-events: all;
+
+    @include media-breakpoint-down(sm) {
+      transform: scale(.21) translate(20px, 35px);
+    }
+  }
+}
+
+.navbar-logo {
+  display: block;
+  height: 280px;
+}
+
+.navbar-collapse {
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  @include media-breakpoint-down(sm) {
+    opacity: 0;
+    transition: opacity .3s;
+
+    .navbar--expanded & {
+      opacity: 1;
+    }
+  }
+}
+
+.navbar-toggler {
+  min-height: 74px;
+  padding: 0 24px;
+  border-radius: 0;
+
+  i {
+    color: $light;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-color: $primary;
+
+    i {
+      color: $light;
+    }
+  }
+}
+
+.nav-link {
+  color: $light;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color .3s;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover,
+  &.page-scroll--active {
+    background-color: $primary;
+    color: $light;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 32px 0;
+    background-color: $dark;
+    text-align: center;
+  }
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    align-items: center;
+
+    // For specificity
+    .navbar-expand-md .navbar-nav & {
+      padding: 0 16px;
+    }
+  }
+}

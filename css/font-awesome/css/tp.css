@@ -1,9 +1,0 @@
-@font-face {
-  font-family: 'AgencyFBRegular';
-  src: url('../fonts/tpr.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/tpr.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/tpr.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/tpr.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/tpr.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/tpr.svg#svgFontName') format('svg'); /* Legacy iOS */
-}
