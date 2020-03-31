@@ -21,3 +21,12 @@
   NODE_ENV = "production"
   YARN_VERSION = "1.22.0"
   YARN_FLAGS = "--no-ignore-optional"
+
+# Branch Deploy context: All Branch Deploys
+# will inherit these settings.
+[context.branch-deploy.environment]
+  HUGO_VERSION = "0.66.0"
+  NODE_VERSION = "12.13.1"
+  NODE_ENV = "production"
+  YARN_VERSION = "1.22.0"
+  YARN_FLAGS = "--no-ignore-optional"

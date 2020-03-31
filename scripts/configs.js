@@ -40,7 +40,7 @@ if (process.env.CONTEXT !== undefined) {
         break;
       }
 
-    // eslint-disable-next-line
+    // eslint-disable-next-line no-fallthrough
     case 'deploy-preview':
     case 'branch-deploy':
       if (process.env.DEPLOY_PRIME_URL) {
@@ -48,7 +48,7 @@ if (process.env.CONTEXT !== undefined) {
         break;
       }
 
-    // eslint-disable-next-line
+    // eslint-disable-next-line no-fallthrough
     default:
       if (process.env.DEPLOY_URL) {
         baseurl = process.env.DEPLOY_URL;
