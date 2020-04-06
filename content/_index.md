@@ -37,7 +37,7 @@ portfolio:
   - image: /media/uploads/20181127_101830914_ios_cropped.jpg
 contact_title: Contacte-nos e peça o seu orçamento
 contact_address: 'Rua das Areias 176, Campanhã, Porto'
-contact_map: https://goo.gl/maps/DiFLjWWsNqfyHCRN7
+contact_map: 'https://goo.gl/maps/DiFLjWWsNqfyHCRN7'
 contact_phone: +351 917 417 873
 contact_email: geral@plantaecorta.pt
 social:
@@ -51,4 +51,4 @@ footer: © Planta&Corta 2020
 ---
 A PLANTA&CORTA dedica-se à gestão, projeto, construção e manutenção de espaços verdes.
 
-Executámos os nossos projetos com os melhores materiais e capacidade técnica para que o resultado final seja a satisfação total dos nossos clientes.
+Executamos os nossos projetos com os melhores materiais e capacidade técnica para que o resultado final seja a satisfação total dos nossos clientes.
