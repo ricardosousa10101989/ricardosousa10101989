@@ -9,7 +9,7 @@ services:
   - title: Construção de Jardins
     icon: fas fa-seedling
     details:
-      - detail: 'Aconselhamento, projeto e acompanhamento técnico especializado'
+      - detail: Aconselhamento, projeto e acompanhamento técnico especializado
       - detail: Plantação
       - detail: Sementeira
       - detail: Tapete de relva natural
@@ -35,17 +35,18 @@ portfolio:
   - image: /media/uploads/20190606_100031018_ios.jpg
   - image: /media/uploads/20181221_155559354_ios.jpg
   - image: /media/uploads/20181127_101830914_ios_cropped.jpg
+  - image: /media/uploads/20201112_103850180_ios.jpg
 contact_title: Contacte-nos e peça o seu orçamento
-contact_address: 'Rua das Areias 176, Campanhã, Porto'
-contact_map: 'https://goo.gl/maps/DiFLjWWsNqfyHCRN7'
+contact_address: Rua das Areias 176, Campanhã, Porto
+contact_map: https://goo.gl/maps/DiFLjWWsNqfyHCRN7
 contact_phone: +351 917 417 873
 contact_email: geral@plantaecorta.pt
 social:
   - label: A nossa página no Facebook
-    link: 'https://facebook.com/plantaecorta'
+    link: https://facebook.com/plantaecorta
     icon: fab fa-facebook-f
   - label: O nosso Instagram
-    link: 'https://www.instagram.com/plantaecorta'
+    link: https://www.instagram.com/plantaecorta
     icon: fab fa-instagram
 footer: © Planta&Corta 2020
 ---
