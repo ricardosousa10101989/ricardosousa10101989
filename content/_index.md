@@ -60,4 +60,4 @@ footer: © Planta&Corta 2021
 ---
 A PLANTA&CORTA dedica-se à gestão, projeto, construção e manutenção de espaços verdes.
 
-Executamos os nossos projetos com os melhores materiais e capacidade técnica para que o resultado final seja a satisfação total dos nossos clientes.
+Executamos os nossos projetos com os melhores materiais e capacidade técnica para que o resultado final seja a satisfação total dos nossos clientes, sejam eles particulares, empresas, quintas de eventos ou hotéis.
