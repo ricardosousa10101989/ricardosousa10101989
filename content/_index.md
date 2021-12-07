@@ -45,7 +45,7 @@ portfolio:
   - image: /media/uploads/20201112_103850180_ios.jpg
     title: Construção de jardim
 contact_title: Contacte-nos e peça o seu orçamento
-contact_address: Rua das Areias 176, Campanhã, Porto
+contact_address: Rua Junqueira de Cima 71, 4405-872, Vila Nova de Gaia
 contact_map: https://goo.gl/maps/DiFLjWWsNqfyHCRN7
 contact_phone: +351 917 417 873
 contact_email: geral@plantaecorta.pt
