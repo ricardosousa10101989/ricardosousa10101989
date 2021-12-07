@@ -46,7 +46,7 @@ portfolio:
     title: Construção de jardim
 contact_title: Contacte-nos e peça o seu orçamento
 contact_address: Rua Junqueira de Cima 71, 4405-872, Vila Nova de Gaia
-contact_map: https://goo.gl/maps/DiFLjWWsNqfyHCRN7
+contact_map: https://goo.gl/maps/jehzxuRHjDwgN2486
 contact_phone: +351 917 417 873
 contact_email: geral@plantaecorta.pt
 social:
