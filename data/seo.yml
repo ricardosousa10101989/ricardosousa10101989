@@ -5,7 +5,22 @@ image: /media/uploads/share_logo_2.jpg
 ga: UA-153474928-1
 fp: "107130145270886"
 fpe: []
-gdpr_message: Ao navegar no site, está a concordar com a utilização de cookies,
+gdpr_message: "Ao navegar no site, está a concordar com a utilização de cookies,
   totalmente anonimizados, com vista à análise de tráfego e melhoramento da
-  experiência de navegação.
+  experiência de navegação. <!-- Messenger Plug-in de chat Code -->     <div
+  id=\"fb-root\"></div>      <!-- Your Plug-in de chat code -->     <div
+  id=\"fb-customer-chat\"
+  class=\"fb-customerchat\">     </div>      <script>       var chatbox =
+  document.getElementById('fb-customer-chat');       chatbox.setAttribute(\"pag\
+  e_id\", \"107130145270886\");       chatbox.setAttribute(\"attribution\",
+  \"biz_inbox\");     </script>      <!-- Your SDK code
+  -->     <script>       window.fbAsyncInit = function()
+  {         FB.init({           xfbml            :
+  true,           version          :
+  'v13.0'         });       };        (function(d, s, id) {         var js, fjs
+  = d.getElementsByTagName(s)[0];         if (d.getElementById(id))
+  return;         js = d.createElement(s); js.id = id;         js.src =
+  'https://connect.facebook.net/pt_PT/sdk/xfbml.customerchat.js';         fjs.p\
+  arentNode.insertBefore(js, fjs);       }(document, 'script',
+  'facebook-jssdk'));     </script>"
 gdpr_accept: Concordo
