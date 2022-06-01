@@ -40,7 +40,7 @@
     "npm-run-all": "^4.1.5",
     "parent-node-prepend-polyfill": "^1.0.0",
     "postcss-cli": "^7.1.0",
-    "sharp": "^0.25.1",
+    "sharp": "^0.30.5",
     "smoothscroll-polyfill": "^0.4.4",
     "toml-require": "^1.2.0",
     "webpack": "^4.41.6",
