@@ -41,10 +41,11 @@ portfolio:
   - image: /media/uploads/20181221_155559354_ios.jpg
     title: Construção de jardim
   - image: /media/uploads/20181127_101830914_ios_cropped.jpg
-    title: Construção de jardim
+    title: Construção e manutenção de jardim
   - image: /media/uploads/20201112_103850180_ios.jpg
     title: Construção de jardim
   - image: /media/uploads/20220118_142127592_ios.jpg
+    title: Manutenção de jardim
 contact_title: Contacte-nos e peça o seu orçamento
 contact_address: Praceta Irene de Castro, Porto
 contact_map: https://goo.gl/maps/4Na181imrQNAMpNx6
