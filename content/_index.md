@@ -56,7 +56,7 @@ social:
   - label: O nosso Instagram
     link: https://www.instagram.com/plantaecorta
     icon: fab fa-instagram
-footer: © Planta&Corta 2021
+footer: © Planta&Corta 2022
 ---
 A PLANTA&CORTA dedica-se à gestão, projeto, construção e manutenção de espaços verdes.
 
