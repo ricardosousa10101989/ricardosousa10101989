@@ -44,6 +44,7 @@ portfolio:
     title: Construção de jardim
   - image: /media/uploads/20201112_103850180_ios.jpg
     title: Construção de jardim
+  - image: /media/uploads/20220118_142127592_ios.jpg
 contact_title: Contacte-nos e peça o seu orçamento
 contact_address: Praceta Irene de Castro, Porto
 contact_map: https://goo.gl/maps/4Na181imrQNAMpNx6
