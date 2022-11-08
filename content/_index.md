@@ -3,7 +3,7 @@ i18nlanguage: pt-i
 title: Enter here to edit.
 hero_text: Mexer na terra é um vício...
 hero_image: /media/uploads/20190401_140137181_ios.jpg
-about_title: Quem somos
+about_title: Sobre nós
 services_title: O que fazemos
 services:
   - title: Construção de Jardins
@@ -60,6 +60,13 @@ social:
     icon: fab fa-instagram
 footer: © Planta&Corta 2022
 ---
-A PLANTA&CORTA dedica-se à gestão, projeto, construção e manutenção de espaços verdes.
+Com a **nossa ajuda** queremos que passe bons momentos em contacto com a natureza!
 
-Executamos os nossos projetos com os melhores materiais e capacidade técnica para que o resultado final seja a satisfação total dos nossos clientes, sejam eles particulares, empresas, quintas de eventos ou hotéis.
+Tem alguma destas **preocupações**? 
+
+* Não tem **tempo** disponível, **equipamento** necessário nem **conhecimento técnico** para cuidar do jardim
+* O **jardim da sua empresa** não cativa os **visitantes** e não proporciona um bom ambiente de trabalho à sua **equipa**
+* A sua **quinta de eventos** carece de um jardim exuberante para cativar e **satisfazer os seus potenciais clientes**
+* O seu **hotel** precisa de cuidado constante para tornar **ainda mais especial a estadia dos seus hóspedes?**
+
+A **nossa equipa** fará com que o jardim deixe de ser um problema e se torne um espaço agradável para conviver, trabalhar e VIVER.
