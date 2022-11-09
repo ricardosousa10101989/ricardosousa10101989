@@ -6,7 +6,7 @@ hero_image: /media/uploads/20190401_140137181_ios.jpg
 about_title: QUEM SOMOS
 services_title: O que fazemos
 services:
-  - title: Construção de Jardins
+  - title: Se deseja CONSTRUIR o seu jardim
     icon: fas fa-seedling
     details:
       - detail: Aconselhamento, projeto e acompanhamento técnico especializado
@@ -16,7 +16,7 @@ services:
       - detail: Tapete de relva sintético
       - detail: Sistema de rega
       - detail: Decoração com inertes
-  - title: Manutenção de Jardins
+  - title: Se deseja MANTER o seu jardim
     icon: fas fa-leaf
     details:
       - detail: Limpeza de terrenos
