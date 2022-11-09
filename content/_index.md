@@ -66,13 +66,13 @@ Com a **nossa ajuda** queremos que passe bons momentos em contacto com a naturez
 
 ###### Tem alguma destas **preocupações**? 
 
-Não tem **tempo** disponível, **equipamento** necessário nem **conhecimento técnico** para cuidar do jardim**?**
-
-O **jardim da sua empresa** não cativa os **visitantes** e não proporciona um bom ambiente de trabalho à sua **equipa?**
-
-A sua **quinta de eventos** carece de um jardim exuberante para cativar e **satisfazer os seus potenciais visitantes?**
-
-O seu **hotel** precisa de cuidado constante para tornar **ainda mais especial a estadia dos seus hóspedes?**
+> Não tem **tempo** disponível, **equipamento** necessário nem **conhecimento técnico** para cuidar do jardim**?**
+>
+> O **jardim da sua empresa** não cativa os **visitantes** e não proporciona um bom ambiente de trabalho à sua **equipa?**
+>
+> A sua **quinta de eventos** carece de um jardim exuberante para cativar e **satisfazer os seus potenciais visitantes?**
+>
+> O seu **hotel** precisa de cuidado constante para tornar **ainda mais especial a estadia dos seus hóspedes?**
 
 
 
