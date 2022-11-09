@@ -58,8 +58,16 @@ Com a **nossa ajuda** queremos que passe bons momentos em contacto com a naturez
 #### Tem alguma destas preocupações?﻿
 
 * Não tem **tempo** disponível, **equipamento** necessário nem **conhecimento técnico** para construir ou cuidar do seu jardim?
+
+
 * O **jardim da sua EMPRESA** não cativa os **visitantes** e não proporciona um bom ambiente de trabalho à sua **equipa**?
+
+
 * A sua **QUINTA DE EVENTOS** carece de um jardim exuberante para **satisfazer os seus potenciais visitantes**?
+
+
 * O seu **HOTEL** precisa de cuidado constante para tornar **ainda mais especial a estadia dos seus hóspedes**?
+
+
 
 A **nossa equipa** fará com que o jardim deixe de ser um problema e se torne um espaço agradável para conviver, trabalhar e VIVER.
