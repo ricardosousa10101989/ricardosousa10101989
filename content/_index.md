@@ -10,13 +10,13 @@ services:
     icon: fas fa-seedling
     details:
       - detail: De acordo com as SUAS EXPECTATIVAS levamos até si as nossas IDEIAS para
-          construirmos o jardim com que sempre sonhou e que cumpra com os
-          requisitos da utilização que lhe vai dar
+          construirmos o jardim com que sempre sonhou e que cumpra os requisitos
+          da utilização que lhe dará
   - title: Se deseja MANTER o seu jardim
     icon: fas fa-leaf
     details:
       - detail: Deixe de se preocupar com a manutenção. A sua única tarefa será
-          contemplar e desfrutar nosso trabalho
+          contemplar e desfrutar do nosso trabalho
 portfolio_title: Alguns dos nossos trabalhos
 portfolio:
   - image: /media/uploads/20190401_140137181_ios.jpg
