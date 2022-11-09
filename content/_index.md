@@ -60,15 +60,9 @@ social:
     icon: fab fa-instagram
 footer: © Planta&Corta 2022
 ---
-Com a **nossa ajuda** queremos que passe bons momentos em contacto com a natureza!
+##### Com a **nossa ajuda** queremos que passe bons momentos em contacto com a natureza!
 
-
-
-
-
-Tem alguma destas **preocupações**? 
-
-
+###### Tem alguma destas **preocupações**? 
 
 Não tem **tempo** disponível, **equipamento** necessário nem **conhecimento técnico** para cuidar do jardim**?**
 
@@ -78,8 +72,4 @@ A sua **quinta de eventos** carece de um jardim exuberante para cativar e **sati
 
 O seu **hotel** precisa de cuidado constante para tornar **ainda mais especial a estadia dos seus hóspedes?**
 
-
-
-
-
-A **nossa equipa** fará com que o jardim deixe de ser um problema e se torne um espaço agradável para conviver, trabalhar e VIVER.
+###### A **nossa equipa** fará com que o jardim deixe de ser um problema e se torne um espaço agradável para conviver, trabalhar e VIVER.
