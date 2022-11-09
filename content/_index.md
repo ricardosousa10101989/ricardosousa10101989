@@ -9,23 +9,15 @@ services:
   - title: Se deseja CONSTRUIR o seu jardim
     icon: fas fa-seedling
     details:
-      - detail: Aconselhamento, projeto e acompanhamento técnico especializado
-      - detail: Plantação
-      - detail: Sementeira
-      - detail: Tapete de relva natural
-      - detail: Tapete de relva sintético
-      - detail: Sistema de rega
-      - detail: Decoração com inertes
+      - detail: Levaremos até si as nossas ideias para de acordo com as suas
+          expectativas, construirmos o jardim com que sempre sonhou e que cumpra
+          com os requisitos da utilização que lhe vai dar
   - title: Se deseja MANTER o seu jardim
     icon: fas fa-leaf
     details:
-      - detail: Limpeza de terrenos
-      - detail: Corte de relvados
-      - detail: Poda e abate de árvores
-      - detail: Poda de sebes e arbustos
-      - detail: Adubação e tratamento fitossanitário
-      - detail: Limpeza e recolha de lixo
-      - detail: Gestão e acompanhamento técnico especializado
+      - detail: Deixe de se preocupar com a manutenção. A sua única tarefa será
+          contemplar e desfrutar do seu jardim. O resto fica à nossa
+          RESPONSABILIDADE
 portfolio_title: Alguns dos nossos trabalhos
 portfolio:
   - image: /media/uploads/20190401_140137181_ios.jpg
