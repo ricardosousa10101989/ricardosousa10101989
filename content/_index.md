@@ -6,7 +6,7 @@ hero_image: /media/uploads/20190401_140137181_ios.jpg
 about_title: QUEM SOMOS
 services_title: O que fazemos
 services:
-  - title: Se deseja CONSTRUIR o seu jardim
+  - title: Construção de Jardins
     icon: fas fa-seedling
     details:
       - detail: Aconselhamento, projeto e acompanhamento técnico especializado
@@ -16,7 +16,7 @@ services:
       - detail: Tapete de relva sintético
       - detail: Sistema de rega
       - detail: Decoração com inertes
-  - title: Se deseja MANTER o seu jardim
+  - title: Manutenção de Jardins
     icon: fas fa-leaf
     details:
       - detail: Limpeza de terrenos
@@ -47,7 +47,7 @@ portfolio:
   - image: /media/uploads/20220118_142127592_ios.jpg
     title: Manutenção de jardim
 contact_title: Contacte-nos e peça o seu orçamento
-contact_address: Estamos no Grande Porto
+contact_address: Praceta Irene de Castro, Porto
 contact_map: https://goo.gl/maps/4Na181imrQNAMpNx6
 contact_phone: +351 917 417 873
 contact_email: geral@plantaecorta.pt
@@ -65,8 +65,16 @@ Com a **nossa ajuda** queremos que passe bons momentos em contacto com a naturez
 Tem alguma destas **preocupações**? 
 
 * Não tem **tempo** disponível, **equipamento** necessário nem **conhecimento técnico** para cuidar do jardim
+
+
 * O **jardim da sua empresa** não cativa os **visitantes** e não proporciona um bom ambiente de trabalho à sua **equipa**
+
+
 * A sua **quinta de eventos** carece de um jardim exuberante para cativar e **satisfazer os seus potenciais clientes**
+
+
 * O seu **hotel** precisa de cuidado constante para tornar **ainda mais especial a estadia dos seus hóspedes?**
+
+
 
 A **nossa equipa** fará com que o jardim deixe de ser um problema e se torne um espaço agradável para conviver, trabalhar e VIVER.
