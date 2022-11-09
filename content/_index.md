@@ -55,9 +55,7 @@ Com a **nossa ajuda** queremos que passe bons momentos em contacto com a naturez
 
  ﻿
 
-### Tem alguma destas **preocupações**?
-
- ﻿
+### Tem alguma destas preocupações?﻿
 
 * Não tem **tempo** disponível, **equipamento** necessário nem **conhecimento técnico** para construir ou cuidar do seu jardim?
 * O **jardim da sua EMPRESA** não cativa os **visitantes** e não proporciona um bom ambiente de trabalho à sua **equipa**?
