@@ -37,7 +37,7 @@ portfolio:
     title: Construção de jardim
   - image: /media/uploads/20220118_142127592_ios.jpg
     title: Manutenção de jardim
-contact_title: Contacte-nos e peça o seu orçamento
+contact_title: Preencha os seus dados para ter um orçamento
 contact_address: Estamos no GRANDE PORTO
 contact_map: https://goo.gl/maps/4Na181imrQNAMpNx6
 contact_phone: +351 917 417 873
