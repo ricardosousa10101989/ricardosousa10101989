@@ -113,11 +113,3 @@
     color: $light;
   }
 }
-
-// Fix for ie, it scrolls to top when opening lightbox.
-body.lb-disable-scrolling {
-  @include ie () {
-    position: static;
-    overflow: auto;
-  }
-}
