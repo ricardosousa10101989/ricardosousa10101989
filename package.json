@@ -1,138 +1,50 @@
 {
   "name": "plantaecorta",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "3.0.0",
+  "packageManager": "yarn@3.3.0",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=development && npm-run-all erase:public pre-build -p watch:*",
-    "build": "NODE_ENV=production && npm-run-all erase:public pre-build -p build:*",
-    "pre-build": "npm-run-all -p pre-build:*",
-    "pre-build:configs": "node scripts/configs.js",
-    "pre-build:vendor": "node scripts/vendor.js",
-    "build:css": "yarn css:scss-compile && yarn css:postcss",
-    "build:hugo": "hugo",
-    "build:js": "webpack",
-    "build:sharp": "node scripts/sharp.js",
-    "watch:browsersync": "browser-sync start --config browser-sync.js",
-    "watch:css": "chokidar 'scss/**/*.scss' -c 'yarn css:build-maps' --initial",
-    "watch:hugo": "hugo -w",
-    "watch:js": "webpack -w",
-    "watch:sharp": "nodemon -q -w scripts/sharp.js -x 'yarn build:sharp'",
-    "erase:public": "rm -Rf ./public && mkdir ./public",
-    "css:build-maps": "yarn css:scss-compile --source-map true && yarn css:postcss --map",
-    "css:postcss": "postcss public/css/*.css -d public/css --use autoprefixer --use cssnano --verbose --no-map",
-    "css:scss-compile": "node-sass scss/ -o public/css --include-path ./node_modules"
-  },
-  "dependencies": {
-    "@babel/core": "^7.8.6",
-    "@babel/preset-env": "^7.8.6",
-    "@fortawesome/fontawesome-free": "^5.12.1",
-    "autoprefixer": "^9.7.4",
-    "babel-loader": "^8.0.6",
-    "bootstrap": "^4.4.1",
-    "bootswatch": "^4.4.1",
-    "core-js": "3",
-    "cssnano": "^4.1.10",
-    "find-and-replace": "^1.0.2",
-    "fs-extra": "^8.1.0",
-    "intersection-observer": "^0.7.0",
-    "node-sass": "^4.13.1",
-    "npm-run-all": "^4.1.5",
-    "parent-node-prepend-polyfill": "^1.0.0",
-    "postcss-cli": "^7.1.0",
-    "sharp": "^0.25.1",
-    "smoothscroll-polyfill": "^0.4.4",
-    "toml-require": "^1.2.0",
-    "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "chalk": "^3.0.0",
-    "chokidar": "^3.3.1",
-    "chokidar-cli": "^2.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.20.1",
-    "nodemon": "^2.0.2"
+    "start": "netlify-cms-proxy-server & next dev"
   },
   "browserslist": [
-    "last 2 versions",
-    "> 1%",
-    "IE 11"
+    "last 3 versions",
+    "Firefox ESR",
+    "cover 98%",
+    "not dead",
+    "not op_mini all"
   ],
-  "sharp-config": {
-    "src": "static/media",
-    "dest": "public/media",
-    "quality": 60,
-    "types": [
-      "jpg",
-      "jpeg",
-      "png",
-      "webp",
-      "tiff"
-    ],
-    "sizes": [
-      {
-        "quality": 60,
-        "suffix": "-wide",
-        "width": 2560
-      },
-      {
-        "quality": 55,
-        "suffix": "-xxxlarge",
-        "width": 1920
-      },
-      {
-        "quality": 50,
-        "suffix": "-xxlarge",
-        "width": 1440
-      },
-      {
-        "quality": 45,
-        "suffix": "-xlarge",
-        "width": 1280
-      },
-      {
-        "quality": 45,
-        "suffix": "-large",
-        "width": 1200
-      },
-      {
-        "quality": 40,
-        "suffix": "-regular",
-        "width": 1080
-      },
-      {
-        "quality": 40,
-        "suffix": "-medium",
-        "width": 960
-      },
-      {
-        "quality": 35,
-        "suffix": "-small",
-        "width": 768
-      },
-      {
-        "quality": 35,
-        "suffix": "-xsmall",
-        "width": 720
-      },
-      {
-        "quality": 35,
-        "suffix": "-xxsmall",
-        "width": 600
-      },
-      {
-        "quality": 30,
-        "suffix": "-xxxsmall",
-        "width": 480
-      },
-      {
-        "quality": 30,
-        "suffix": "-tiny",
-        "width": 320
-      }
-    ]
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@netlify/plugin-nextjs": "^4.29.3",
+    "bootstrap": "^5.2.3",
+    "bootswatch": "^5.2.2",
+    "classnames": "^2.3.2",
+    "js-cookie": "^3.0.1",
+    "netlify-cms-app": "^2.15.72",
+    "netlify-identity-widget": "^1.9.2",
+    "next": "^13.0.6",
+    "next-plugin-yaml": "^1.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hooks-global-state": "^2.1.0",
+    "react-markdown": "^8.0.4",
+    "remark-gfm": "^3.0.1",
+    "sass": "^1.56.1",
+    "tiny-slider": "^2.9.4",
+    "yaml-front-matter": "^4.1.1"
+  },
+  "devDependencies": {
+    "@wemake-services/stylelint-config-scss": "^1.0.0",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "netlify-cms-proxy-server": "^1.3.24",
+    "stylelint": "^14.16.0"
   }
 }

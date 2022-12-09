@@ -1,0 +1,75 @@
+@use 'sass:color';
+
+.cookies-banner {
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0.8em 0;
+  background: $dark;
+  color: $light;
+  font-size: 15px;
+  letter-spacing: 0.03125em;
+  line-height: 1.25rem;
+  box-shadow:
+    0 11px 15px -7px rgba($dark, 0.2),
+    0 24px 38px 3px rgba($dark, 0.14),
+    0 9px 46px 8px rgba($dark, 0.12);
+
+  .container {
+    display: grid;
+    grid-template-areas: 'content refuse accept';
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 10px;
+    align-items: center;
+
+    @include media-breakpoint-down(md) {
+      grid-template-areas: 'content content' 'refuse accept';
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+  }
+}
+
+.cookies-banner__content {
+  grid-area: content;
+  flex: 1 1 auto;
+  display: flex;
+  gap: 10px;
+
+  @include media-breakpoint-up(lggdpr) {
+    padding-bottom: 0;
+  }
+}
+
+.cookies-banner__btn {
+  font-size: 14px;
+  line-height: 35px;
+  padding: 0 1.5rem;
+}
+
+.cookies-banner__btn--accept {
+  grid-area: accept;
+}
+
+.cookies-banner__btn--refuse {
+  grid-area: refuse;
+}
+
+.cookies-banner__info {
+  flex: 1 0 auto;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: $primary;
+  background-image: none;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

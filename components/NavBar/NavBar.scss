@@ -1,0 +1,131 @@
+.navbar {
+  display: flex;
+  align-items: stretch;
+  height: 74px;
+  min-height: 74px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, $dark, transparent);
+  transition: background-color 0.3s;
+
+  @include media-breakpoint-down(md) {
+    &.navbar--expanded {
+      background-color: $dark;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .container {
+      justify-content: flex-end;
+      max-width: unset;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    justify-content: space-between;
+  }
+
+  body.scrolled & {
+    background-color: $dark;
+  }
+
+  .container {
+    --container-width: 0;
+
+    position: relative;
+    align-items: stretch;
+  }
+}
+
+.navbar-brand {
+  position: absolute;
+  z-index: 5;
+  top: 8px;
+  left: 8px;
+  margin-right: 0;
+  padding: 0;
+  transform: translate(calc((var(--container-width) / 2) - 50% - 8px), 138px) scale(1);
+  transform-origin: top left;
+  pointer-events: none;
+
+  @include media-breakpoint-down(md) {
+    transform: translate(calc((var(--container-width) / 2) - (50% * 0.47) - 8px), 50px) scale(0.47);
+
+    .navbar--expanded & {
+      pointer-events: all;
+    }
+  }
+
+  .navbar--expanded &,
+  body.scrolled & {
+    transform: translate(0, 0) scale(0.21);
+    pointer-events: all;
+  }
+
+  body:not(.transitions-enabled) & {
+    display: none;
+  }
+
+  body.transitions-enabled & {
+    transition: transform 0.6s;
+  }
+
+  body.transitions-enabled .navbar--expanded & {
+    transition: transform 0.3s;
+  }
+
+  body.transitions-enabled.header-gone & {
+    transition: transform 0.15s;
+  }
+}
+
+.navbar-logo {
+  display: block;
+  height: 280px;
+}
+
+.navbar-collapse {
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  @include media-breakpoint-down(md) {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow-y: hidden;
+    transition: all 0.3s;
+
+    .navbar--expanded & {
+      max-height: 360px;
+      opacity: 1;
+    }
+  }
+}
+
+.navbar-toggler {
+  min-height: 74px;
+  padding: 0 24px;
+  border-radius: 0;
+
+  svg {
+    color: $light;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-color: $primary;
+
+    svg {
+      color: $light;
+    }
+  }
+}

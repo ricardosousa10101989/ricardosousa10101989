@@ -1,0 +1,18 @@
+.btn {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.btn-primary {
+  padding: 20px 40px;
+}
+
+.btn-clear {
+  color: #fff;
+  background-color: transparent;
+}

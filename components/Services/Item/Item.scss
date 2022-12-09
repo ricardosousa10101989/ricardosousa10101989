@@ -1,0 +1,53 @@
+.services__col {
+  display: flex;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    margin: 15px 0;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin: 36px 0;
+  }
+}
+
+.services__item {
+  @include media-breakpoint-up(md) {
+    max-width: 470px;
+    border-bottom: 1px solid $primary;
+    border-radius: 2px;
+    background: $light;
+    box-shadow: 0 1px 4px 0 $primary;
+  }
+}
+
+.services__heading {
+  display: flex;
+  align-items: center;
+}
+
+.services__title {
+  margin-bottom: 0;
+  color: $dark;
+  font-size: 20px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 22.5px;
+  }
+}
+
+.services__icon {
+  width: 45px;
+  height: 45px;
+  padding: 20px;
+  color: $primary;
+}
+
+.services__details {
+  padding: 0 28px 16px 52px;
+  font-size: 18px;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 8px;
+  }
+}

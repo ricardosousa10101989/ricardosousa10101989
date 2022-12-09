@@ -1,11 +1,2 @@
-@import 'init';
-
-@import 'components/button';
-@import 'components/contact';
-@import 'components/footer';
-@import 'components/gdpr';
-@import 'components/header';
-@import 'components/navbar';
-@import 'components/portfolio';
-@import 'components/section';
-@import 'components/services';
+@import 'base/init';
+@import 'components';

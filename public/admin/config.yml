@@ -1,0 +1,158 @@
+backend:
+  name: github
+  repo: ricardosousa10101989/ricardosousa10101989.github.io
+
+media_folder: /public/media
+public_folder: /media
+
+collections:
+  - name: homepage
+    label: Homepage
+    folder: content
+    filter:
+      field: i18nlanguage
+      value: pt-i
+    extension: md
+    format: yaml-frontmatter
+    create: false
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - name: i18nlanguage
+        label: Content language
+        widget: hidden
+        default: pt-i
+      - name: title
+        label: "[hidden]"
+        widget: string
+        default: Enter here to edit.
+      - name: hero_text
+        label: Hero Text
+        widget: string
+      - name: hero_image
+        label: Hero Image
+        widget: image
+      - name: about_title
+        label: About us - Section Title
+        widget: string
+      - name: body
+        label: About us
+        widget: markdown
+      - name: services_title
+        label: Services - Section Title
+        widget: string
+      - name: services
+        label: Services
+        widget: list
+        fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: icon
+            label: Icon
+            widget: string
+          - name: details
+            label: Details
+            widget: list
+            fields:
+              - name: detail
+                label: Detail
+                widget: string
+      - name: portfolio_title
+        label: Portfolio - Section Title
+        widget: string
+      - name: portfolio
+        label: Portfolio
+        widget: list
+        fields:
+          - name: image
+            label: Image
+            widget: image
+          - name: title
+            label: Title
+            widget: string
+            required: false
+      - name: contact_title
+        label: Contact - Section Title
+        widget: string
+      - name: contact_address
+        label: Contact Address
+        widget: string
+      - name: contact_map
+        label: Contact Map
+        widget: string
+      - name: contact_phone
+        label: Contact Phone
+        widget: string
+      - name: contact_email
+        label: Contact Email
+        widget: string
+      - name: social
+        label: Social links
+        widget: list
+        required: false
+        fields:
+          - name: label
+            label: Label
+            widget: string
+          - name: link
+            label: Link
+            widget: string
+          - name: icon
+            label: Icon
+            widget: string
+      - name: footer
+        label: Footer message
+        widget: string
+        required: false
+  - name: seo
+    label: SEO
+    folder: data
+    format: yaml
+    create: false
+    delete: false
+    editor:
+      preview: false
+    fields:
+      - name: title
+        label: "[hidden]"
+        widget: string
+        default: Enter here to edit.
+      - name: google_verification
+        label: Google Site Verification Code
+        widget: string
+        required: false
+      - name: site_title
+        label: Site Title
+        widget: string
+      - name: description
+        label: Description
+        widget: string
+        required: false
+      - name: image
+        label: Image
+        widget: image
+        required: false
+      - label: Google Analytics tracking code
+        name: ga
+        widget: string
+        required: false
+      - label: Facebook Pixel ID
+        name: fp
+        widget: string
+        required: false
+      - label: Facebook Pixel Events
+        name: fpe
+        widget: list
+        required: false
+        fields:
+          - label: Event
+            name: event
+            widget: string
+      - name: gdpr_message
+        label: GDPR Message
+        widget: string
+      - name: gdpr_accept
+        label: GDPR Accept Button
+        widget: string
