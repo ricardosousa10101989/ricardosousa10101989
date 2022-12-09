@@ -18,7 +18,8 @@ const Services = () => {
             <SectionHeading>{ pageData?.services_title }</SectionHeading>
           </div>
         </div>
-        <div className="row services__wrapper">
+
+        <div className="services__wrapper">
           { pageData?.services?.map(service => (
             <ServicesItem
               key={ service.title }
