@@ -46,6 +46,9 @@ social:
   - label: A nossa página no Facebook
     link: https://facebook.com/plantaecorta
     icon: fa-brands fa-facebook-f
+  - label: O nosso Instagram
+    link: https://www.instagram.com/plantaecorta
+    icon: fa-brands fa-instagram
 footer: © Planta&Corta 2022
 ---
 Com a **nossa ajuda** queremos que passe bons momentos em contacto com a natureza!
