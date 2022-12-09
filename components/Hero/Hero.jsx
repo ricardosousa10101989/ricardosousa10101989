@@ -12,26 +12,26 @@ const Header = () => {
   return (
     <Section
       As="header"
-      className="header"
+      className="hero"
       id="hero"
     >
       <Image
         alt={ seo.site_title }
-        className="header__bg"
+        className="hero__bg"
         priority
         src={ pageData?.hero_image }
         sizes="100vw"
       />
 
       <div className="container">
-        <div className="header__intro-text">
-          <div className="header__intro-lead-in">
+        <div className="hero__intro-text">
+          <div className="hero__intro-lead-in">
             { pageData?.hero_text }
           </div>
         </div>
 
         <Button
-          className="btn-lg header__button"
+          className="btn-lg hero__button"
           to="#contact"
         >
           Peça orçamento
