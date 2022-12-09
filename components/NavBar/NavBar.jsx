@@ -1,6 +1,4 @@
-import {
-  useCallback, useEffect, useRef, useState,
-} from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -9,7 +7,6 @@ import Link from 'components/Link';
 import NavBarItem from 'components/NavBar/Item/Item';
 
 import useClickOutside from 'hooks/useClickOutside';
-import useFirstRender from 'hooks/useFirstRender';
 
 import addPassiveEventListener from 'utils/addPassiveEventListener';
 
@@ -18,16 +15,6 @@ import seo from 'data/seo.yml';
 import svgLogoHeader from './assets/logo-header.svg';
 
 const NavBar = () => {
-  const firstRender = useFirstRender();
-
-  useEffect(() => {
-    if (firstRender) {
-      setTimeout(() => {
-        document.body.classList.add('transitions-enabled');
-      }, 100);
-    }
-  }, [ firstRender ]);
-
   useEffect(() => {
     const handler = () => {
       const { scrollY } = window;
@@ -49,22 +36,6 @@ const NavBar = () => {
     return addPassiveEventListener(window, 'scroll', handler);
   }, []);
 
-  const containerRef = useRef();
-
-  useEffect(() => {
-    const handler = () => {
-      if (containerRef.current) {
-        const { clientWidth } = containerRef.current;
-
-        containerRef.current.style.setProperty('--container-width', `${clientWidth}px`);
-      }
-    };
-
-    handler();
-
-    return addPassiveEventListener(window, 'resize', handler);
-  }, []);
-
   const [ mobile, setMobile ] = useState(false);
 
   const onClickOutside = useCallback(() => {
@@ -80,10 +51,7 @@ const NavBar = () => {
       }) }
       ref={ clickOutside }
     >
-      <div
-        className="container"
-        ref={ containerRef }
-      >
+      <div className="container">
         <Link
           aria-label="To top"
           className="navbar-brand"

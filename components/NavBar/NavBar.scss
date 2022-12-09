@@ -47,38 +47,13 @@
   left: 8px;
   margin-right: 0;
   padding: 0;
-  transform: translate(calc((var(--container-width) / 2) - 50% - 8px), 138px) scale(1);
+  transform: scale(0.21);
   transform-origin: top left;
-  pointer-events: none;
 
   @include media-breakpoint-down(md) {
-    transform: translate(calc((var(--container-width) / 2) - (50% * 0.47) - 8px), 50px) scale(0.47);
-
     .navbar--expanded & {
       pointer-events: all;
     }
-  }
-
-  .navbar--expanded &,
-  body.scrolled & {
-    transform: translate(0, 0) scale(0.21);
-    pointer-events: all;
-  }
-
-  body:not(.transitions-enabled) & {
-    display: none;
-  }
-
-  body.transitions-enabled & {
-    transition: transform 0.6s;
-  }
-
-  body.transitions-enabled .navbar--expanded & {
-    transition: transform 0.3s;
-  }
-
-  body.transitions-enabled.header-gone & {
-    transition: transform 0.15s;
   }
 }
 
