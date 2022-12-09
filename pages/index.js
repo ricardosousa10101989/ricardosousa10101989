@@ -14,4 +14,11 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
+console.log({
+  url: process.env.URL,
+  deploy_url: process.env.DEPLOY_URL,
+  deploy_prime_url: process.env.DEPLOY_PRIME_URL,
+  env: process.env,
+});
+
 export default Homepage;
