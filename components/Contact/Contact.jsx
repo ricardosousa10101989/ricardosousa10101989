@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Form from 'components/Form';
 import Link from 'components/Link';
 import Section from 'components/Section/Section';
 import SectionHeading from 'components/Section/Heading/Heading';
@@ -33,11 +34,9 @@ const Contact = () => {
 
         <div className="row">
           <div className="col-lg-12">
-            <form
+            <Form
               id="contactForm"
               name="contactForm"
-              // eslint-disable-next-line react/no-unknown-property
-              netlify=""
               onSubmit={ submit }
               ref={ formRef }
             >
@@ -168,7 +167,7 @@ const Contact = () => {
                   ) }
                 </div>
               </div>
-            </form>
+            </Form>
           </div>
         </div>
 

@@ -86,10 +86,7 @@ const useContactForm = () => {
     });
 
     const { FormData, URLSearchParams } = window;
-
     const formData = new FormData(formRef.current);
-    formData.append('form-name', formRef.current.getAttribute('name'));
-
     const body = new URLSearchParams(formData).toString();
 
     fetch('/', {
