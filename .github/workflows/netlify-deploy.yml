@@ -93,12 +93,12 @@ jobs:
           echo "Prefix              : ${PREFIX}"
           echo "======================================"
 
-          echo "::set-output name=target_branch::${TARGET_BRANCH}"
-          echo "::set-output name=environment::${ENVIRONMENT}"
-          echo "::set-output name=context::${CONTEXT}"
-          echo "::set-output name=prefix::${PREFIX}"
+          echo "target_branch=${TARGET_BRANCH}" >> $GITHUB_OUTPUT
+          echo "environment=${ENVIRONMENT}" >> $GITHUB_OUTPUT
+          echo "context=${CONTEXT}" >> $GITHUB_OUTPUT
+          echo "prefix=${PREFIX}" >> $GITHUB_OUTPUT
 
-          echo "Variables exported through ::set-output"
+          echo "Variables exported through GITHUB_OUTPUT"
 
   deploy:
     name: "🛒 Deploy to Netlify"
@@ -181,7 +181,7 @@ jobs:
           SITE_INFO="${SITE_INFO//'%'/'%25'}"
           SITE_INFO="${SITE_INFO//$'\n'/'%0A'}"
           SITE_INFO="${SITE_INFO//$'\r'/'%0D'}"
-          echo "::set-output name=site_info::${SITE_INFO}"
+          echo "site_info=${SITE_INFO}" >> $GITHUB_OUTPUT
 
       - name: "🌂 Deploy Preview Link"
         id: deploy_link
@@ -193,7 +193,7 @@ jobs:
           SITE_NAME=${{ fromJson(steps.site_info.outputs.site_info).name }}
           SITE_PREFIX=$(if [ "$PREFIX" != "production" ]; then printf -- "${PREFIX}--"; fi)
           DEPLOY_LINK="https://${SITE_PREFIX}${SITE_NAME}.netlify.app"
-          echo "::set-output name=deploy_link::${DEPLOY_LINK}"
+          echo "deploy_link=${DEPLOY_LINK}" >> $GITHUB_OUTPUT
           curl --request POST \
             --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }} \
             --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
