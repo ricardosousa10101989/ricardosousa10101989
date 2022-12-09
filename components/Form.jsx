@@ -1,20 +1,7 @@
 import { forwardRef } from 'react';
 
+// eslint-disable-next-line arrow-body-style
 const Form = forwardRef(({ children, name, ...props }, ref) => {
-  if (process.env.NETLIFY_LOCAL) {
-    return (
-      <form
-        { ...props }
-        name={ name }
-        // eslint-disable-next-line react/no-unknown-property
-        netlify=""
-        ref={ ref }
-      >
-        { children }
-      </form>
-    );
-  }
-
   return (
     <form
       { ...props }

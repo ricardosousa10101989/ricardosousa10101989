@@ -8,7 +8,7 @@ import SectionHeading from 'components/Section/Heading/Heading';
 import useContactForm from 'hooks/useContactForm';
 import usePageData from 'hooks/usePageData';
 
-const Contact = () => {
+const Contact = ({ netlify }) => {
   const pageData = usePageData();
 
   const {
@@ -37,6 +37,7 @@ const Contact = () => {
             <Form
               id="contactForm"
               name="contactForm"
+              netlify={ netlify ? '' : undefined }
               onSubmit={ submit }
               ref={ formRef }
             >
