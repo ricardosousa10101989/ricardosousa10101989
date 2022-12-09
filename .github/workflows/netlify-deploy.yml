@@ -178,8 +178,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
           SITE_INFO=$(netlify api getSite --data "{ \"site_id\": \"${NETLIFY_SITE_ID}\" }")
-          SITE_NAME=${{ fromJson(env.SITE_INFO).name }}
-          echo "site_name=${SITE_NAME}" >> $GITHUB_OUTPUT
+          echo "site_info=${SITE_INFO}" >> $GITHUB_OUTPUT
 
       - name: "🌂 Deploy Preview Link"
         id: deploy_link
@@ -188,7 +187,7 @@ jobs:
           ENVIRONMENT: ${{ needs.detect_environments.outputs.environment }}
           PREFIX: ${{ needs.detect_environments.outputs.prefix }}
         run: |
-          SITE_NAME=${{ steps.site_info.outputs.site_name }}
+          SITE_NAME=${{ fromJson(steps.site_info.outputs.site_info).name }}
           SITE_PREFIX=$(if [ "$PREFIX" != "production" ]; then printf -- "${PREFIX}--"; fi)
           DEPLOY_LINK="https://${SITE_PREFIX}${SITE_NAME}.netlify.app"
           echo "deploy_link=${DEPLOY_LINK}" >> $GITHUB_OUTPUT
