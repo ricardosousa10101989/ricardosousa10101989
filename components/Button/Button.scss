@@ -9,7 +9,20 @@
 }
 
 .btn-primary {
-  padding: 20px 40px;
+  --bs-btn-padding-y: 20px;
+  --bs-btn-padding-x: 40px;
+
+  @include media-breakpoint-down(md) {
+    --bs-btn-font-size: 1rem;
+    --bs-btn-padding-y: 14px;
+    --bs-btn-padding-x: 28px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    --bs-btn-font-size: 0.85rem;
+    --bs-btn-padding-y: 10px;
+    --bs-btn-padding-x: 20px;
+  }
 }
 
 .btn-clear {

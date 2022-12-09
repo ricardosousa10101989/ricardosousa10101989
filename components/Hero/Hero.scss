@@ -29,14 +29,17 @@
 
 .header__intro-lead-in {
   font-family: 'Droid Serif', serif;
-  font-size: 22px;
+  font-size: 40px;
   font-style: italic;
-  line-height: 22px;
+  line-height: 1em;
   text-shadow: 0 0 20px $dark, 0 0 10px $dark;
 
-  @include media-breakpoint-up(md) {
-    font-size: 40px;
-    line-height: 40px;
+  @include media-breakpoint-down(md) {
+    font-size: 32px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 28px;
   }
 }
 
