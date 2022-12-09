@@ -178,9 +178,6 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
           SITE_INFO=$(netlify api getSite --data "{ \"site_id\": \"${NETLIFY_SITE_ID}\" }")
-          SITE_INFO="${SITE_INFO//'%'/'%25'}"
-          SITE_INFO="${SITE_INFO//$'\n'/'%0A'}"
-          SITE_INFO="${SITE_INFO//$'\r'/'%0D'}"
           SITE_NAME=${{ fromJson(env.SITE_INFO).name }}
           echo "site_name=${SITE_NAME}" >> $GITHUB_OUTPUT
 
