@@ -10,6 +10,11 @@ const Form = forwardRef(({ children, name, ...props }, ref) => {
         netlify=""
         ref={ ref }
       >
+        <input
+          name="form-name"
+          type="hidden"
+          value={ name }
+        />
         { children }
       </form>
     );
