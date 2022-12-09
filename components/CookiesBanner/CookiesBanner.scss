@@ -37,10 +37,6 @@
   flex: 1 1 auto;
   display: flex;
   gap: 10px;
-
-  @include media-breakpoint-up(lggdpr) {
-    padding-bottom: 0;
-  }
 }
 
 .cookies-banner__btn {
