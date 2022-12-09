@@ -181,7 +181,7 @@ jobs:
           SITE_INFO="${SITE_INFO//'%'/'%25'}"
           SITE_INFO="${SITE_INFO//$'\n'/'%0A'}"
           SITE_INFO="${SITE_INFO//$'\r'/'%0D'}"
-          SITE_NAME=${{ fromJson(SITE_INFO).name }}
+          SITE_NAME=${{ fromJson($SITE_INFO).name }}
           echo "site_name=${SITE_NAME}" >> $GITHUB_OUTPUT
 
       - name: "🌂 Deploy Preview Link"
