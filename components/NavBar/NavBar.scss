@@ -33,6 +33,7 @@
   }
 
   .container {
+    --bs-gutter-x: 0;
     --container-width: 0;
 
     position: relative;
@@ -89,6 +90,7 @@
   min-height: 74px;
   padding: 0 24px;
   border-radius: 0;
+  border: none;
 
   svg {
     color: $light;
