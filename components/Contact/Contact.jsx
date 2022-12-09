@@ -21,10 +21,12 @@ const Contact = ({ netlify }) => {
       id="contact"
     >
       <div className="container">
-        <FontAwesomeIcon
-          className="contact__bg"
-          icon="fa-solid fa-envelope-open-text"
-        />
+        <div className="form-group">
+          <FontAwesomeIcon
+            className="contact__bg"
+            icon="fa-solid fa-envelope-open-text"
+          />
+        </div>
 
         <div className="row">
           <div className="col-lg-12 text-center">
@@ -42,7 +44,7 @@ const Contact = ({ netlify }) => {
               ref={ formRef }
             >
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-lg-12">
                   <div className="form-group">
                     <input
                       className="form-control"
@@ -86,7 +88,7 @@ const Contact = ({ netlify }) => {
                   </div>
                 </div>
 
-                <div className="col-md-6">
+                <div className="col-lg-12">
                   <div className="form-group">
                     <textarea
                       className="form-control"
@@ -140,8 +142,10 @@ const Contact = ({ netlify }) => {
                     </div>
                   </div>
 
-                  <div className="contact__note">
-                    * Campos obrigatórios
+                  <div className="form-group">
+                    <div className="contact__note">
+                      * Campos obrigatórios
+                    </div>
                   </div>
 
                   { contactForm.status === 'success' && (
@@ -177,6 +181,7 @@ const Contact = ({ netlify }) => {
             { !!pageData?.contact_address && (
               <div className="contacts-url__address">
                 <Link to={ pageData.contact_map }>
+                  <FontAwesomeIcon icon="fa-solid fa-map-location-dot" />
                   { pageData.contact_address }
                 </Link>
               </div>

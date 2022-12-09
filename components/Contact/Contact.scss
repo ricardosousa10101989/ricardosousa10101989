@@ -11,6 +11,8 @@
   }
 
   .container {
+    position: relative;
+
     > *:not(svg) {
       position: relative;
       z-index: 10;
@@ -18,7 +20,8 @@
   }
 
   .form-group {
-    margin-bottom: 25px;
+    max-width: 760px;
+    margin: 0 auto 25px;
 
     label:not(.form-check-label) {
       position: absolute;
@@ -62,21 +65,13 @@
 
 .contact__bg {
   position: absolute;
-  top: 20px;
-  left: 50%;
   opacity: 0.2;
   color: $gray-500;
-  font-size: 200px;
-  transform: translateX(-50%);
   pointer-events: none;
   z-index: 5;
-
-  @include media-breakpoint-up(md) {
-    top: 5px;
-    left: 20px;
-    font-size: 450px;
-    transform: none;
-  }
+  top: 5px;
+  left: -250px;
+  font-size: 450px;
 }
 
 .contact__checkboxes {
@@ -92,9 +87,7 @@
 
   /* stylelint-disable-next-line no-descending-specificity */
   input {
-    width: 22px;
-    height: 20px;
-    padding: 0;
+    padding: 10px;
   }
 }
 
@@ -153,5 +146,9 @@
 .contacts-url__address {
   @include media-breakpoint-up(md) {
     margin: 1em 0;
+  }
+
+  svg {
+    margin-right: 0.65em;
   }
 }
