@@ -55,7 +55,7 @@ const NavBar = () => {
         <Link
           aria-label="To top"
           className="navbar-brand"
-          to="#page-top"
+          to="#hero"
         >
           <Image
             alt={ seo.site_title }
