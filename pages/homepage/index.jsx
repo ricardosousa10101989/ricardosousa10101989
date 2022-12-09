@@ -12,9 +12,9 @@ const Homepage = () => {
     <>
       <NavBar />
       <Hero />
-      <About />
       <Services />
       <Portfolio />
+      <About />
       <Contact />
       <Footer />
     </>

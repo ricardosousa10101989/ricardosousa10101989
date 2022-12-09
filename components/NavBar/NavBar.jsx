@@ -78,12 +78,6 @@ const NavBar = () => {
         <div className="navbar-collapse">
           <div className="navbar-nav navbar-right">
             <NavBarItem
-              id="about"
-              onClick={ () => setMobile(false) }
-            >
-              Acerca
-            </NavBarItem>
-            <NavBarItem
               id="services"
               onClick={ () => setMobile(false) }
             >
@@ -96,10 +90,16 @@ const NavBar = () => {
               Portfolio
             </NavBarItem>
             <NavBarItem
+              id="about"
+              onClick={ () => setMobile(false) }
+            >
+              Acerca
+            </NavBarItem>
+            <NavBarItem
               id="contact"
               onClick={ () => setMobile(false) }
             >
-              Contactos
+              Contacto
             </NavBarItem>
           </div>
         </div>

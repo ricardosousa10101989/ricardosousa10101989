@@ -8,7 +8,10 @@ const About = () => {
   const pageData = usePageData();
 
   return (
-    <Section id="about">
+    <Section
+      className="about"
+      id="about"
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12 text-center">
