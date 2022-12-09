@@ -32,9 +32,10 @@
     flex-wrap: nowrap;
     height: 100%;
 
-    @include media-breakpoint-down(md) {
-      justify-content: center;
-    }
+    // Doesn't work on safari, hence the absolute positioning of .navbar-brand below
+    // @include media-breakpoint-down(md) {
+    //   justify-content: center;
+    // }
   }
 }
 
@@ -45,13 +46,21 @@
   padding: 8px;
   transition: all 0.3s;
 
+  @include media-breakpoint-down(md) {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   body:not(.scrolled) .navbar:not(.navbar--expanded) & {
     @include media-breakpoint-down(md) {
-      transform: scale(1.7) translateY(36px);
+      transform: translateX(-50%) scale(1.7) translateY(36px);
     }
 
     @include media-breakpoint-down(sm) {
-      transform: scale(1.55) translateY(24px);
+      transform: translateX(-50%) scale(1.55) translateY(24px);
     }
   }
 }
@@ -59,6 +68,8 @@
 .navbar-logo {
   display: block;
   height: 100%;
+  // fix for safari
+  max-width: 100%;
   filter: drop-shadow(0 0 20px $dark);
 }
 
