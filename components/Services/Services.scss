@@ -4,5 +4,21 @@
 }
 
 .services__wrapper {
+  --services-gap: 32px;
+
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: calc(var(--services-gap) * 7);
+  max-width: 760px;
+  margin: calc(var(--services-gap) * 4) auto calc(var(--services-gap) * 3);
+
+  @include media-breakpoint-down(md) {
+    --services-gap: 24px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    --services-gap: 18px;
+  }
 }

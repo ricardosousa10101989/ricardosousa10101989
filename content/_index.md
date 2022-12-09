@@ -3,20 +3,17 @@ i18nlanguage: pt-i
 title: Enter here to edit.
 hero_text: Mexer na terra é um vício...
 hero_image: /media/20190401_140137181_ios.jpg
-about_title: QUEM SOMOS
 services_title: O que fazemos
 services:
   - title: Se deseja CONSTRUIR o seu jardim
     icon: fa-solid fa-seedling
-    details:
-      - detail: De acordo com as SUAS EXPECTATIVAS levamos até si as nossas IDEIAS para
-          construirmos o jardim com que sempre sonhou e que cumpra os requisitos
-          da utilização que lhe dará
+    detail: De acordo com as **SUAS EXPECTATIVAS** levamos até si as nossas
+      **IDEIAS** para construirmos o jardim com que sempre sonhou e que cumpra
+      os requisitos da utilização que lhe dará.
   - title: Se deseja MANTER o seu jardim
     icon: fa-solid fa-leaf
-    details:
-      - detail: Deixe de se preocupar com a manutenção. A sua única tarefa será
-          contemplar e desfrutar do nosso trabalho
+    detail: Deixe de se preocupar com a manutenção. A sua única tarefa será
+      **CONTEMPLAR** e **DESFRUTAR** do nosso trabalho.
 portfolio_title: Alguns dos nossos trabalhos
 portfolio:
   - image: /media/20190401_140137181_ios.jpg
@@ -37,6 +34,7 @@ portfolio:
     title: Construção de jardim
   - image: /media/20220118_142127592_ios.jpg
     title: Manutenção de jardim
+about_title: QUEM SOMOS
 contact_title: Contacte-nos e peça o seu orçamento
 contact_address: Estamos no GRANDE PORTO
 contact_map: https://goo.gl/maps/4Na181imrQNAMpNx6

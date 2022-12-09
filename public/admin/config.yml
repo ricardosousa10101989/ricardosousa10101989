@@ -33,12 +33,6 @@ collections:
       - name: hero_image
         label: Hero Image
         widget: image
-      - name: about_title
-        label: About us - Section Title
-        widget: string
-      - name: body
-        label: About us
-        widget: markdown
       - name: services_title
         label: Services - Section Title
         widget: string
@@ -52,13 +46,9 @@ collections:
           - name: icon
             label: Icon
             widget: string
-          - name: details
-            label: Details
-            widget: list
-            fields:
-              - name: detail
-                label: Detail
-                widget: string
+          - name: detail
+            label: Detail
+            widget: markdown
       - name: portfolio_title
         label: Portfolio - Section Title
         widget: string
@@ -73,21 +63,31 @@ collections:
             label: Title
             widget: string
             required: false
+      - name: about_title
+        label: About us - Section Title
+        widget: string
+      - name: body
+        label: About us
+        widget: markdown
       - name: contact_title
         label: Contact - Section Title
         widget: string
       - name: contact_address
         label: Contact Address
         widget: string
+        required: false
       - name: contact_map
         label: Contact Map
         widget: string
+        required: false
       - name: contact_phone
         label: Contact Phone
         widget: string
+        required: false
       - name: contact_email
         label: Contact Email
         widget: string
+        required: false
       - name: social
         label: Social links
         widget: list

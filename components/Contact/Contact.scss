@@ -60,6 +60,7 @@
   input,
   textarea {
     padding: 20px;
+    border-radius: 0;
   }
 }
 
@@ -85,9 +86,9 @@
   display: flex;
   gap: 12px;
 
-  /* stylelint-disable-next-line no-descending-specificity */
-  input {
+  .form-check-input {
     padding: 10px;
+    border-radius: 0;
   }
 }
 

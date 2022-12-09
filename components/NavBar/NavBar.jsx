@@ -75,33 +75,31 @@ const NavBar = () => {
           <FontAwesomeIcon icon="fa-solid fa-bars" />
         </button>
 
-        <div className="navbar-collapse">
-          <div className="navbar-nav navbar-right">
-            <NavBarItem
-              id="services"
-              onClick={ () => setMobile(false) }
-            >
-              Serviços
-            </NavBarItem>
-            <NavBarItem
-              id="portfolio"
-              onClick={ () => setMobile(false) }
-            >
-              Portfolio
-            </NavBarItem>
-            <NavBarItem
-              id="about"
-              onClick={ () => setMobile(false) }
-            >
-              Acerca
-            </NavBarItem>
-            <NavBarItem
-              id="contact"
-              onClick={ () => setMobile(false) }
-            >
-              Contacto
-            </NavBarItem>
-          </div>
+        <div className="navbar-nav navbar-right">
+          <NavBarItem
+            id="services"
+            onClick={ () => setMobile(false) }
+          >
+            Serviços
+          </NavBarItem>
+          <NavBarItem
+            id="portfolio"
+            onClick={ () => setMobile(false) }
+          >
+            Portfolio
+          </NavBarItem>
+          <NavBarItem
+            id="about"
+            onClick={ () => setMobile(false) }
+          >
+            Acerca
+          </NavBarItem>
+          <NavBarItem
+            id="contact"
+            onClick={ () => setMobile(false) }
+          >
+            Contacto
+          </NavBarItem>
         </div>
       </div>
     </nav>
