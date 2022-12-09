@@ -43,14 +43,15 @@ const Header = () => {
       id="hero"
       ref={ headerRef }
     >
-      <div className="container">
-        <Image
-          alt={ seo.site_title }
-          className="header__bg"
-          src={ pageData?.hero_image }
-          sizes="100vw"
-        />
+      <Image
+        alt={ seo.site_title }
+        className="header__bg"
+        priority
+        src={ pageData?.hero_image }
+        sizes="100vw"
+      />
 
+      <div className="container">
         <div className="header__intro-text">
           <div className="header__intro-lead-in">
             { pageData?.hero_text }
