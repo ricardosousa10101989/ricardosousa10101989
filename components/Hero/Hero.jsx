@@ -19,6 +19,7 @@ const Header = () => {
         alt={ seo.site_title }
         className="hero__bg"
         priority
+        quality={ 10 }
         src={ pageData?.hero_image }
         sizes="100vw"
       />
