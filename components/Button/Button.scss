@@ -13,6 +13,8 @@
   --bs-btn-padding-x: 40px;
   --bs-btn-border-radius: 0;
 
+  text-shadow: 0 0 24px $dark;
+
   @include media-breakpoint-down(md) {
     --bs-btn-font-size: 1rem;
     --bs-btn-padding-y: 14px;
