@@ -51,7 +51,7 @@ footer: © Planta&Corta 2022
 ---
 Com a **nossa ajuda** queremos que passe bons momentos em contacto com a natureza!
 
-#### Tem alguma destas preocupações?
+### Tem alguma destas preocupações?
 
 * Não tem **tempo** disponível, **equipamento** necessário nem **conhecimento técnico** para construir ou cuidar do seu jardim?
 
