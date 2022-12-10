@@ -9,10 +9,12 @@
   z-index: 1050;
   transition: all 0.3s;
   padding: var(--lightbox-padding-y) 64px;
+  opacity: 0;
+  pointer-events: none;
 
-  &:not(.lightbox--visible) {
-    opacity: 0;
-    pointer-events: none;
+  &.lightbox--visible {
+    opacity: 1;
+    pointer-events: all;
   }
 }
 

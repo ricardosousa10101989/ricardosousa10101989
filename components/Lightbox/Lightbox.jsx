@@ -4,11 +4,14 @@ import {
 import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import useFirstRender from 'hooks/useFirstRender';
 import useLightbox from 'hooks/useLightbox';
 
 import prepareClickableContainer from 'utils/prepareClickableContainer';
 
 const Lightbox = () => {
+  const firstRender = useFirstRender();
+
   const [ lightbox, setLightbox ] = useLightbox();
   const [ last, setLast ] = useState(null);
 
@@ -29,7 +32,7 @@ const Lightbox = () => {
     };
   }, [ lightbox ]);
 
-  return (
+  return firstRender && (
     <div
       className={ classnames('lightbox', {
         'lightbox--visible': lightbox,
@@ -50,7 +53,7 @@ const Lightbox = () => {
 
       <div className="lightbox__content">
         <img
-          alt={ last?.title }
+          alt={ last?.title || 'hidden' }
           className="lightbox__img"
           sizes="100vw"
           src={ last?.src }
