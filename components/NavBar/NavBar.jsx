@@ -25,6 +25,11 @@ const NavBar = () => {
       else {
         document.body.classList.remove('scrolled');
       }
+
+      console.log({
+        scrolled: document.body.classList.contains('scrolled'),
+        scrollY,
+      });
     };
 
     // When refreshing an already scrolled page, the logo will appear floating
