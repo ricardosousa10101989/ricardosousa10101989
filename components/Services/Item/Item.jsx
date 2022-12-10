@@ -14,7 +14,7 @@ const ServicesItem = ({ detail, icon, title }) => {
       ) }
 
       { !!title && (
-        <h4 className="services__title">{ title }</h4>
+        <h3 className="services__title">{ title }</h3>
       ) }
 
       <Markdown className="services__detail">

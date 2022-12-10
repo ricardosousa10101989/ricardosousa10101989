@@ -39,11 +39,14 @@ const Lightbox = () => {
       }) }
     >
       <div
+        aria-label="Close"
         className="lightbox__overlay"
         { ...clickableContainer }
+        tabIndex={ -1 }
       />
 
       <button
+        aria-label="Close"
         className="lightbox__close"
         onClick={ close }
         type="button"

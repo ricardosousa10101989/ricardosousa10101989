@@ -43,6 +43,7 @@
   font-size: 14px;
   line-height: 35px;
   padding: 0 1.5rem;
+  text-shadow: 0 0 24px $dark;
 
   @include media-breakpoint-down(sm) {
     padding: 0 0.5rem;
