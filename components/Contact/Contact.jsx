@@ -39,7 +39,7 @@ const Contact = ({ netlify }) => {
             <Form
               id="contactForm"
               name="contactForm"
-              netlify={ netlify ? '' : undefined }
+              netlify={ netlify }
               onSubmit={ submit }
               ref={ formRef }
             >
