@@ -35,7 +35,7 @@ const Header = () => {
           className="btn-lg hero__button"
           to="#contact"
         >
-          Peça orçamento
+          Pedir orçamento
         </Button>
       </div>
     </Section>
