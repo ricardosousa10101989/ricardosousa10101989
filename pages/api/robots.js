@@ -5,7 +5,7 @@ const robots = async (req, res) => {
 User-agent: *
 Allow: /
 
-Sitemap: ${absoluteUrl('/sitemap.xml')}
+Sitemap: ${absoluteUrl('/sitemap.xml', req)}
 `);
 };
 
