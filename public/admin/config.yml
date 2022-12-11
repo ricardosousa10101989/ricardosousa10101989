@@ -8,63 +8,6 @@ media_folder: /public/media
 public_folder: /media
 
 collections:
-  - name: content
-    label: Conteúdo
-    create: false
-    delete: false
-    editor:
-      preview: false
-    files:
-      - label: "Homepage"
-        name: "homepage"
-        file: "content/homepage.md"
-        format: yaml-frontmatter
-        fields:
-          - name: hero_text
-            label: Hero - Texto
-            widget: string
-          - name: hero_image
-            label: Hero - Imagem
-            widget: image
-          - name: services_title
-            label: Serviços - Título de Secção
-            widget: string
-          - name: services
-            label: Serviços
-            widget: list
-            fields:
-              - name: title
-                label: Título
-                widget: string
-              - name: icon
-                label: Icon
-                widget: string
-              - name: detail
-                label: Detalhe
-                widget: markdown
-          - name: portfolio_title
-            label: Portfolio - Título de Secção
-            widget: string
-          - name: portfolio
-            label: Portfolio
-            widget: list
-            fields:
-              - name: image
-                label: Imagem
-                widget: image
-              - name: title
-                label: Título
-                widget: string
-                required: false
-          - name: about_title
-            label: Acerca - Título de Secção
-            widget: string
-          - name: body
-            label: Acerca - Conteúdo
-            widget: markdown
-          - name: contact_title
-            label: Contact - Título de Secção
-            widget: string
   - name: general
     label: Geral
     create: false
@@ -173,3 +116,78 @@ collections:
           - name: marketing
             label: Opção Marketing
             widget: string
+
+  - name: content
+    label: Conteúdo
+    create: false
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: "Página Principal"
+        name: "homepage"
+        file: "content/homepage.md"
+        format: yaml-frontmatter
+        fields:
+          - name: hero_text
+            label: Hero - Texto
+            widget: string
+          - name: hero_image
+            label: Hero - Imagem
+            widget: image
+          - name: services_title
+            label: Serviços - Título de Secção
+            widget: string
+          - name: services
+            label: Serviços
+            widget: list
+            fields:
+              - name: title
+                label: Título
+                widget: string
+              - name: icon
+                label: Icon
+                widget: string
+              - name: detail
+                label: Detalhe
+                widget: markdown
+          - name: portfolio_title
+            label: Portfolio - Título de Secção
+            widget: string
+          - name: portfolio
+            label: Portfolio
+            widget: list
+            fields:
+              - name: image
+                label: Imagem
+                widget: image
+              - name: title
+                label: Título
+                widget: string
+                required: false
+          - name: about_title
+            label: Acerca - Título de Secção
+            widget: string
+          - name: body
+            label: Acerca - Conteúdo
+            widget: markdown
+          - name: contact_title
+            label: Contact - Título de Secção
+            widget: string
+
+  - name: simple_pages
+    label: Páginas Simples
+    create: false
+    delete: false
+    editor:
+      preview: false
+    folder: content/simple-pages
+    extension: md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Título
+        widget: string
+      - name: body
+        label: Conteúdo
+        widget: markdown
