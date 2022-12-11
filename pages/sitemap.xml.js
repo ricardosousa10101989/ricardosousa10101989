@@ -22,6 +22,7 @@ export const getServerSideProps = async ({ req, res }) => {
   ];
 
   res.setHeader('Content-Type', 'text/xml');
+  res.setHeader('Cache-Control', `public, s-maxage=${60 * 60 * 24 * 30}`);
   res.write(`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(url => `<url>
