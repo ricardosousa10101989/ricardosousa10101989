@@ -1,14 +1,14 @@
-import absoluteUrl from 'utils/absoluteUrl';
+// import absoluteUrl from 'utils/absoluteUrl';
 
 const sitemap = async (req, res) => {
-  const pages = [
-    {
-      changefreq: 'monthly',
-      lastmod: '',
-      loc: absoluteUrl('/'),
-      priority: 1,
-    },
-  ];
+  // const pages = [
+  //   {
+  //     changefreq: 'monthly',
+  //     lastmod: '',
+  //     loc: absoluteUrl('/'),
+  //     priority: 1,
+  //   },
+  // ];
   res.send(JSON.stringify(process.env));
 
 //   res.send(`<?xml version="1.0" encoding="UTF-8"?>
