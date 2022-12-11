@@ -6,6 +6,13 @@ module.exports = withYaml({
     imageSizes: [ 320, 480, 600, 720, 960, 1200 ],
   },
 
+  rewrites: async () => [
+    {
+      source: '/admin/',
+      destination: '/admin/index.html',
+    },
+  ],
+
   // Need this for the /admin path to work properly, as without it Netlify CMS will try to use hash
   // routes as /admin#/ instead of /admin/#/
   trailingSlash: true,
