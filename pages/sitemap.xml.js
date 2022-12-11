@@ -3,13 +3,7 @@ import absoluteUrl from 'utils/absoluteUrl';
 const SiteMapXml = () => null;
 
 export const getServerSideProps = async ({ req, res }) => {
-  const { execSync } = await import('child_process');
-  const debug = execSync(`cd ${process.cwd()} && ls -la`).toString();
-  console.log(debug);
-
   const fs = await import('fs');
-  const files = await fs.promises.readdir(`${process.cwd()}/content/simple-pages`);
-
   const lastTimestamp = (await fs.promises.stat(`${process.cwd()}/.next/build-manifest.json`)).mtimeMs;
   const lastmod = (new Date(lastTimestamp)).toISOString();
 
@@ -19,14 +13,12 @@ export const getServerSideProps = async ({ req, res }) => {
       loc: absoluteUrl('/', req),
       priority: 1,
     },
-    ...files
-      .filter(file => file.endsWith('.md'))
+    // For now these are hardcoded here as I haven't found a way to properly generate these in
+    // Netlify builds (Netlify's own sitemap plugin is also insuficcient in a NextJS app)
+    ...[ '/condicoes-de-utilizacao', '/cookies', '/politica-de-privacidade' ]
       .map(file => ({
         changefreq: 'yearly',
-        loc: absoluteUrl(
-          `/${file.split('/').pop().replace(/\.md$/, '')}`,
-          req,
-        ),
+        loc: absoluteUrl(file, req),
         priority: 0.1,
       })),
   ];
