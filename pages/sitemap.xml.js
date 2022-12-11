@@ -3,9 +3,7 @@ import absoluteUrl from 'utils/absoluteUrl';
 const SiteMapXml = () => null;
 
 export const getServerSideProps = async ({ req, res }) => {
-  const fs = await import('fs');
-  const lastTimestamp = (await fs.promises.stat(`${process.cwd()}/.next/build-manifest.json`)).mtimeMs;
-  const lastmod = (new Date(lastTimestamp)).toISOString();
+  const lastmod = (new Date()).toISOString();
 
   const urls = [
     {
