@@ -24,17 +24,15 @@
     }
   }
 
-  &:focus {
+  &:hover,
+  &:focus:not(:active),
+  &.page-scroll--active {
+    background-color: $primary;
     color: $light;
     outline: 0;
   }
 
-  &:hover,
-  &.page-scroll--active {
-    background-color: $primary;
-    color: $light;
-  }
-
+  // stylelint-disable-next-line no-descending-specificity
   body.scrolled & {
     margin: 0;
   }

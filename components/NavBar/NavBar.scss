@@ -145,7 +145,8 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     outline: 0;
     background-color: $primary;
     box-shadow: none;

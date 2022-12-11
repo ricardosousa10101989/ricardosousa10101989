@@ -29,6 +29,17 @@ const CookiesBanner = () => {
     }
   }, [ consent, cookiesBanner, setCookiesBanner ]);
 
+  useEffect(() => {
+    if (firstRender && cookiesBanner) {
+      // Don't bother with refs, Button and Link don't support it and not worth the trouble
+      // rewriting those with forwardRef and testing everything just for this.
+      const btn = document.querySelector('.cookies-banner__btn--accept');
+      if (btn) {
+        btn.focus();
+      }
+    }
+  }, [ cookiesBanner, firstRender ]);
+
   return firstRender && cookiesBanner && (
     <div
       className={ classnames('cookies-banner', `cookies-banner--${cookiesBanner}`) }

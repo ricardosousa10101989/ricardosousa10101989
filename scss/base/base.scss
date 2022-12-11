@@ -12,10 +12,13 @@ p {
 a {
   color: $primary;
 
-  a:hover,
-  a:focus,
-  a.active {
-    outline: 0;
+  &:hover {
+    color: $secondary;
+  }
+
+  &:focus:not(&:active) {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
     color: $secondary;
   }
 }

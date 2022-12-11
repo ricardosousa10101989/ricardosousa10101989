@@ -60,7 +60,8 @@ footer {
     color: $dark;
     transition: all 0.3s;
 
-    &:hover {
+    &:hover,
+    &:focus:not(:active) {
       color: $primary;
     }
   }

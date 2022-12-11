@@ -1,9 +1,12 @@
 .btn {
+  --bs-btn-border-radius: 0;
+
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
 
-  &:focus {
+  &:hover,
+  &:focus:not(:active) {
     outline: 0;
   }
 }
@@ -11,7 +14,6 @@
 .btn-primary {
   --bs-btn-padding-y: 20px;
   --bs-btn-padding-x: 40px;
-  --bs-btn-border-radius: 0;
 
   text-shadow: 0 0 24px $dark;
 
@@ -26,9 +28,17 @@
     --bs-btn-padding-y: 10px;
     --bs-btn-padding-x: 20px;
   }
+
+  &:focus:not(:active) {
+    outline: 2px solid $light;
+  }
 }
 
 .btn-clear {
   color: #fff;
   background-color: transparent;
+
+  &:focus:not(:active) {
+    outline: 2px solid $light;
+  }
 }

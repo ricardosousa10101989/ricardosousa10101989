@@ -61,6 +61,11 @@
   textarea {
     padding: 20px;
     border-radius: 0;
+
+    &:focus {
+      outline: 2px solid $primary;
+      outline-offset: 2px;
+    }
   }
 }
 
