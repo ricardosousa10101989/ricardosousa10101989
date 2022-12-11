@@ -7,7 +7,7 @@ export const getServerSideProps = async ({ req, res }) => {
   const stat = await fs.promises.stat(`${process.cwd()}/.next/build-manifest.json`);
   const lastTimestamp = stat.mtimeMs || stat.ctimeMs;
   const lastmod = (new Date(lastTimestamp)).toISOString();
-
+  console.log({ stat });
   const urls = [
     {
       changefreq: 'monthly',
