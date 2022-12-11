@@ -3,6 +3,10 @@ import absoluteUrl from 'utils/absoluteUrl';
 const SiteMapXml = () => null;
 
 export const getServerSideProps = async ({ req, res }) => {
+  const { execSync } = await import('child_process');
+  const debug = execSync(`cd ${process.cwd()} && ls -la`).toString();
+  console.log(debug);
+
   const fs = await import('fs');
   const files = await fs.promises.readdir(`${process.cwd()}/content/simple-pages`);
 
