@@ -1,7 +1,7 @@
-import seo from 'data/seo.yml';
+import analytics from 'content/analytics.yml';
 
 const useGTag = () => ({
-  tagId: seo.ga,
+  tagId: analytics.ga,
 });
 
 export default useGTag;

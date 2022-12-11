@@ -1,6 +1,9 @@
 @use 'sass:color';
 
 .cookies-banner {
+  --cookies-banner-gap: 10px;
+  --cookies-banner-icon-size: 24px;
+
   z-index: 9999;
   position: fixed;
   width: 100%;
@@ -20,14 +23,32 @@
 
   .container {
     display: grid;
-    grid-template-areas: 'content refuse accept';
     grid-template-columns: minmax(0, 1fr) auto auto;
-    gap: 10px;
+    gap: var(--cookies-banner-gap);
     align-items: center;
 
     @include media-breakpoint-down(md) {
-      grid-template-areas: 'content content' 'refuse accept';
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+  }
+
+  &.cookies-banner--banner {
+    .container {
+      grid-template-areas: 'content more accept' 'links more accept';
+
+      @include media-breakpoint-down(md) {
+        grid-template-areas: 'content content' 'links links' 'more accept';
+      }
+    }
+  }
+
+  &.cookies-banner--options {
+    .container {
+      grid-template-areas: 'content content accept' 'links links accept' 'options options .';
+
+      @include media-breakpoint-down(md) {
+        grid-template-areas: 'content content' 'links links' 'options options' 'accept accept';
+      }
     }
   }
 }
@@ -36,7 +57,7 @@
   grid-area: content;
   flex: 1 1 auto;
   display: flex;
-  gap: 10px;
+  gap: var(--cookies-banner-gap);
 }
 
 .cookies-banner__btn {
@@ -53,15 +74,15 @@
   grid-area: accept;
 }
 
-.cookies-banner__btn--refuse {
-  grid-area: refuse;
+.cookies-banner__btn--more {
+  grid-area: more;
 }
 
 .cookies-banner__info {
   flex: 1 0 auto;
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: var(--cookies-banner-icon-size);
+  height: var(--cookies-banner-icon-size);
   border-radius: 50%;
   background-color: $primary;
   background-image: none;
@@ -71,5 +92,41 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.cookies-banner__links {
+  grid-area: links;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding-left: calc(var(--cookies-banner-gap) + var(--cookies-banner-icon-size));
+
+  a {
+    color: $light;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.cookies-banner__options {
+  grid-area: options;
+  padding-left: calc(var(--cookies-banner-gap) + var(--cookies-banner-icon-size));
+  display: flex;
+  flex-direction: column;
+  gap: var(--cookies-banner-gap);
+}
+
+.cookies-banner__option {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  .form-check-input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
   }
 }

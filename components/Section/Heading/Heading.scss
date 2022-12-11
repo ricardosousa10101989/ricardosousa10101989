@@ -7,4 +7,8 @@
   @include media-breakpoint-down(sm) {
     font-size: 28px;
   }
+
+  body.pg-simple & {
+    text-align: center;
+  }
 }

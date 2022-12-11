@@ -4,7 +4,7 @@ import Section from 'components/Section/Section';
 
 import usePageData from 'hooks/usePageData';
 
-import seo from 'data/seo.yml';
+import general from 'content/general.yml';
 
 const Header = () => {
   const pageData = usePageData();
@@ -16,7 +16,7 @@ const Header = () => {
       id="hero"
     >
       <Image
-        alt={ seo.site_title }
+        alt={ general.site_title }
         className="hero__bg"
         priority
         quality={ 10 }

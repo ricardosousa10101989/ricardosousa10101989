@@ -1,0 +1,15 @@
+site_title: Planta&Corta
+description: Arquitetura paisagística e construção e manutenção de jardins.
+image: /media/share_logo_2.jpg
+contact_address: Estamos no GRANDE PORTO
+contact_map: https://goo.gl/maps/4Na181imrQNAMpNx6
+contact_phone: ""
+contact_email: geral@plantaecorta.pt
+social:
+  - label: A nossa página no Facebook
+    link: https://facebook.com/plantaecorta
+    icon: fa-brands fa-facebook-f
+  - label: O nosso Instagram
+    link: https://www.instagram.com/plantaecorta
+    icon: fa-brands fa-instagram
+footer: © Planta&Corta 2022

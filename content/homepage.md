@@ -1,6 +1,4 @@
 ---
-i18nlanguage: pt-i
-title: Enter here to edit.
 hero_text: Mexer na terra é um vício...
 hero_image: /media/20190401_140137181_ios.jpg
 services_title: O que fazemos
@@ -36,18 +34,6 @@ portfolio:
     title: Manutenção de jardim
 about_title: QUEM SOMOS
 contact_title: Contacte-nos e peça o seu orçamento
-contact_address: Estamos no GRANDE PORTO
-contact_map: https://goo.gl/maps/4Na181imrQNAMpNx6
-contact_phone: ""
-contact_email: geral@plantaecorta.pt
-social:
-  - label: A nossa página no Facebook
-    link: https://facebook.com/plantaecorta
-    icon: fa-brands fa-facebook-f
-  - label: O nosso Instagram
-    link: https://www.instagram.com/plantaecorta
-    icon: fa-brands fa-instagram
-footer: © Planta&Corta 2022
 ---
 Com a **nossa ajuda** queremos que passe bons momentos em contacto com a natureza!
 

@@ -1,8 +1,8 @@
-import seo from 'data/seo.yml';
+import analytics from 'content/analytics.yml';
 
 const useFPixel = () => ({
-  eventIds: seo.fpe,
-  pixelId: seo.fp,
+  eventIds: analytics.fpe,
+  pixelId: analytics.fp,
 });
 
 export default useFPixel;

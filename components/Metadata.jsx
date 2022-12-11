@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import seo from 'data/seo.yml';
+import general from 'content/general.yml';
 
 import useRouter from 'hooks/useRouter';
 
@@ -12,15 +12,15 @@ const Metadata = () => {
 
   return (
     <Head>
-      <title>{ seo.site_title }</title>
-      <meta name="twitter:title" property="og:title" content={ seo.site_title } />
+      <title>{ general.site_title }</title>
+      <meta name="twitter:title" property="og:title" content={ general.site_title } />
 
       <link rel="canonical" href={ absoluteUrl(path) } />
       <meta property="og:url" content={ absoluteUrl(path) } />
 
-      <meta name="twitter:description" property="og:description" content={ seo.description } />
-      <meta name="description" content={ seo.description } />
-      <meta name="twitter:image" property="og:image" content={ absoluteUrl(seo.image) } />
+      <meta name="twitter:description" property="og:description" content={ general.description } />
+      <meta name="description" content={ general.description } />
+      <meta name="twitter:image" property="og:image" content={ absoluteUrl(general.image) } />
 
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />

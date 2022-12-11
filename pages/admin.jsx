@@ -19,8 +19,15 @@ const Admin = ({ branch, localBackend }) => {
   useEffect(() => {
     const initCMS = async () => {
       const CMS = (await import('netlify-cms-app')).default;
+      const { pt } = await import('netlify-cms-locales');
       const { origin } = window.location;
 
+      // Some customizations
+      pt.app.header.media = 'Media';
+      pt.mediaLibrary.mediaLibrary.onDelete = 'Tem certeza de que deseja excluir a media selecionada?';
+      pt.mediaLibrary.mediaLibraryModal.mediaAssets = 'Recursos de media';
+
+      CMS.registerLocale('pt', pt);
       CMS.init({
         config: {
           backend: { branch },

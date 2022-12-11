@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -7,14 +7,18 @@ import Link from 'components/Link';
 import NavBarItem from 'components/NavBar/Item/Item';
 
 import useClickOutside from 'hooks/useClickOutside';
+import useDrawerMenu from 'hooks/useDrawerMenu';
+import useRouter from 'hooks/useRouter';
 
 import addPassiveEventListener from 'utils/addPassiveEventListener';
 
-import seo from 'data/seo.yml';
+import general from 'content/general.yml';
 
 import svgLogoHeader from './assets/logo-header.svg';
 
 const NavBar = () => {
+  const { pathname } = useRouter();
+
   useEffect(() => {
     const handler = () => {
       const { scrollY } = window;
@@ -36,18 +40,18 @@ const NavBar = () => {
     return addPassiveEventListener(window, 'scroll', handler);
   }, []);
 
-  const [ mobile, setMobile ] = useState(false);
+  const [ drawerMenu, setDrawerMenu ] = useDrawerMenu();
 
   const onClickOutside = useCallback(() => {
-    setMobile(false);
-  }, []);
+    setDrawerMenu(false);
+  }, [ setDrawerMenu ]);
 
   const clickOutside = useClickOutside(onClickOutside);
 
   return (
     <nav
       className={ classnames('navbar navbar-expand-md fixed-top', {
-        'navbar--expanded': mobile,
+        'navbar--expanded': drawerMenu,
       }) }
       ref={ clickOutside }
     >
@@ -55,10 +59,10 @@ const NavBar = () => {
         <Link
           aria-label="To top"
           className="navbar-brand"
-          to="#hero"
+          to={ pathname === '/' ? '#hero' : '/' }
         >
           <Image
-            alt={ seo.site_title }
+            alt={ general.site_title }
             className="navbar-logo"
             src={ svgLogoHeader }
           />
@@ -68,7 +72,7 @@ const NavBar = () => {
           aria-label="Toggle navigation"
           className="navbar-toggler"
           onClick={ () => {
-            setMobile(!mobile);
+            setDrawerMenu(!drawerMenu);
           } }
           type="button"
         >
@@ -76,30 +80,28 @@ const NavBar = () => {
         </button>
 
         <div className="navbar-nav navbar-right">
-          <NavBarItem
-            id="services"
-            onClick={ () => setMobile(false) }
-          >
-            Serviços
-          </NavBarItem>
-          <NavBarItem
-            id="portfolio"
-            onClick={ () => setMobile(false) }
-          >
-            Portfolio
-          </NavBarItem>
-          <NavBarItem
-            id="about"
-            onClick={ () => setMobile(false) }
-          >
-            Acerca
-          </NavBarItem>
-          <NavBarItem
-            id="contact"
-            onClick={ () => setMobile(false) }
-          >
-            Contacto
-          </NavBarItem>
+          { pathname === '/' && (
+            <>
+              <NavBarItem id="services">
+                Serviços
+              </NavBarItem>
+              <NavBarItem id="portfolio">
+                Portfolio
+              </NavBarItem>
+              <NavBarItem id="about">
+                Acerca
+              </NavBarItem>
+              <NavBarItem id="contact">
+                Contacto
+              </NavBarItem>
+            </>
+          ) }
+
+          { pathname !== '/' && (
+            <NavBarItem to="/">
+              Página Principal
+            </NavBarItem>
+          ) }
         </div>
       </div>
     </nav>

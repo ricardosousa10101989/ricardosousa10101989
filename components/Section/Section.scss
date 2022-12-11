@@ -4,4 +4,10 @@ section.main-section {
   .container {
     --bs-gutter-x: 3rem;
   }
+
+  body.pg-simple & {
+    &:first-of-type {
+      padding-top: 256px;
+    }
+  }
 }

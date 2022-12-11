@@ -11,7 +11,9 @@ const Section = forwardRef(({
   // eslint-disable-next-line arrow-body-style
   useEffect(() => {
     return () => {
-      unregister(id);
+      if (id) {
+        unregister(id);
+      }
     };
   }, [ id, unregister ]);
 
@@ -20,7 +22,9 @@ const Section = forwardRef(({
       className={ classnames('main-section', className) }
       id={ id }
       ref={ el => {
-        register(id, el);
+        if (id) {
+          register(id, el);
+        }
 
         if (typeof ref === 'function') {
           ref(el);

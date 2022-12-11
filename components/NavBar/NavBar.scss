@@ -1,26 +1,60 @@
 .navbar {
+  --navbar-padding: 32px;
+  --navbar-height: 150px;
+
   display: flex;
   align-items: stretch;
-  height: 150px;
-  padding: 32px 0 0;
+  height: var(--navbar-height);
+  padding: var(--navbar-padding) 0 0;
   border: 0;
   background-color: transparent;
   background-image: linear-gradient(to bottom, $dark, transparent);
   transition: all 0.3s;
 
   @include media-breakpoint-down(md) {
-    height: 74px;
-    padding-top: 0;
+    --navbar-height: 74px;
+    --navbar-padding: 0;
 
     &.navbar--expanded {
       background-color: $dark;
     }
   }
 
-  body.scrolled & {
+  body.pg-simple & {
+    --navbar-height: 182px;
+
     background-color: $dark;
-    height: 74px;
-    padding-top: 0;
+    background-image: none;
+    padding-bottom: var(--navbar-padding);
+
+    @include media-breakpoint-down(md) {
+      --navbar-height: 74px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: calc(var(--navbar-height) * 1.5);
+        background-color: $dark;
+        transition: all 0.3s;
+      }
+    }
+  }
+
+  body:not(.scrolled) &.navbar--expanded,
+  body.scrolled & {
+    --navbar-height: 74px;
+
+    background-color: $dark;
+    padding: 0;
+
+    @include media-breakpoint-down(md) {
+      &::after {
+        height: 0;
+      }
+    }
   }
 
   .container {
@@ -84,6 +118,7 @@
     width: 100%;
     top: 100%;
     left: 0;
+    z-index: 2;
     max-height: 0;
     opacity: 0;
     overflow-y: hidden;

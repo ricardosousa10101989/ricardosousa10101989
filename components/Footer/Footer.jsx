@@ -2,18 +2,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Link from 'components/Link';
 
-import usePageData from 'hooks/usePageData';
+import general from 'content/general.yml';
 
+// eslint-disable-next-line arrow-body-style
 const Footer = () => {
-  const pageData = usePageData();
-
   return (
     <footer>
       <div className="container footer__container">
         <div className="row">
-          { !!pageData?.social.length && (
+          { !!general.social.length && (
             <ul className="list-inline social-buttons">
-              { pageData.social.map(social => (
+              { general.social.map(social => (
                 <li key={ social.link }>
                   <Link
                     aria-label={ social.label }
@@ -28,7 +27,15 @@ const Footer = () => {
         </div>
 
         <div className="row">
-          <div className="copyright">{ pageData?.footer }</div>
+          <div className="footer__links">
+            <Link to="/condicoes-de-utilizacao">Condições de Utilização</Link>
+            <Link to="/politica-de-privacidade">Política de Privacidade</Link>
+            <Link to="/cookies">Política de Cookies</Link>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="copyright">{ general?.footer }</div>
         </div>
       </div>
     </footer>

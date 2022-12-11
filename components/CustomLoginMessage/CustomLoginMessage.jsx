@@ -12,7 +12,7 @@ const CustomLogin = () => {
       />
 
       <h3 className="custom-login-message__title">
-        Manage here your amazing content.
+        Edite aqui o seu conteúdo!
       </h3>
     </div>
   );

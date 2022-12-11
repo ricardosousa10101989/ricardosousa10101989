@@ -197,7 +197,7 @@ const Portfolio = () => {
             }
           } }
         >
-          { pageData?.portfolio.map(item => (
+          { pageData?.portfolio?.map(item => (
             <button
               key={ item.image }
               aria-label="Expand portfolio photo"

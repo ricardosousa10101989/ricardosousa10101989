@@ -1,8 +1,6 @@
 import About from 'components/About/About';
 import Contact from 'components/Contact/Contact';
-import Footer from 'components/Footer/Footer';
 import Hero from 'components/Hero/Hero';
-import NavBar from 'components/NavBar/NavBar';
 import Portfolio from 'components/Portfolio/Portfolio';
 import Services from 'components/Services/Services';
 
@@ -10,15 +8,27 @@ import Services from 'components/Services/Services';
 const Homepage = () => {
   return (
     <>
-      <NavBar />
       <Hero />
       <Services />
       <Portfolio />
       <About />
       <Contact />
-      <Footer />
     </>
   );
+};
+
+export const getStaticProps = async ({ params }) => {
+  const fs = await import('fs');
+  const yamlFront = await import('yaml-front-matter');
+  const contents = await fs.promises.readFile(`${process.cwd()}/content/homepage.md`);
+  const pageData = yamlFront.loadFront(contents);
+
+  return {
+    props: {
+      ...params,
+      pageData,
+    },
+  };
 };
 
 export default Homepage;

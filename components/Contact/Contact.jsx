@@ -8,6 +8,8 @@ import SectionHeading from 'components/Section/Heading/Heading';
 import useContactForm from 'hooks/useContactForm';
 import usePageData from 'hooks/usePageData';
 
+import general from 'content/general.yml';
+
 const Contact = ({ netlify }) => {
   const pageData = usePageData();
 
@@ -170,27 +172,27 @@ const Contact = ({ netlify }) => {
 
         <div className="row">
           <div className="contacts-url col-lg-12 text-center">
-            { !!pageData?.contact_address && (
+            { !!general.contact_address && (
               <div className="contacts-url__address">
-                <Link to={ pageData.contact_map }>
+                <Link to={ general.contact_map }>
                   <FontAwesomeIcon icon="fa-solid fa-map-location-dot" />
-                  { pageData.contact_address }
+                  { general.contact_address }
                 </Link>
               </div>
             ) }
 
-            { !!pageData?.contact_phone && (
+            { !!general.contact_phone && (
               <div className="contacts-url__phone">
-                <Link to={ `tel:${pageData.contact_phone.replace(/ /g, '')}` }>
-                  { pageData.contact_phone }
+                <Link to={ `tel:${general.contact_phone.replace(/ /g, '')}` }>
+                  { general.contact_phone }
                 </Link>
               </div>
             ) }
 
-            { !!pageData?.contact_email && (
+            { !!general.contact_email && (
               <div className="contacts-url__email">
-                <Link to={ `mailto:${pageData.contact_email}` }>
-                  { pageData.contact_email }
+                <Link to={ `mailto:${general.contact_email}` }>
+                  { general.contact_email }
                 </Link>
               </div>
             ) }

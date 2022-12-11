@@ -4,7 +4,7 @@ import {
 
 import absoluteUrl from 'utils/absoluteUrl';
 
-import seo from 'data/seo.yml';
+import analytics from 'content/analytics.yml';
 
 // We shouldn't have any logic here, if we ever want to change the lang attribute (i.e. site
 // becomes multilang), we'll need to find another way, possibly through getInitialProps();
@@ -16,7 +16,7 @@ const Document = () => (
       <meta charSet="utf-8" />
       <meta name="theme-color" content="#0d153e" />
 
-      <meta name="google-site-verification" content={ seo.google_verification } />
+      <meta name="google-site-verification" content={ analytics.google_verification } />
 
       <link rel="shortcut icon" href={ absoluteUrl('/meta/favicon.ico') } />
       <link rel="icon" sizes="16x16 32x32 64x64" href={ absoluteUrl('/meta/favicon.ico') } />
