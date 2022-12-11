@@ -3,7 +3,15 @@ import absoluteUrl from 'utils/absoluteUrl';
 const SiteMapXml = () => null;
 
 export const getServerSideProps = async ({ req, res }) => {
-  const lastmod = (new Date()).toISOString();
+  const fs = await import('fs');
+  const fileLocation = `${process.cwd()}/.build-time`;
+
+  if (!fs.existsSync(fileLocation)) {
+    const timestamp = (new Date()).toISOString();
+    await fs.promises.writeFile(fileLocation, timestamp);
+  }
+
+  const lastmod = await fs.promises.readFile(fileLocation);
 
   const urls = [
     {

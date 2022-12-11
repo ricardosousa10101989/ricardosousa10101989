@@ -11,6 +11,7 @@ node_modules/
 .artifact-server
 .next/
 _next/
+.build-time
 .eslintcache
 .stylelintcache
 
