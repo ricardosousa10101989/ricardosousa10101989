@@ -15,6 +15,10 @@ module.exports = withYaml({
       source: '/robots.txt',
       destination: '/api/robots',
     },
+    {
+      source: '/sitemap.xml',
+      destination: '/api/sitemap',
+    },
   ],
 
   // Need this for the /admin path to work properly, as without it Netlify CMS will try to use hash
