@@ -3,12 +3,11 @@ import absoluteUrl from 'utils/absoluteUrl';
 const SiteMapXml = () => null;
 
 export const getServerSideProps = async ({ req, res }) => {
-  const { execSync } = await import('child_process');
-  const lastTimestamp = execSync('git show -s --format=%ct HEAD').toString();
-  const lastmod = (new Date(Number(lastTimestamp) * 1000)).toISOString();
-
   const fs = await import('fs');
   const files = await fs.promises.readdir(`${process.cwd()}/content/simple-pages`);
+
+  const lastTimestamp = (await fs.promises.stat(`${process.cwd()}/.next/build-manifest.json`)).mtimeMs;
+  const lastmod = (new Date(lastTimestamp)).toISOString();
 
   const urls = [
     {
