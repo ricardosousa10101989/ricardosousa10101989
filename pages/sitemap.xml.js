@@ -37,10 +37,14 @@ ${urls.map(url => `<url>
   <changefreq>${url.changefreq}</changefreq>
   <priority>${url.priority}</priority>
 </url>
-`)}
+`).join('')}
 </urlset>
 `);
   res.end();
+
+  return {
+    props: {},
+  };
 };
 
 export default SiteMapXml;
