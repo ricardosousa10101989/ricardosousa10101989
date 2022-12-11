@@ -3,11 +3,9 @@ import absoluteUrl from 'utils/absoluteUrl';
 const SiteMapXml = () => null;
 
 export const getServerSideProps = async ({ req, res }) => {
-  const fs = await import('fs');
-  const stat = await fs.promises.stat(`${process.cwd()}/.next/build-manifest.json`);
-  const lastTimestamp = stat.mtimeMs || stat.ctimeMs;
-  const lastmod = (new Date(lastTimestamp)).toISOString();
-  console.log({ stat });
+  // Always a new date, because there's no apparent way of getting a proper build timestamp here.
+  const lastmod = (new Date()).toISOString();
+
   const urls = [
     {
       changefreq: 'monthly',
