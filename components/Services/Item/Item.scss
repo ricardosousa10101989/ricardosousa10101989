@@ -1,0 +1,63 @@
+.services__item {
+  --services-offset: 200px;
+
+  position: relative;
+
+  @include media-breakpoint-down(md) {
+    --services-offset: 100px;
+  }
+
+  &:nth-child(odd) {
+    margin-left: var(--services-offset);
+
+    @include media-breakpoint-down(sm) {
+      margin-left: calc(var(--services-offset) / 3);
+      margin-right: calc(var(--services-offset) / 3);
+    }
+  }
+
+  &:nth-child(even) {
+    margin-right: var(--services-offset);
+
+    @include media-breakpoint-down(sm) {
+      margin-left: calc(var(--services-offset) / 3);
+      margin-right: calc(var(--services-offset) / 3);
+    }
+  }
+}
+
+.services__title {
+  position: relative;
+  z-index: 2;
+  color: $dark;
+  font-size: 20px;
+  margin-bottom: 2em;
+
+  @include media-breakpoint-up(md) {
+    font-size: 22.5px;
+  }
+}
+
+.services__icon {
+  position: absolute;
+  opacity: 0.125;
+  top: -148px;
+  width: 340px;
+  height: 340px;
+  color: $primary;
+
+  .services__item:nth-child(odd) & {
+    left: calc(var(--services-offset) * -1.2);
+  }
+
+  .services__item:nth-child(even) & {
+    right: calc(var(--services-offset) * -1.2);
+  }
+}
+
+.services__detail {
+  position: relative;
+  z-index: 2;
+  font-size: 18px;
+  color: $section-text;
+}

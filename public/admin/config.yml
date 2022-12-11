@@ -1,0 +1,193 @@
+backend:
+  name: github
+  repo: ricardosousa10101989/ricardosousa10101989.github.io
+
+locale: pt
+
+media_folder: /public/media
+public_folder: /media
+
+collections:
+  - name: general
+    label: Geral
+    create: false
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: general
+        label: Informações do Site
+        file: "content/general.yml"
+        format: yaml
+        fields:
+          - name: site_title
+            label: Nome do Site
+            widget: string
+          - name: description
+            label: Descrição
+            widget: string
+            required: false
+          - name: image
+            label: Imagem de Partilha
+            widget: image
+            required: false
+          - name: contact_address
+            label: Endereço
+            widget: string
+            required: false
+          - name: contact_map
+            label: Mapa
+            widget: string
+            required: false
+          - name: contact_phone
+            label: Telefone
+            widget: string
+            required: false
+          - name: contact_email
+            label: Email
+            widget: string
+            required: false
+          - name: social
+            label: Links Socias
+            widget: list
+            required: false
+            fields:
+              - name: label
+                label: Nome
+                widget: string
+              - name: link
+                label: Endereço
+                widget: string
+              - name: icon
+                label: Ícone
+                widget: string
+          - name: footer
+            label: Mensagem de Rodapé
+            widget: string
+            required: false
+      - name: analytics
+        label: Analytics
+        file: "content/analytics.yml"
+        format: yaml
+        fields:
+          - name: google_verification
+            label: Código de Verificação de Site da Google
+            widget: string
+            required: false
+          - label: Código de Tracking do Google Analytics
+            name: ga
+            widget: string
+            required: false
+          - label: ID de Facebook Pixel
+            name: fp
+            widget: string
+            required: false
+          - label: Eventos de Facebook Pixel
+            name: fpe
+            widget: list
+            required: false
+            fields:
+              - label: Evento
+                name: event
+                widget: string
+      - name: cookies_banner
+        label: Banner de Cookies
+        file: "content/cookies_banner.yml"
+        format: yaml
+        fields:
+          - name: message
+            label: Mensagem GDPR
+            widget: string
+          - name: accept
+            label: Botão Aceitar
+            widget: string
+          - name: more
+            label: Botão Mais Opções
+            widget: string
+          - name: save
+            label: Botão Guardar
+            widget: string
+          - name: options
+            label: Botão Opções (na página de cookies)
+            widget: string
+          - name: analytics
+            label: Opção Analytics
+            widget: string
+          - name: marketing
+            label: Opção Marketing
+            widget: string
+
+  - name: content
+    label: Conteúdo
+    create: false
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: "Página Principal"
+        name: "homepage"
+        file: "content/homepage.md"
+        format: yaml-frontmatter
+        fields:
+          - name: hero_text
+            label: Hero - Texto
+            widget: string
+          - name: hero_image
+            label: Hero - Imagem
+            widget: image
+          - name: services_title
+            label: Serviços - Título de Secção
+            widget: string
+          - name: services
+            label: Serviços
+            widget: list
+            fields:
+              - name: title
+                label: Título
+                widget: string
+              - name: icon
+                label: Icon
+                widget: string
+              - name: detail
+                label: Detalhe
+                widget: markdown
+          - name: portfolio_title
+            label: Portfolio - Título de Secção
+            widget: string
+          - name: portfolio
+            label: Portfolio
+            widget: list
+            fields:
+              - name: image
+                label: Imagem
+                widget: image
+              - name: title
+                label: Título
+                widget: string
+                required: false
+          - name: about_title
+            label: Acerca - Título de Secção
+            widget: string
+          - name: body
+            label: Acerca - Conteúdo
+            widget: markdown
+          - name: contact_title
+            label: Contact - Título de Secção
+            widget: string
+
+  - name: simple_pages
+    label: Páginas Simples
+    create: false
+    delete: false
+    editor:
+      preview: false
+    folder: content/simple-pages
+    extension: md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Título
+        widget: string
+      - name: body
+        label: Conteúdo
+        widget: markdown

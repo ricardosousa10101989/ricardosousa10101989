@@ -1,0 +1,15 @@
+@mixin safari {
+  // stylelint-disable-next-line scss/media-feature-value-dollar-variable
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) { // sass-lint:disable-line no-vendor-prefixes
+      @content;
+    }
+  }
+}
+
+@mixin ie {
+  // stylelint-disable-next-line scss/media-feature-value-dollar-variable
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}

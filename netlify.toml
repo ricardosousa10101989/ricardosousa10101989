@@ -1,32 +1,12 @@
-# Global settings applied to the whole site.
 [build]
-  base    = ""
-  publish = "public"
-  command = "yarn build"
+  base = ""
+  command = "yarn next build"
+  publish = ".next"
 
-# Production context: All deploys to the main
-# repository branch will inherit these settings.
-[context.production.environment]
-  HUGO_VERSION = "0.66.0"
-  NODE_VERSION = "12.13.1"
+[build.environment]
+  NODE_VERSION = "16.14.0"
   NODE_ENV = "production"
-  YARN_VERSION = "1.22.0"
-  YARN_FLAGS = "--no-ignore-optional"
+  YARN_VERSION = "3.3.0"
 
-# Deploy Preview context: All Deploy Previews
-# will inherit these settings.
-[context.deploy-preview.environment]
-  HUGO_VERSION = "0.66.0"
-  NODE_VERSION = "12.13.1"
-  NODE_ENV = "production"
-  YARN_VERSION = "1.22.0"
-  YARN_FLAGS = "--no-ignore-optional"
-
-# Branch Deploy context: All Branch Deploys
-# will inherit these settings.
-[context.branch-deploy.environment]
-  HUGO_VERSION = "0.66.0"
-  NODE_VERSION = "12.13.1"
-  NODE_ENV = "production"
-  YARN_VERSION = "1.22.0"
-  YARN_FLAGS = "--no-ignore-optional"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

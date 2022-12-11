@@ -1,0 +1,14 @@
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 75px;
+  font-size: 40px;
+  font-weight: 400;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 28px;
+  }
+
+  body.pg-simple & {
+    text-align: center;
+  }
+}

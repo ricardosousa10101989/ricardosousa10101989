@@ -1,0 +1,64 @@
+// stylelint-disable selector-class-pattern
+
+.custom-login-message {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    top: calc(50vh - 175px);
+  }
+
+  .logged-in & {
+    display: none;
+  }
+}
+
+.custom-login-message__image {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.custom-login-message__title {
+  margin: 0 auto;
+  color: #777;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: none;
+
+  @include media-breakpoint-up(md) {
+    font-size: 25px;
+    line-height: 28px;
+  }
+}
+
+span[class*='IconWrapper-NetlifyLogoIcon'],
+span[class*='IconWrapper-PageLogoIcon'] {
+  display: none !important;
+}
+
+button[class*='LoginButton-button-default'] {
+  top: 160px;
+  margin-top: 0 !important;
+}
+
+.logged-in {
+  // .nc-entryEditor-containerOuter { // Netlify-cms 1.9.2
+  .e1pxf6c40,
+  .e1pxf6c41 {
+    padding-bottom: 44px;
+  }
+
+  div[class*='SidebarContainer-card'] {
+    max-height: calc(100vh - 132px);
+  }
+
+  div[class*='CollectionMain'] {
+    padding-bottom: 20px;
+  }
+}
+
+h2[class*='ListCardTitle'] {
+  text-transform: none;
+}
