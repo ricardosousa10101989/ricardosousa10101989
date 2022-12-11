@@ -4,7 +4,7 @@ const getBaseUrl = () => {
   }
 
   // Netlify Deployment via Github Actions
-  if (process.env.PREFIX) {
+  if (process.env.PREFIX && process.env.PREFIX !== 'production') {
     return `https://${process.env.PREFIX}--${process.env.SITE_NAME}.netlify.app`;
   }
 
