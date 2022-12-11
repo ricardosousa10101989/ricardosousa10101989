@@ -4,7 +4,8 @@ const SiteMapXml = () => null;
 
 export const getServerSideProps = async ({ req, res }) => {
   const fs = await import('fs');
-  const lastTimestamp = (await fs.promises.stat(`${process.cwd()}/.next/build-manifest.json`)).mtimeMs;
+  const stat = await fs.promises.stat(`${process.cwd()}/.next/build-manifest.json`);
+  const lastTimestamp = stat.mtimeMs || stat.ctimeMs;
   const lastmod = (new Date(lastTimestamp)).toISOString();
 
   const urls = [
