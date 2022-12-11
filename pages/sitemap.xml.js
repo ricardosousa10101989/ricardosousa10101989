@@ -4,14 +4,8 @@ const SiteMapXml = () => null;
 
 export const getServerSideProps = async ({ req, res }) => {
   const fs = await import('fs');
-  const fileLocation = `${process.cwd()}/.build-time`;
-
-  if (!fs.existsSync(fileLocation)) {
-    const timestamp = (new Date()).toISOString();
-    await fs.promises.writeFile(fileLocation, timestamp);
-  }
-
-  const lastmod = await fs.promises.readFile(fileLocation);
+  const lastTimestamp = (await fs.promises.stat(`${process.cwd()}/.next/build-manifest.json`)).mtimeMs;
+  const lastmod = (new Date(lastTimestamp)).toISOString();
 
   const urls = [
     {
@@ -30,7 +24,6 @@ export const getServerSideProps = async ({ req, res }) => {
   ];
 
   res.setHeader('Content-Type', 'text/xml');
-  res.setHeader('Cache-Control', `public, s-maxage=${60 * 60 * 24 * 30}`);
   res.write(`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map(url => `<url>
