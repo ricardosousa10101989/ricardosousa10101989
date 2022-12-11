@@ -1,7 +1,7 @@
 import getBaseUrl from 'utils/getBaseUrl';
 
-const absoluteUrl = url => (url.startsWith('/')
-  ? `${getBaseUrl()}${url}`
+const absoluteUrl = (url, req) => (url.startsWith('/')
+  ? `${getBaseUrl(req)}${url}`
   : url
 );
 

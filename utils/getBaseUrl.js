@@ -1,6 +1,10 @@
-const getBaseUrl = () => {
+const getBaseUrl = req => {
   if (typeof window !== 'undefined') {
     return window.location.origin;
+  }
+
+  if (req?.headers?.host) {
+    return `http${!req.headers.host.startsWith('localhost') ? 's' : ''}://${req.headers.host}`;
   }
 
   // Netlify Deployment via Github Actions
