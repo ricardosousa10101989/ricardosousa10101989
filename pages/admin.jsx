@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import CustomLoginMessage from 'components/CustomLoginMessage/CustomLoginMessage';
 
-import netlify from 'utils/netlify';
+// import netlify from 'utils/netlify';
 
 const SELECTORS = {
   container: '.css-v758ki-AppMainContainer',
@@ -45,33 +45,35 @@ const Admin = ({ branch, localBackend }) => {
         .forEach(style => CMS.registerPreviewStyle(style, { raw: true }));
     };
 
-    // Login is deferred to Netlify Identity Widget's.
-    (async () => {
-      const netlifyIdentity = await netlify.identity;
+    // We're leveraging Github auth, so we don't need Netlify Identity
+    // (async () => {
+    //   const netlifyIdentity = await netlify.identity;
 
-      const refreshAndInit = async () => {
-        await netlifyIdentity.refresh();
-        initCMS();
-      };
+    //   const refreshAndInit = async () => {
+    //     await netlifyIdentity.refresh();
+    //     initCMS();
+    //   };
 
-      const onInit = user => {
-        netlifyIdentity.on('login', refreshAndInit);
+    //   const onInit = user => {
+    //     netlifyIdentity.on('login', refreshAndInit);
 
-        if (!user) {
-          netlifyIdentity.open();
-        }
-        else {
-          refreshAndInit();
-        }
-      };
+    //     if (!user) {
+    //       netlifyIdentity.open();
+    //     }
+    //     else {
+    //       refreshAndInit();
+    //     }
+    //   };
 
-      if (netlifyIdentity.gotrue) {
-        onInit(netlifyIdentity.currentUser());
-      }
-      else {
-        netlifyIdentity.on('init', onInit);
-      }
-    })();
+    //   if (netlifyIdentity.gotrue) {
+    //     onInit(netlifyIdentity.currentUser());
+    //   }
+    //   else {
+    //     netlifyIdentity.on('init', onInit);
+    //   }
+    // })();
+
+    initCMS();
   }, [ branch, localBackend ]);
 
   useEffect(() => {

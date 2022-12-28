@@ -11,7 +11,7 @@ import usePageData from 'hooks/usePageData';
 import useRouter from 'hooks/useRouter';
 
 import 'scss/style.scss';
-import 'utils/netlify';
+// import 'utils/netlify';
 
 // `require()` instead of `import` due to https://github.com/FortAwesome/Font-Awesome/issues/19348
 const { config, library } = require('@fortawesome/fontawesome-svg-core');
