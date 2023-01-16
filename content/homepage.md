@@ -33,7 +33,7 @@ portfolio:
   - image: /media/20220118_142127592_ios.jpg
     title: Manutenção de jardim
 about_title: QUEM SOMOS
-contact_title: Deixe aqui o seu pedido de orçamento/contacto
+contact_title: Deixe aqui o seu pedido de orçamento / contacto
 ---
 Com a **nossa ajuda** queremos que passe bons momentos em contacto com a natureza!
 
