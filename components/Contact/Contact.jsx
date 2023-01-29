@@ -9,12 +9,12 @@ import Section from 'components/Section/Section';
 import SectionHeading from 'components/Section/Heading/Heading';
 
 import useContactForm from 'hooks/useContactForm';
-import usePageData from 'hooks/usePageData';
+// import usePageData from 'hooks/usePageData';
 
 import general from 'content/general.yml';
 
 const Contact = ({ netlify }) => {
-  const pageData = usePageData();
+  // const pageData = usePageData();
 
   const {
     contactForm, formRef, set, submit, valid,
