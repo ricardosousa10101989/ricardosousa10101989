@@ -184,7 +184,7 @@ const Contact = ({ netlify }) => {
             { !!general.contact_phone && (
               <div className="contacts-url__phone">
                 <Link to={ `tel:${general.contact_phone.replace(/ /g, '')}` }>
-                  { general.contact_phone }
+                  { `${general.contact_phone} (Chamada para rede móvel nacional)` }
                 </Link>
               </div>
             ) }
