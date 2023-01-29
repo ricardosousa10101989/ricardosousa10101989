@@ -1,9 +1,19 @@
 .contact {
+  --form-group-margin: 1.5em;
+
   position: relative;
   background-color: $dark;
 
   @include media-breakpoint-up(md) {
     padding-bottom: 100px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    --form-group-margin: 0.85em;
+  }
+
+  &.main-section {
+    padding-top: 0;
   }
 
   .section-heading {
@@ -19,9 +29,19 @@
     }
   }
 
+  .tns-controls {
+    display: none;
+  }
+
   .form-group {
     max-width: 760px;
-    margin: 0 auto 25px;
+    margin: 0 auto var(--form-group-margin);
+    display: flex;
+    gap: var(--form-group-margin);
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
 
     label:not(.form-check-label) {
       position: absolute;
@@ -62,6 +82,10 @@
     padding: 20px;
     border-radius: 0;
 
+    @include media-breakpoint-down(sm) {
+      padding: 8px;
+    }
+
     &:focus {
       outline: 2px solid $primary;
       outline-offset: 2px;
@@ -80,16 +104,95 @@
   font-size: 450px;
 }
 
+.contact__step {
+  position: relative;
+  padding-top: var(--section-padding);
+  overflow: hidden;
+  min-height: 300px;
+
+  .section-heading {
+    text-align: center;
+  }
+}
+
+.contact__actions {
+  display: flex;
+  gap: 1em;
+  margin: var(--section-heading-margin) auto 0;
+  justify-content: center;
+}
+
+.contact__back-btn {
+  background: none;
+  border-color: transparent;
+  color: rgba($white, 0.8);
+
+  &:hover {
+    background: rgba($white, 0.2);
+    border-color: transparent;
+    color: $white;
+  }
+}
+
+.contact__select-buttons {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: var(--form-group-margin);
+}
+
+.contact__select-button {
+  background: rgba($grey-light, 0.9);
+  border: 0;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  color: $white;
+
+  &:hover {
+    background: $grey-light;
+  }
+
+  &.contact__select-button--active {
+    background: $primary;
+  }
+}
+
+.contact__step__objective {
+  width: min-content;
+  text-transform: uppercase;
+}
+
+.contact__step__area {
+
+}
+
 .contact__checkboxes {
-  color: $light;
-  font-size: 18px;
-  text-align: left;
+  &.form-group {
+    color: $light;
+    font-size: 18px;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
+    }
+  }
 }
 
 .contact__checkboxes__item {
   margin-bottom: 16px;
   display: flex;
   gap: 12px;
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 8px;
+  }
 
   .form-check-input {
     padding: 10px;
@@ -107,29 +210,31 @@
 }
 
 .contact__success {
-  border: 1px solid $primary;
-  background: rgba($primary, 0.2);
   color: $light;
-  font-size: 24px;
+  font-size: 36px;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+  max-width: 85%;
 }
 
 .contact__error {
-  border: 1px solid $red;
-  background: rgba($red, 0.2);
   color: $light;
   font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
 }
 
 .contact__note {
   width: 100%;
   color: $light;
   text-align: left;
-  margin-bottom: 25px;
-}
-
-.contact__submit {
-  display: block;
-  margin: 0 auto;
 }
 
 .contacts-url {

@@ -6,10 +6,3 @@
     }
   }
 }
-
-@mixin ie {
-  // stylelint-disable-next-line scss/media-feature-value-dollar-variable
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    @content;
-  }
-}

@@ -1,5 +1,7 @@
 section.main-section {
-  padding: 10vh 0;
+  --section-padding: 10vh;
+
+  padding: var(--section-padding) 0;
 
   .container {
     --bs-gutter-x: 3rem;
