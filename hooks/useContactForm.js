@@ -96,11 +96,12 @@ const useContactForm = () => {
     });
 
     const { FormData, URLSearchParams } = window;
-    const formData = new FormData(formRef.current);
-    const body = new URLSearchParams(formData).toString();
+    const formData = new URLSearchParams(new FormData(formRef.current));
+    formData.append('objectivo', contactForm.objectivo);
+    formData.append('area', contactForm.area);
 
     fetch('/', {
-      body,
+      body: formData.toString(),
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
@@ -120,7 +121,7 @@ const useContactForm = () => {
           value: 'error',
         });
       });
-  }, [ set, validate ]);
+  }, [ contactForm, set, validate ]);
 
   return {
     contactForm, formRef, set, submit, valid,

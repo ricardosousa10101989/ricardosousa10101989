@@ -32,7 +32,7 @@ const Contact = ({ netlify }) => {
   });
 
   useEffect(() => {
-    if (container && tns) {
+    if (!netlify && container && tns) {
       slider.current = tns({
         autoHeight: true,
         center: true,
@@ -53,7 +53,7 @@ const Contact = ({ netlify }) => {
         preventScrollOnTouch: 'auto',
       });
     }
-  }, [ container, tns ]);
+  }, [ container, netlify, tns ]);
 
   return (
     <Section
