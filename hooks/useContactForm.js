@@ -97,6 +97,10 @@ const useContactForm = () => {
 
     const { FormData, URLSearchParams } = window;
     const formData = new URLSearchParams(new FormData(formRef.current));
+
+    // It appends objectivo twice, for reasons...
+    formData.delete('objectivo');
+    formData.delete('area');
     formData.append('objectivo', contactForm.objectivo);
     formData.append('area', contactForm.area);
 

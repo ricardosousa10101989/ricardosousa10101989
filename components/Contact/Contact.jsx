@@ -93,6 +93,13 @@ const Contact = ({ netlify }) => {
                     Em que podemos ajudar?
                   </SectionHeading>
 
+                  <input
+                    id="objective"
+                    name="objectivo"
+                    type="hidden"
+                    value={ contactForm.objectivo }
+                  />
+
                   <div className="contact__select-buttons">
                     <ContactSelectButton
                       className="contact__step__objective"
@@ -118,6 +125,13 @@ const Contact = ({ netlify }) => {
                   <SectionHeading>
                     Qual é a área do jardim?
                   </SectionHeading>
+
+                  <input
+                    id="area"
+                    name="area"
+                    type="hidden"
+                    value={ contactForm.area }
+                  />
 
                   <div className="contact__select-buttons">
                     <ContactSelectButton
