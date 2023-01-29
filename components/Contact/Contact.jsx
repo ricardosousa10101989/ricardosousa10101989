@@ -105,7 +105,7 @@ const Contact = ({ netlify }) => {
                       className="contact__step__objective"
                       name="objectivo"
                       onClick={ () => slider.current.goTo(1) }
-                      value="contrução"
+                      value="construção"
                     >
                       Construção de jardim
                     </ContactSelectButton>
