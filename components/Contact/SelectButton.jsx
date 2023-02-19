@@ -21,7 +21,9 @@ const SelectButton = ({
       } }
       type="button"
     >
-      { children }
+      <span className="contact__select-button__inner">
+        { children }
+      </span>
     </button>
   );
 };

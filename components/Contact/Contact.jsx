@@ -4,6 +4,11 @@ import 'tiny-slider/dist/tiny-slider.css';
 
 import ContactSelectButton from 'components/Contact/SelectButton';
 import Form from 'components/Form';
+import IconFlower from 'components/Icon/Flower';
+import IconForest from 'components/Icon/Forest/Forest';
+import IconLawnmower from 'components/Icon/Lawnmower';
+import IconPersonDigging from 'components/Icon/PersonDigging';
+import IconTree from 'components/Icon/Tree';
 import Link from 'components/Link';
 import Section from 'components/Section/Section';
 import SectionHeading from 'components/Section/Heading/Heading';
@@ -23,6 +28,7 @@ const Contact = ({ netlify }) => {
   const [ container, setContainer ] = useState(null);
   const [ tns, setTns ] = useState(null);
   const slider = useRef();
+  const nameRef = useRef();
 
   useEffect(() => {
     (async () => {
@@ -52,7 +58,24 @@ const Contact = ({ netlify }) => {
         // happening.
         preventScrollOnTouch: 'auto',
       });
+
+      const onIndexChange = () => {
+        const info = slider.current.getInfo();
+        if (info.index === 3) {
+          setTimeout(() => {
+            nameRef.current.focus();
+          }, 350);
+        }
+      };
+
+      slider.current.events.on('indexChanged', onIndexChange);
+
+      return () => {
+        slider.current.events.off('indexChanged', onIndexChange);
+      };
     }
+
+    return () => {};
   }, [ container, netlify, tns ]);
 
   return (
@@ -80,6 +103,14 @@ const Contact = ({ netlify }) => {
         >
           <div className="row">
             <div className="col-lg-12">
+              <SectionHeading className="contact__title">
+                Peça Aqui Orçamento
+              </SectionHeading>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-lg-12">
               <div
                 className="contact__steps"
                 ref={ el => {
@@ -90,7 +121,7 @@ const Contact = ({ netlify }) => {
               >
                 <div className="contact__step">
                   <SectionHeading>
-                    Em que podemos ajudar?
+                    Como podemos ajudar?
                   </SectionHeading>
 
                   <input
@@ -100,13 +131,14 @@ const Contact = ({ netlify }) => {
                     value={ contactForm.objectivo }
                   />
 
-                  <div className="contact__select-buttons">
+                  <div className="contact__select-buttons contact__select-buttons--objective">
                     <ContactSelectButton
                       className="contact__step__objective"
                       name="objectivo"
                       onClick={ () => slider.current.goTo(1) }
                       value="construção"
                     >
+                      <IconPersonDigging className="contact__select-button-image" />
                       Construção de jardim
                     </ContactSelectButton>
 
@@ -116,6 +148,7 @@ const Contact = ({ netlify }) => {
                       onClick={ () => slider.current.goTo(1) }
                       value="manutenção"
                     >
+                      <IconLawnmower className="contact__select-button-image" />
                       Manutenção de jardim
                     </ContactSelectButton>
                   </div>
@@ -133,14 +166,21 @@ const Contact = ({ netlify }) => {
                     value={ contactForm.area }
                   />
 
-                  <div className="contact__select-buttons">
+                  <div className="contact__select-buttons contact__select-buttons--area">
                     <ContactSelectButton
                       className="contact__step__area"
                       name="area"
                       onClick={ () => slider.current.goTo(2) }
                       value="-50"
                     >
-                      { '< 50m2' }
+                      <FontAwesomeIcon
+                        className="contact__select-button-image"
+                        icon="fa-solid fa-seedling"
+                      />
+                      <span>
+                        até 50m
+                        <sup>2</sup>
+                      </span>
                     </ContactSelectButton>
 
                     <ContactSelectButton
@@ -149,7 +189,13 @@ const Contact = ({ netlify }) => {
                       onClick={ () => slider.current.goTo(2) }
                       value="50-100"
                     >
-                      50m2 a 100m2
+                      <IconFlower className="contact__select-button-image" />
+                      <span>
+                        50m
+                        <sup>2</sup>
+                        { ' a 100m' }
+                        <sup>2</sup>
+                      </span>
                     </ContactSelectButton>
 
                     <ContactSelectButton
@@ -158,7 +204,13 @@ const Contact = ({ netlify }) => {
                       onClick={ () => slider.current.goTo(2) }
                       value="100-500"
                     >
-                      100m2 a 500m2
+                      <IconTree className="contact__select-button-image" />
+                      <span>
+                        100m
+                        <sup>2</sup>
+                        { ' a 500m' }
+                        <sup>2</sup>
+                      </span>
                     </ContactSelectButton>
 
                     <ContactSelectButton
@@ -167,7 +219,11 @@ const Contact = ({ netlify }) => {
                       onClick={ () => slider.current.goTo(2) }
                       value="500+"
                     >
-                      { '> 500m2' }
+                      <IconForest className="contact__select-button-image" />
+                      <span>
+                        maior que 500m
+                        <sup>2</sup>
+                      </span>
                     </ContactSelectButton>
                   </div>
 
@@ -194,6 +250,7 @@ const Contact = ({ netlify }) => {
                       name="nome"
                       onChange={ set }
                       placeholder="* Nome"
+                      ref={ nameRef }
                       required
                       value={ contactForm.nome }
                       type="text"
