@@ -104,6 +104,10 @@ const useContactForm = () => {
     formData.append('objectivo', contactForm.objectivo);
     formData.append('area', contactForm.area);
 
+    // Massage for Freshsales
+    formData.delete('subscrever marketing');
+    formData.append('subscrever marketing', contactForm['subscrever marketing'] ? '1' : '0');
+
     fetch('/', {
       body: formData.toString(),
       headers: {

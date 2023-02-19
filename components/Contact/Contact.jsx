@@ -151,7 +151,7 @@ const Contact = ({ netlify }) => {
                       className="contact__step__objective"
                       name="objectivo"
                       onClick={ onButtonClick(1) }
-                      value="construção"
+                      value="Construção"
                     >
                       <IconPersonDigging className="contact__select-button-image" />
                       Construção de jardim
@@ -161,7 +161,7 @@ const Contact = ({ netlify }) => {
                       className="contact__step__objective"
                       name="objectivo"
                       onClick={ onButtonClick(1) }
-                      value="manutenção"
+                      value="Manutenção"
                     >
                       <IconLawnmower className="contact__select-button-image" />
                       Manutenção de jardim
