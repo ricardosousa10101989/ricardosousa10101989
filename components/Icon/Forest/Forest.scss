@@ -8,6 +8,7 @@
     height: 100%;
     top: 0;
     left: 0;
+    transform-origin: bottom center;
 
     &:nth-child(1) {
       transform: translateX(22%);
@@ -15,7 +16,18 @@
 
     &:nth-child(2) {
       transform: translate(-44%, -10%) scale(0.45);
-      transform-origin: bottom center;
     }
+
+    &:nth-child(3) {
+      transform: translate(5%, -1%) scale(0.15);
+    }
+
+    // &:nth-child(4) {
+    //   transform: translate(39%, -1%) scale(0.1) scaleX(-1);
+    // }
+
+    // &:nth-child(5) {
+    //   transform: translate(-34%, -8%) scale(0.05);
+    // }
   }
 }
