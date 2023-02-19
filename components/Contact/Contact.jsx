@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import {
+  useCallback, useEffect, useRef, useState,
+} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'tiny-slider/dist/tiny-slider.css';
 
@@ -78,6 +80,19 @@ const Contact = ({ netlify }) => {
     return () => {};
   }, [ container, netlify, tns ]);
 
+  const onButtonClick = useCallback(idx => event => {
+    const pointerType = event?.nativeEvent?.pointerType || event?.pointerType;
+    const delay = [ 'pen', 'touch' ].includes(pointerType) ? 350 : 0;
+
+    const timeoutId = setTimeout(() => {
+      slider.current.goTo(idx);
+    }, delay);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   return (
     <Section
       className="contact"
@@ -97,7 +112,7 @@ const Contact = ({ netlify }) => {
           netlify={ netlify }
           onSubmit={ event => {
             submit(event);
-            slider.current.goTo(4);
+            onButtonClick(4)(event);
           } }
           ref={ formRef }
         >
@@ -135,7 +150,7 @@ const Contact = ({ netlify }) => {
                     <ContactSelectButton
                       className="contact__step__objective"
                       name="objectivo"
-                      onClick={ () => slider.current.goTo(1) }
+                      onClick={ onButtonClick(1) }
                       value="construção"
                     >
                       <IconPersonDigging className="contact__select-button-image" />
@@ -145,7 +160,7 @@ const Contact = ({ netlify }) => {
                     <ContactSelectButton
                       className="contact__step__objective"
                       name="objectivo"
-                      onClick={ () => slider.current.goTo(1) }
+                      onClick={ onButtonClick(1) }
                       value="manutenção"
                     >
                       <IconLawnmower className="contact__select-button-image" />
@@ -170,7 +185,7 @@ const Contact = ({ netlify }) => {
                     <ContactSelectButton
                       className="contact__step__area"
                       name="area"
-                      onClick={ () => slider.current.goTo(2) }
+                      onClick={ onButtonClick(2) }
                       value="-50"
                     >
                       <FontAwesomeIcon
@@ -186,7 +201,7 @@ const Contact = ({ netlify }) => {
                     <ContactSelectButton
                       className="contact__step__area"
                       name="area"
-                      onClick={ () => slider.current.goTo(2) }
+                      onClick={ onButtonClick(2) }
                       value="50-100"
                     >
                       <IconFlower className="contact__select-button-image" />
@@ -201,7 +216,7 @@ const Contact = ({ netlify }) => {
                     <ContactSelectButton
                       className="contact__step__area"
                       name="area"
-                      onClick={ () => slider.current.goTo(2) }
+                      onClick={ onButtonClick(2) }
                       value="100-500"
                     >
                       <IconTree className="contact__select-button-image" />
@@ -216,7 +231,7 @@ const Contact = ({ netlify }) => {
                     <ContactSelectButton
                       className="contact__step__area"
                       name="area"
-                      onClick={ () => slider.current.goTo(2) }
+                      onClick={ onButtonClick(2) }
                       value="500+"
                     >
                       <IconForest className="contact__select-button-image" />
@@ -230,7 +245,7 @@ const Contact = ({ netlify }) => {
                   <div className="contact__actions">
                     <button
                       className="contact__back-btn btn btn-lg btn-primary"
-                      onClick={ () => slider.current.goTo(0) }
+                      onClick={ onButtonClick(0) }
                       type="button"
                     >
                       Voltar atrás
@@ -342,7 +357,7 @@ const Contact = ({ netlify }) => {
                   <div className="contact__actions">
                     <button
                       className="contact__back-btn btn btn-lg btn-primary"
-                      onClick={ () => slider.current.goTo(1) }
+                      onClick={ onButtonClick(1) }
                       type="button"
                     >
                       Voltar atrás
@@ -351,9 +366,7 @@ const Contact = ({ netlify }) => {
                     <button
                       className="contact__submit btn btn-primary btn-lg"
                       disabled={ !valid }
-                      onClick={ () => {
-                        slider.current.goTo(3);
-                      } }
+                      onClick={ onButtonClick(3) }
                       type="button"
                     >
                       Continuar
@@ -382,7 +395,7 @@ const Contact = ({ netlify }) => {
                   <div className="contact__actions">
                     <button
                       className="contact__back-btn btn btn-lg btn-primary"
-                      onClick={ () => slider.current.goTo(2) }
+                      onClick={ onButtonClick(2) }
                       type="button"
                     >
                       Voltar atrás
@@ -418,7 +431,7 @@ const Contact = ({ netlify }) => {
 
                       <button
                         className="contact__submit btn btn-primary btn-lg"
-                        onClick={ () => slider.current.goTo(0) }
+                        onClick={ onButtonClick(0) }
                         type="button"
                       >
                         Tentar Novamente
