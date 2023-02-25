@@ -1,17 +1,25 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback } from 'react';
 import { createGlobalState } from 'react-hooks-global-state';
 
 const { getGlobalState, setGlobalState, useGlobalState } = createGlobalState({
   contactForm: {
+    area: '',
     'consentimento submissão': false,
     email: '',
     mensagem: '',
+    morada: '',
     nome: '',
+    objectivo: '',
     status: '',
     'subscrever marketing': false,
     telefone: '',
   },
+  valid: false,
 });
+
+const formRef = {
+  current: null,
+};
 
 const getInputValue = input => {
   switch (input.type) {
@@ -25,8 +33,7 @@ const getInputValue = input => {
 
 const useContactForm = () => {
   const [ contactForm ] = useGlobalState('contactForm');
-  const [ valid, setValid ] = useState(false);
-  const formRef = useRef();
+  const [ valid, setValid ] = useGlobalState('valid');
 
   const validate = useCallback(() => {
     let newValid = true;
@@ -38,6 +45,9 @@ const useContactForm = () => {
       newValid = false;
     }
     if (!formRef.current.telefone.checkValidity()) {
+      newValid = false;
+    }
+    if (!formRef.current.morada.checkValidity()) {
       newValid = false;
     }
     if (!formRef.current['consentimento submissão'].checkValidity()) {
@@ -52,7 +62,7 @@ const useContactForm = () => {
     }
 
     return newValid;
-  }, [ valid ]);
+  }, [ valid, setValid ]);
 
   const set = useCallback(input => {
     if ('target' in input) {
@@ -86,20 +96,29 @@ const useContactForm = () => {
     });
 
     const { FormData, URLSearchParams } = window;
-    const formData = new FormData(formRef.current);
-    const body = new URLSearchParams(formData).toString();
+    const formData = new URLSearchParams(new FormData(formRef.current));
+
+    // It appends objectivo twice, for reasons...
+    formData.delete('objectivo');
+    formData.delete('area');
+    formData.append('objectivo', contactForm.objectivo);
+    formData.append('area', contactForm.area);
+
+    // Massage for Freshsales
+    formData.delete('subscrever marketing');
+    formData.append('subscrever marketing', contactForm['subscrever marketing'] ? '1' : '2');
 
     fetch('/', {
-      body,
+      body: formData.toString(),
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       method: 'POST',
     })
-      .then(() => {
+      .then(result => {
         set({
           name: 'status',
-          value: 'success',
+          value: result?.ok ? 'success' : 'error',
         });
       })
       .catch(error => {
@@ -110,7 +129,7 @@ const useContactForm = () => {
           value: 'error',
         });
       });
-  }, [ set, validate ]);
+  }, [ contactForm, set, validate ]);
 
   return {
     contactForm, formRef, set, submit, valid,

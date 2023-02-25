@@ -1,7 +1,13 @@
+import classnames from 'classnames';
+
 // eslint-disable-next-line arrow-body-style
-const SectionHeading = ({ children }) => {
+const SectionHeading = ({ children, className }) => {
   return (
-    <h2 className="section-heading">{ children }</h2>
+    <h2
+      className={ classnames('section-heading', className) }
+    >
+      { children }
+    </h2>
   );
 };
 

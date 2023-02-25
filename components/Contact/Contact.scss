@@ -1,9 +1,20 @@
 .contact {
+  --form-group-margin: 1.5em;
+
   position: relative;
   background-color: $dark;
+  background-image: linear-gradient(to right bottom, $dark 35%, rgba($black, 0.5));
 
   @include media-breakpoint-up(md) {
     padding-bottom: 100px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    --form-group-margin: 0.85em;
+  }
+
+  &.main-section {
+    padding-top: 0;
   }
 
   .section-heading {
@@ -12,6 +23,7 @@
 
   .container {
     position: relative;
+    overflow: hidden;
 
     > *:not(svg) {
       position: relative;
@@ -19,9 +31,19 @@
     }
   }
 
+  .tns-controls {
+    display: none;
+  }
+
   .form-group {
     max-width: 760px;
-    margin: 0 auto 25px;
+    margin: 0 auto var(--form-group-margin);
+    display: flex;
+    gap: var(--form-group-margin);
+
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+    }
 
     label:not(.form-check-label) {
       position: absolute;
@@ -30,16 +52,20 @@
   }
 
   .form-control {
-    color: $dark;
+    background: none;
+    border: 1px solid $white;
+    border-radius: 8px;
+    color: $white;
+    backdrop-filter: blur(15px);
 
     &:focus {
       border-color: $primary;
       box-shadow: none;
-      color: $dark;
+      color: $white;
     }
 
     &::placeholder {
-      color: $section-text;
+      color: $grey;
       font-style: italic;
       text-transform: uppercase;
     }
@@ -48,31 +74,42 @@
   input {
     &.form-control {
       height: auto;
+
+      &:autofill {
+        box-shadow: 0 0 0 30px $dark inset !important;
+        background-color: transparent !important;
+        color: $white !important;
+        -webkit-text-fill-color: $white !important;
+      }
     }
   }
 
   textarea {
     &.form-control {
-      height: 236px;
+      height: 190px;
+      resize: none;
     }
   }
 
   input,
   textarea {
-    padding: 20px;
+    padding: 12px;
+    margin-bottom: 4px;
     border-radius: 0;
 
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 8px;
+    }
+
     &:focus {
-      outline: 2px solid $primary;
-      outline-offset: 2px;
+      border-color: $primary;
     }
   }
 }
 
 .contact__bg {
   position: absolute;
-  opacity: 0.2;
-  color: $gray-500;
+  color: rgb(52, 53, 54);
   pointer-events: none;
   z-index: 5;
   top: 5px;
@@ -80,10 +117,173 @@
   font-size: 450px;
 }
 
+.contact__title {
+  &.section-heading {
+    margin-top: var(--section-heading-margin);
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+
+.contact__step {
+  position: relative;
+  padding-top: var(--section-padding);
+  overflow: hidden;
+  min-height: 300px;
+
+  .section-heading {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 2em;
+  }
+}
+
+.contact__actions {
+  display: flex;
+  gap: 1em;
+  margin: var(--section-heading-margin) auto 0;
+  padding: 2px;
+  justify-content: center;
+}
+
+.contact__back-btn {
+  background: none;
+  border-color: transparent;
+  color: rgba($white, 0.8);
+
+  &:hover {
+    background: rgba($white, 0.2);
+    border-color: transparent;
+    color: $white;
+  }
+}
+
+.contact__select-buttons {
+  --select-buttons-gap: 1em;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--select-buttons-gap);
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto var(--form-group-margin);
+
+  @include media-breakpoint-down(sm) {
+    --select-buttons-gap: 0.5em;
+  }
+}
+
+.contact__select-button {
+  position: relative;
+  border: 1px solid $white;
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  background: none;
+  padding: 3% 6%;
+  overflow: hidden;
+  flex: 1 1 calc((100% - var(--select-buttons-gap)) / 2);
+  aspect-ratio: 4/3;
+
+  @include media-breakpoint-down(xsm) {
+    padding: 0.5em;
+    aspect-ratio: 7/8;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba($primary, 0.4) 10%, $primary 80%);
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.contact__select-button-image {
+  width: auto;
+  height: 96px;
+  max-width: 100%;
+
+  @include media-breakpoint-down(sm) {
+    height: 64px;
+  }
+}
+
+.contact__select-button__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: $white;
+  position: relative;
+  z-index: 2;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 16px;
+  }
+}
+
+.contact__step__objective {
+  text-transform: uppercase;
+}
+
+.contact__step__area {
+  .contact__select-button-image {
+    transform-origin: bottom center;
+  }
+
+  &:nth-child(1) {
+    .contact__select-button-image {
+      transform: scale(0.35);
+    }
+  }
+
+  &:nth-child(2) {
+    .contact__select-button-image {
+      transform: scale(0.75);
+    }
+  }
+
+  &:nth-child(3) {
+    .contact__select-button-image {
+      transform: scale(1.1);
+    }
+  }
+
+  &:nth-child(4) {
+    .contact__select-button-image {
+      transform: scale(2.1);
+    }
+  }
+}
+
 .contact__checkboxes {
-  color: $light;
-  font-size: 18px;
-  text-align: left;
+  &.form-group {
+    color: $light;
+    font-size: 18px;
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
+    }
+  }
 }
 
 .contact__checkboxes__item {
@@ -91,9 +291,19 @@
   display: flex;
   gap: 12px;
 
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 8px;
+  }
+
   .form-check-input {
     padding: 10px;
     border-radius: 0;
+    border: 1px solid $primary;
+
+    &:not(:checked) {
+      background: none;
+      border-color: $white;
+    }
   }
 }
 
@@ -107,29 +317,31 @@
 }
 
 .contact__success {
-  border: 1px solid $primary;
-  background: rgba($primary, 0.2);
   color: $light;
-  font-size: 24px;
+  font-size: 36px;
+  margin: 2em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+  max-width: 85%;
 }
 
 .contact__error {
-  border: 1px solid $red;
-  background: rgba($red, 0.2);
   color: $light;
   font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
 }
 
 .contact__note {
   width: 100%;
   color: $light;
   text-align: left;
-  margin-bottom: 25px;
-}
-
-.contact__submit {
-  display: block;
-  margin: 0 auto;
 }
 
 .contacts-url {
@@ -159,6 +371,7 @@
     margin: 1em 0;
   }
 
+  // stylelint-disable-next-line no-descending-specificity
   svg {
     margin-right: 0.65em;
   }
